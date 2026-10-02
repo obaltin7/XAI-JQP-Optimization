@@ -1,0 +1,7 @@
+{
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "precision": "fp16",
+  "dataset": "wikitext-2-raw-v1 (test split)",
+  "perplexity": 5.219959259033203,
+  "eval_time_seconds": 64.10788464546204
+}

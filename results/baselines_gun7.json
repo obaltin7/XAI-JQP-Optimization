@@ -1,0 +1,782 @@
+{
+  "run": {
+    "started_at": "2026-09-18T21:23:00",
+    "status": "completed",
+    "args": {
+      "configs": "nf4_uniform",
+      "seed": 42,
+      "output": "results/baselines_gun7.json",
+      "log": "log_baselines_gun7.txt",
+      "baseline": "results/baseline_fp16.json",
+      "no_mmlu": false,
+      "mmlu_ids": "results/mmlu_subset_ids.json",
+      "mmlu_prompt_style": "plain",
+      "mmlu_batch_size": 8,
+      "nf4_no_double_quant": false,
+      "gptq_model": null,
+      "awq_model": null,
+      "quant_cache": "/workspace/quant_cache",
+      "dry_run": false,
+      "preflight": false,
+      "resume": true
+    },
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)",
+      "packages": {
+        "bitsandbytes": "0.50.2",
+        "accelerate": "1.15.0",
+        "datasets": "5.0.1",
+        "optimum": null,
+        "gptqmodel": null,
+        "auto-gptq": null,
+        "autoawq": null
+      }
+    },
+    "config_order": [
+      "nf4_uniform"
+    ],
+    "finished_at": "2026-09-18T21:24:51",
+    "total_seconds": 111.46175980567932
+  },
+  "reference": {
+    "fp16_baseline_gun1": 5.219959259033203,
+    "size_note": "model_bytes = parametre + buffer baytı; bnb quant_state (absmax) ek yükü hariç (Gün 5 ile aynı ölçüm)",
+    "peak_vram_note": "konfig başına reset_peak_memory_stats; yükleme öncesi ayrılmış bellek cuda_allocated_before_load_gb",
+    "perplexity_settings": {
+      "max_length": 1024,
+      "stride": 512,
+      "dataset": "wikitext-2-raw-v1 (test split)"
+    },
+    "mmlu_n_questions": 500
+  },
+  "configs": {
+    "nf4_uniform": {
+      "description": "uniform NF4: tüm decoder Linear'ları bitsandbytes 4-bit (load_in_4bit, nf4, compute fp16, çift kuantizasyon), lm_head hariç",
+      "available": true,
+      "status": "completed",
+      "seed": 42,
+      "started_at": "2026-09-18T21:23:08",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 13.499624252319336,
+      "load_info": {
+        "quantization_config": {
+          "quant_method": "bitsandbytes",
+          "_load_in_8bit": false,
+          "_load_in_4bit": true,
+          "llm_int8_threshold": 6.0,
+          "llm_int8_skip_modules": null,
+          "llm_int8_enable_fp32_cpu_offload": false,
+          "llm_int8_has_fp16_weight": false,
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_use_double_quant": true,
+          "bnb_4bit_compute_dtype": "float16",
+          "bnb_4bit_quant_storage": "uint8",
+          "load_in_4bit": true,
+          "load_in_8bit": false
+        },
+        "linear_module_types": {
+          "Linear4bit": 224,
+          "Linear": 1
+        },
+        "lm_head_type": "Linear"
+      },
+      "model_bytes": {
+        "bytes": 4027072512,
+        "gb": 4.027072512,
+        "by_dtype_bytes": {
+          "torch.float16": 537403392,
+          "torch.uint8": 3489660928,
+          "torch.float32": 8192
+        }
+      },
+      "cuda_allocated_after_load_gb": 4.138820608,
+      "perplexity": 5.306489944458008,
+      "perplexity_seconds": 80.32744288444519,
+      "perplexity_finite": true,
+      "mmlu": {
+        "mmlu_subset_acc": 0.53,
+        "accuracy": 0.53,
+        "n_questions": 500,
+        "n_correct": 265,
+        "per_subject": {
+          "abstract_algebra": {
+            "accuracy": 0.36,
+            "n": 50,
+            "correct": 18
+          },
+          "anatomy": {
+            "accuracy": 0.5,
+            "n": 50,
+            "correct": 25
+          },
+          "astronomy": {
+            "accuracy": 0.7,
+            "n": 50,
+            "correct": 35
+          },
+          "college_computer_science": {
+            "accuracy": 0.44,
+            "n": 50,
+            "correct": 22
+          },
+          "high_school_mathematics": {
+            "accuracy": 0.3,
+            "n": 50,
+            "correct": 15
+          },
+          "philosophy": {
+            "accuracy": 0.72,
+            "n": 50,
+            "correct": 36
+          },
+          "world_religions": {
+            "accuracy": 0.78,
+            "n": 50,
+            "correct": 39
+          },
+          "us_foreign_policy": {
+            "accuracy": 0.8,
+            "n": 50,
+            "correct": 40
+          },
+          "econometrics": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          },
+          "moral_scenarios": {
+            "accuracy": 0.36,
+            "n": 50,
+            "correct": 18
+          }
+        },
+        "seconds": 8.88565444946289,
+        "predicted_letter_counts": {
+          "A": 161,
+          "B": 110,
+          "C": 105,
+          "D": 124
+        },
+        "gold_letter_counts": {
+          "A": 113,
+          "B": 109,
+          "C": 141,
+          "D": 137
+        },
+        "mean_correct_prob": 0.5171064178197994,
+        "prompt_format": {
+          "style": "plain",
+          "n_shot": 0,
+          "chat_template_used": false,
+          "system_prompt": null,
+          "template": "The following are multiple choice questions (with answers) about {subject}.\n\n{question}\nA. {a}\nB. {b}\nC. {c}\nD. {d}\nAnswer:",
+          "assistant_prefix": null,
+          "scoring": "son konumda A/B/C/D token log-olasılıkları (tam sözlük log_softmax, fp32), argmax"
+        },
+        "letter_tokens": {
+          "ids": [
+            1098,
+            1133,
+            1102,
+            1152
+          ],
+          "context_stable": true,
+          "tokens": [
+            "▁A",
+            "▁B",
+            "▁C",
+            "▁D"
+          ]
+        },
+        "subset": {
+          "dataset": "cais/mmlu",
+          "split": "test",
+          "seed": 42,
+          "per_subject": 50,
+          "subjects": [
+            "abstract_algebra",
+            "anatomy",
+            "astronomy",
+            "college_computer_science",
+            "high_school_mathematics",
+            "philosophy",
+            "world_religions",
+            "us_foreign_policy",
+            "econometrics",
+            "moral_scenarios"
+          ],
+          "created_at": "2026-09-18T00:12:10",
+          "ids_file": "results/mmlu_subset_ids.json"
+        },
+        "batch_size": 8,
+        "max_length": 2048,
+        "n_truncated": 0
+      },
+      "mmlu_subset_acc": 0.53,
+      "peak_vram_gb": 4.827973632,
+      "cuda_allocated_after_free_gb": 0.008520704,
+      "seconds": 103.26175093650818
+    },
+    "gptq_4bit": {
+      "description": "GPTQ 4-bit (auto-gptq: g128, desc_act=False, sym; kalibrasyon WikiText-2 train 128×2048), lm_head hariç",
+      "available": true,
+      "status": "completed",
+      "seed": 42,
+      "started_at": "2026-09-18T20:02:19",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 2.3577394485473633,
+      "load_info": {
+        "checkpoint": "/workspace/quant_cache/Mistral-7B-Instruct-v0.3-gptq_4bit-g128",
+        "quantization_config": "GPTQConfig(quant_method=<QuantizationMethod.GPTQ: 'gptq'>)",
+        "linear_module_types": {
+          "QuantLinear": 224,
+          "Linear": 1
+        },
+        "lm_head_type": "Linear",
+        "quantization": {
+          "source": "bu koşuda kuantize edildi",
+          "library": "auto-gptq",
+          "bits": 4,
+          "group_size": 128,
+          "desc_act": false,
+          "sym": true,
+          "calibration": {
+            "dataset": "wikitext-2-raw-v1",
+            "split": "train",
+            "min_chars": 200,
+            "group_size": 128,
+            "gptq_n_samples": 128,
+            "gptq_seqlen": 2048,
+            "awq_n_paragraphs": 1024,
+            "n_samples": 128,
+            "seqlen": 2048,
+            "seed": 42
+          },
+          "quantize_seconds": 1659.1086642742157
+        }
+      },
+      "model_bytes": {
+        "bytes": 4168368128,
+        "gb": 4.168368128,
+        "by_dtype_bytes": {
+          "torch.float16": 646455296,
+          "torch.float32": 8192,
+          "torch.int32": 3521904640
+        }
+      },
+      "cuda_allocated_after_load_gb": 4.176896,
+      "perplexity": 5.319397449493408,
+      "perplexity_seconds": 166.8133270740509,
+      "perplexity_finite": true,
+      "mmlu": {
+        "mmlu_subset_acc": 0.53,
+        "accuracy": 0.53,
+        "n_questions": 500,
+        "n_correct": 265,
+        "per_subject": {
+          "abstract_algebra": {
+            "accuracy": 0.32,
+            "n": 50,
+            "correct": 16
+          },
+          "anatomy": {
+            "accuracy": 0.56,
+            "n": 50,
+            "correct": 28
+          },
+          "astronomy": {
+            "accuracy": 0.7,
+            "n": 50,
+            "correct": 35
+          },
+          "college_computer_science": {
+            "accuracy": 0.46,
+            "n": 50,
+            "correct": 23
+          },
+          "high_school_mathematics": {
+            "accuracy": 0.26,
+            "n": 50,
+            "correct": 13
+          },
+          "philosophy": {
+            "accuracy": 0.7,
+            "n": 50,
+            "correct": 35
+          },
+          "world_religions": {
+            "accuracy": 0.82,
+            "n": 50,
+            "correct": 41
+          },
+          "us_foreign_policy": {
+            "accuracy": 0.82,
+            "n": 50,
+            "correct": 41
+          },
+          "econometrics": {
+            "accuracy": 0.32,
+            "n": 50,
+            "correct": 16
+          },
+          "moral_scenarios": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          }
+        },
+        "seconds": 16.961496353149414,
+        "predicted_letter_counts": {
+          "A": 160,
+          "B": 84,
+          "C": 117,
+          "D": 139
+        },
+        "gold_letter_counts": {
+          "A": 113,
+          "B": 109,
+          "C": 141,
+          "D": 137
+        },
+        "mean_correct_prob": 0.5177755258536345,
+        "prompt_format": {
+          "style": "plain",
+          "n_shot": 0,
+          "chat_template_used": false,
+          "system_prompt": null,
+          "template": "The following are multiple choice questions (with answers) about {subject}.\n\n{question}\nA. {a}\nB. {b}\nC. {c}\nD. {d}\nAnswer:",
+          "assistant_prefix": null,
+          "scoring": "son konumda A/B/C/D token log-olasılıkları (tam sözlük log_softmax, fp32), argmax"
+        },
+        "letter_tokens": {
+          "ids": [
+            1098,
+            1133,
+            1102,
+            1152
+          ],
+          "context_stable": true,
+          "tokens": [
+            "▁A",
+            "▁B",
+            "▁C",
+            "▁D"
+          ]
+        },
+        "subset": {
+          "dataset": "cais/mmlu",
+          "split": "test",
+          "seed": 42,
+          "per_subject": 50,
+          "subjects": [
+            "abstract_algebra",
+            "anatomy",
+            "astronomy",
+            "college_computer_science",
+            "high_school_mathematics",
+            "philosophy",
+            "world_religions",
+            "us_foreign_policy",
+            "econometrics",
+            "moral_scenarios"
+          ],
+          "created_at": "2026-09-18T00:12:10",
+          "ids_file": "results/mmlu_subset_ids.json"
+        },
+        "batch_size": 8,
+        "max_length": 2048,
+        "n_truncated": 0
+      },
+      "mmlu_subset_acc": 0.53,
+      "peak_vram_gb": 4.936996864,
+      "cuda_allocated_after_free_gb": 4.177010688,
+      "seconds": 1870.2283990383148
+    },
+    "awq_4bit": {
+      "description": "AWQ 4-bit (autoawq: g128, zero_point, GEMM; kalibrasyon WikiText-2 train paragrafları), lm_head hariç",
+      "available": true,
+      "status": "completed",
+      "seed": 42,
+      "started_at": "2026-09-18T20:33:30",
+      "cuda_allocated_before_load_gb": 4.177010688,
+      "model_load_seconds": 1.2536053657531738,
+      "load_info": {
+        "checkpoint": "/workspace/quant_cache/Mistral-7B-Instruct-v0.3-awq_4bit-g128",
+        "quantization_config": "AwqConfig(quant_method=<QuantizationMethod.AWQ: 'awq'>)",
+        "linear_module_types": {
+          "WQLinear_GEMM": 224,
+          "Linear": 1
+        },
+        "lm_head_type": "Linear",
+        "quantization": {
+          "source": "bu koşuda kuantize edildi",
+          "library": "autoawq",
+          "zero_point": true,
+          "q_group_size": 128,
+          "w_bit": 4,
+          "version": "GEMM",
+          "calibration": {
+            "dataset": "wikitext-2-raw-v1",
+            "split": "train",
+            "min_chars": 200,
+            "group_size": 128,
+            "gptq_n_samples": 128,
+            "gptq_seqlen": 2048,
+            "awq_n_paragraphs": 1024,
+            "n_paragraphs": 1024,
+            "block_size": 512,
+            "seed": null
+          },
+          "quantize_seconds": 729.5665726661682
+        }
+      },
+      "model_bytes": {
+        "bytes": 4163387392,
+        "gb": 4.163387392,
+        "by_dtype_bytes": {
+          "torch.float16": 646455296,
+          "torch.int32": 3516923904,
+          "torch.float32": 8192
+        }
+      },
+      "cuda_allocated_after_load_gb": 8.340406272,
+      "perplexity": 5.324202537536621,
+      "perplexity_seconds": 86.11500406265259,
+      "perplexity_finite": true,
+      "mmlu": {
+        "mmlu_subset_acc": 0.54,
+        "accuracy": 0.54,
+        "n_questions": 500,
+        "n_correct": 270,
+        "per_subject": {
+          "abstract_algebra": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          },
+          "anatomy": {
+            "accuracy": 0.48,
+            "n": 50,
+            "correct": 24
+          },
+          "astronomy": {
+            "accuracy": 0.74,
+            "n": 50,
+            "correct": 37
+          },
+          "college_computer_science": {
+            "accuracy": 0.48,
+            "n": 50,
+            "correct": 24
+          },
+          "high_school_mathematics": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          },
+          "philosophy": {
+            "accuracy": 0.68,
+            "n": 50,
+            "correct": 34
+          },
+          "world_religions": {
+            "accuracy": 0.82,
+            "n": 50,
+            "correct": 41
+          },
+          "us_foreign_policy": {
+            "accuracy": 0.8,
+            "n": 50,
+            "correct": 40
+          },
+          "econometrics": {
+            "accuracy": 0.42,
+            "n": 50,
+            "correct": 21
+          },
+          "moral_scenarios": {
+            "accuracy": 0.3,
+            "n": 50,
+            "correct": 15
+          }
+        },
+        "seconds": 11.58749771118164,
+        "predicted_letter_counts": {
+          "A": 182,
+          "B": 109,
+          "C": 96,
+          "D": 113
+        },
+        "gold_letter_counts": {
+          "A": 113,
+          "B": 109,
+          "C": 141,
+          "D": 137
+        },
+        "mean_correct_prob": 0.5203362465403043,
+        "prompt_format": {
+          "style": "plain",
+          "n_shot": 0,
+          "chat_template_used": false,
+          "system_prompt": null,
+          "template": "The following are multiple choice questions (with answers) about {subject}.\n\n{question}\nA. {a}\nB. {b}\nC. {c}\nD. {d}\nAnswer:",
+          "assistant_prefix": null,
+          "scoring": "son konumda A/B/C/D token log-olasılıkları (tam sözlük log_softmax, fp32), argmax"
+        },
+        "letter_tokens": {
+          "ids": [
+            1098,
+            1133,
+            1102,
+            1152
+          ],
+          "context_stable": true,
+          "tokens": [
+            "▁A",
+            "▁B",
+            "▁C",
+            "▁D"
+          ]
+        },
+        "subset": {
+          "dataset": "cais/mmlu",
+          "split": "test",
+          "seed": 42,
+          "per_subject": 50,
+          "subjects": [
+            "abstract_algebra",
+            "anatomy",
+            "astronomy",
+            "college_computer_science",
+            "high_school_mathematics",
+            "philosophy",
+            "world_religions",
+            "us_foreign_policy",
+            "econometrics",
+            "moral_scenarios"
+          ],
+          "created_at": "2026-09-18T00:12:10",
+          "ids_file": "results/mmlu_subset_ids.json"
+        },
+        "batch_size": 8,
+        "max_length": 2048,
+        "n_truncated": 0
+      },
+      "mmlu_subset_acc": 0.54,
+      "peak_vram_gb": 9.020234752,
+      "cuda_allocated_after_free_gb": 4.177010688,
+      "seconds": 837.7833037376404
+    },
+    "fp16": {
+      "description": "FP16 referans (sıkıştırma yok)",
+      "available": true,
+      "status": "completed",
+      "seed": 42,
+      "started_at": "2026-09-18T19:50:06",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 37.952038288116455,
+      "load_info": {
+        "dtype": "float16",
+        "linear_module_types": {
+          "Linear": 225
+        },
+        "lm_head_type": "Linear"
+      },
+      "model_bytes": {
+        "bytes": 14496055296,
+        "gb": 14.496055296,
+        "by_dtype_bytes": {
+          "torch.float16": 14496047104,
+          "torch.float32": 8192
+        }
+      },
+      "cuda_allocated_after_load_gb": 14.496063488,
+      "perplexity": 5.219959259033203,
+      "perplexity_seconds": 64.08974027633667,
+      "perplexity_finite": true,
+      "mmlu": {
+        "mmlu_subset_acc": 0.546,
+        "accuracy": 0.546,
+        "n_questions": 500,
+        "n_correct": 273,
+        "per_subject": {
+          "abstract_algebra": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          },
+          "anatomy": {
+            "accuracy": 0.48,
+            "n": 50,
+            "correct": 24
+          },
+          "astronomy": {
+            "accuracy": 0.7,
+            "n": 50,
+            "correct": 35
+          },
+          "college_computer_science": {
+            "accuracy": 0.52,
+            "n": 50,
+            "correct": 26
+          },
+          "high_school_mathematics": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          },
+          "philosophy": {
+            "accuracy": 0.7,
+            "n": 50,
+            "correct": 35
+          },
+          "world_religions": {
+            "accuracy": 0.82,
+            "n": 50,
+            "correct": 41
+          },
+          "us_foreign_policy": {
+            "accuracy": 0.78,
+            "n": 50,
+            "correct": 39
+          },
+          "econometrics": {
+            "accuracy": 0.42,
+            "n": 50,
+            "correct": 21
+          },
+          "moral_scenarios": {
+            "accuracy": 0.36,
+            "n": 50,
+            "correct": 18
+          }
+        },
+        "seconds": 7.210829257965088,
+        "predicted_letter_counts": {
+          "A": 171,
+          "B": 107,
+          "C": 96,
+          "D": 126
+        },
+        "gold_letter_counts": {
+          "A": 113,
+          "B": 109,
+          "C": 141,
+          "D": 137
+        },
+        "mean_correct_prob": 0.5310633053738857,
+        "prompt_format": {
+          "style": "plain",
+          "n_shot": 0,
+          "chat_template_used": false,
+          "system_prompt": null,
+          "template": "The following are multiple choice questions (with answers) about {subject}.\n\n{question}\nA. {a}\nB. {b}\nC. {c}\nD. {d}\nAnswer:",
+          "assistant_prefix": null,
+          "scoring": "son konumda A/B/C/D token log-olasılıkları (tam sözlük log_softmax, fp32), argmax"
+        },
+        "letter_tokens": {
+          "ids": [
+            1098,
+            1133,
+            1102,
+            1152
+          ],
+          "context_stable": true,
+          "tokens": [
+            "▁A",
+            "▁B",
+            "▁C",
+            "▁D"
+          ]
+        },
+        "subset": {
+          "dataset": "cais/mmlu",
+          "split": "test",
+          "seed": 42,
+          "per_subject": 50,
+          "subjects": [
+            "abstract_algebra",
+            "anatomy",
+            "astronomy",
+            "college_computer_science",
+            "high_school_mathematics",
+            "philosophy",
+            "world_religions",
+            "us_foreign_policy",
+            "econometrics",
+            "moral_scenarios"
+          ],
+          "created_at": "2026-09-18T00:12:10",
+          "ids_file": "results/mmlu_subset_ids.json"
+        },
+        "batch_size": 8,
+        "max_length": 2048,
+        "n_truncated": 0
+      },
+      "mmlu_subset_acc": 0.546,
+      "peak_vram_gb": 15.184411648,
+      "cuda_allocated_after_free_gb": 0.00851968,
+      "seconds": 109.90967679023743
+    }
+  },
+  "summary": {
+    "reference_perplexity": 5.219959259033203,
+    "reference_source": "fp16 konfigi (bu koşu)",
+    "reference_mmlu_subset_acc": 0.546,
+    "configs": {
+      "nf4_uniform": {
+        "perplexity": 5.306489944458008,
+        "mmlu_subset_acc": 0.53,
+        "model_gb": 4.027072512,
+        "peak_vram_gb": 4.827973632,
+        "seconds": 103.26175093650818,
+        "perplexity_delta_vs_fp16": 0.08653068542480469,
+        "perplexity_ratio_vs_fp16": 1.0165768890389446,
+        "measured_model_bytes_ratio": 0.27780471512903365,
+        "mmlu_delta_vs_fp16": -0.016000000000000014
+      },
+      "gptq_4bit": {
+        "perplexity": 5.319397449493408,
+        "mmlu_subset_acc": 0.53,
+        "model_gb": 4.168368128,
+        "peak_vram_gb": 4.936996864,
+        "seconds": 1870.2283990383148,
+        "perplexity_delta_vs_fp16": 0.09943819046020508,
+        "perplexity_ratio_vs_fp16": 1.0190496104520597,
+        "measured_model_bytes_ratio": 0.28755189207578474,
+        "mmlu_delta_vs_fp16": -0.016000000000000014
+      },
+      "awq_4bit": {
+        "perplexity": 5.324202537536621,
+        "mmlu_subset_acc": 0.54,
+        "model_gb": 4.163387392,
+        "peak_vram_gb": 9.020234752,
+        "seconds": 837.7833037376404,
+        "perplexity_delta_vs_fp16": 0.10424327850341797,
+        "perplexity_ratio_vs_fp16": 1.0199701325873423,
+        "measured_model_bytes_ratio": 0.28720829956745775,
+        "mmlu_delta_vs_fp16": -0.006000000000000005
+      },
+      "fp16": {
+        "perplexity": 5.219959259033203,
+        "mmlu_subset_acc": 0.546,
+        "model_gb": 14.496055296,
+        "peak_vram_gb": 15.184411648,
+        "seconds": 109.90967679023743,
+        "perplexity_delta_vs_fp16": 0.0,
+        "perplexity_ratio_vs_fp16": 1.0,
+        "measured_model_bytes_ratio": 1.0,
+        "mmlu_delta_vs_fp16": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,1548 @@
+{
+ "meta": {
+  "dataset": "allenai/c4 en validation (streaming)",
+  "skip_docs": 1000,
+  "n_docs": 256,
+  "min_chars": 500,
+  "note": "kalibrasyon pasajları akış indeksi 0–24; ilk skip_docs belge atlandığı için çakışma yok",
+  "created_at": "2026-09-21T20:34:12"
+ },
+ "docs": [
+  {
+   "stream_index": 1000,
+   "url": "http://www.d2messageboard.com/showthread.php?t=94010&amp;s=9b3a30e7f44ebca6bdc3a1b43888f6d8",
+   "sha1": "b9e02e995f241177d3884eefdd4afffbe33b7611",
+   "n_chars": 3667
+  },
+  {
+   "stream_index": 1001,
+   "url": "https://thejournal.com/articles/1997/01/01/new-technology-training-method-brings-ga-educators-out-of-the-dark.aspx",
+   "sha1": "b9f9d9d79427d1ad99d20a8cbfb39e27c02a0fe2",
+   "n_chars": 3853
+  },
+  {
+   "stream_index": 1002,
+   "url": "https://www.laurensmith.com/brand-image/",
+   "sha1": "92fe4b4824ca5758fba4f0cdec36878406e87729",
+   "n_chars": 13346
+  },
+  {
+   "stream_index": 1003,
+   "url": "https://www.kindadusty.com/deal-with-the-dangers-in-your-home-in-the-right-way/",
+   "sha1": "3dde0342900dee6915a3e5b28e14dc900f2638de",
+   "n_chars": 2727
+  },
+  {
+   "stream_index": 1004,
+   "url": "https://roostertfeathers.laughstub.com/event.cfm?showTimingID=525931",
+   "sha1": "a9b625f6577027b0e95879c58d3109aab416a158",
+   "n_chars": 750
+  },
+  {
+   "stream_index": 1005,
+   "url": "https://www.odgersinterim.com/pl/who-we-are/intelligence/enter-the-maelstrom-why-the-convergence-of-sports-media-and-gaming-is-the-future-of-esports-4740/",
+   "sha1": "eab1437aacb257baf3cdbfa43d92e9366dc0aaf0",
+   "n_chars": 6356
+  },
+  {
+   "stream_index": 1006,
+   "url": "https://www.prnewsonline.com/awardwinners/trista-morrison/",
+   "sha1": "92e2f6e6e7ee5bcb56004b318ea2f3e6d3b61043",
+   "n_chars": 1915
+  },
+  {
+   "stream_index": 1007,
+   "url": "https://www.allaboutcabo.com/blog/a-cabo-villa-photo/",
+   "sha1": "1247ec19725f2f570da1e1e9029ed1462b94e605",
+   "n_chars": 896
+  },
+  {
+   "stream_index": 1009,
+   "url": "https://www.imgtec.com/webinar/where-next-after-mobile/",
+   "sha1": "062c36d74f928efe8db92d21407b577fa997c202",
+   "n_chars": 1323
+  },
+  {
+   "stream_index": 1012,
+   "url": "http://www.everydaythrifter.com/2017/08/10/7-things-college-students-should-buy-at-thrift-stores/",
+   "sha1": "7f20432d4dd2b6e88f6cc8869f300d962b9315c4",
+   "n_chars": 8501
+  },
+  {
+   "stream_index": 1013,
+   "url": "http://sammypiccolo.com/new-south-wales/sai-nakshatra-malika-in-telugu-pdf.php",
+   "sha1": "beb8695b857db19b09718330b49f615627c5c0f5",
+   "n_chars": 883
+  },
+  {
+   "stream_index": 1015,
+   "url": "https://www.newsy.com/stories/some-spiders-mimic-ants-to-avoid-being-eaten/",
+   "sha1": "667f2fdf84b55eb6d5a30cd49c18522d90a67438",
+   "n_chars": 878
+  },
+  {
+   "stream_index": 1016,
+   "url": "https://www.theravive.com/cities/il/christian-counseling-lincolnwood.aspx",
+   "sha1": "b0414584573fe7d5f7b695b77b4bf9e7aeeb3d47",
+   "n_chars": 5684
+  },
+  {
+   "stream_index": 1017,
+   "url": "https://www.pon.harvard.edu/research_projects/affiliated-faculty/",
+   "sha1": "71db2c359cc0a0f089254a136db29b31c8665cdf",
+   "n_chars": 4349
+  },
+  {
+   "stream_index": 1018,
+   "url": "https://www.athenaeum.edu/SupportUs/MessageFromDirector.aspx",
+   "sha1": "0e470a2efd117a295eda26139a4abdca38057c38",
+   "n_chars": 1228
+  },
+  {
+   "stream_index": 1019,
+   "url": "http://dslab.naist.jp/en/publication-e.html",
+   "sha1": "9cabca46581e1760018d94c7cc9ca6c6cbf8e841",
+   "n_chars": 31689
+  },
+  {
+   "stream_index": 1020,
+   "url": "https://www.discogs.com/Slam-Dark-Forces/master/37305",
+   "sha1": "7bb78bd46e14d742e37c6f5a02203e436339c80a",
+   "n_chars": 1184
+  },
+  {
+   "stream_index": 1022,
+   "url": "https://www.silversurfers.com/silvercard-plus-offers/save-extra-200-per-couple-select-emerald-waterways-european-river-cruises/",
+   "sha1": "9e706aa59ab8710e7988969eb812280db881fb71",
+   "n_chars": 584
+  },
+  {
+   "stream_index": 1023,
+   "url": "http://www.rundesroom.com/2012/04/math-journal-sundays_15.html",
+   "sha1": "63ad3f0798c28c7071969aaf6b375ea811293524",
+   "n_chars": 2815
+  },
+  {
+   "stream_index": 1024,
+   "url": "https://dailynewsegypt.com/2018/09/23/government-modifies-contracting-system-with-siemens-to-establish-wind-energy-stations-for-e2bn/",
+   "sha1": "3e9ee62252868336d5830712838b58b349284f81",
+   "n_chars": 2939
+  },
+  {
+   "stream_index": 1025,
+   "url": "https://www.vaildaily.com/news/vail-daily-health-story-call-push-shock/",
+   "sha1": "8c76f2f3421cf8547c352bd05812589308df1ad7",
+   "n_chars": 5586
+  },
+  {
+   "stream_index": 1026,
+   "url": "https://vogellegacy.wordpress.com/i-refuse/",
+   "sha1": "07840e111881d20d4e0db4ea5a3edad2b3df0348",
+   "n_chars": 904
+  },
+  {
+   "stream_index": 1028,
+   "url": "https://www.mesirowfinancial.com/markets/cmib/sale-leaseback-capital/clients-we-serve/",
+   "sha1": "92e30443e3c50ff3836f716fbdb997a98133e1d2",
+   "n_chars": 749
+  },
+  {
+   "stream_index": 1029,
+   "url": "http://www.theacademies.com/stop-caring-about-what-you-dont-care-about/",
+   "sha1": "3a4706bb5830cbcff646218f59b398074e100343",
+   "n_chars": 1164
+  },
+  {
+   "stream_index": 1030,
+   "url": "https://nafoa.org/broadcasts/cdfi-call-for-new-markets-tax-credit-application-reviewers",
+   "sha1": "91dfdb8d3ccade683b7fd2a5b643f3a78fbc6fea",
+   "n_chars": 1268
+  },
+  {
+   "stream_index": 1031,
+   "url": "https://www.interviewsuccessformula.com/job-search-advice/how-college-prepares-you-for-the-real-world.php",
+   "sha1": "19dbc88146fd19697fe5ce64c3e03ff1a2d865a6",
+   "n_chars": 1486
+  },
+  {
+   "stream_index": 1032,
+   "url": "https://www.performance-exhausts.com.au/viewStory/honda-performance-exhaust-armadale-perth",
+   "sha1": "64610c68185a16329ba7217114e3727254aaa2a7",
+   "n_chars": 1303
+  },
+  {
+   "stream_index": 1033,
+   "url": "https://artes.esa.int/news/french-senate-and-esa-organise-colloquium-bridging-digital-divide",
+   "sha1": "318108dd0273b918057bf92d68bca39201234227",
+   "n_chars": 1852
+  },
+  {
+   "stream_index": 1034,
+   "url": "http://watches-on-time.com/2012/06/opening-night-for-the-night-of-the-company-dietrich/",
+   "sha1": "6d8a29e880f930f7778eb0d41bc12013392055b9",
+   "n_chars": 1211
+  },
+  {
+   "stream_index": 1035,
+   "url": "http://www.stabbslifeboat.org.uk/press-release-thomas-tunnock-sons-ltd/",
+   "sha1": "a54ab340e615f67c8223fbf60bec2e17a464b0b2",
+   "n_chars": 925
+  },
+  {
+   "stream_index": 1036,
+   "url": "https://socialsciences.ucla.edu/2018/04/05/april-4-50th-anniversary-remembrance-of-martin-luther-king-jr-s-assassination-3/",
+   "sha1": "8c69e368b2a9a92d86ca4dcf2a362f564dfb3809",
+   "n_chars": 542
+  },
+  {
+   "stream_index": 1037,
+   "url": "http://www.ecocarpetcleaningliverpool.co.uk/professional-furniture-cleaning-one-specialisms/",
+   "sha1": "9b1702335a11fc8ec12e39d9646c7d708fa90907",
+   "n_chars": 3673
+  },
+  {
+   "stream_index": 1038,
+   "url": "https://qoshe.com/rt-com/robert-bridge/don-t-forget-to-file-your-taxes-america-becaus/28300295",
+   "sha1": "647febd07821caf42eb08de46643395f6aea9033",
+   "n_chars": 1893
+  },
+  {
+   "stream_index": 1039,
+   "url": "http://sport.mpelembe.net/home/silver-is-the-new-gold-for-australia-says-minister",
+   "sha1": "c28bc8126ec2ff52d14dfbfc96618dfcd872b8ee",
+   "n_chars": 1808
+  },
+  {
+   "stream_index": 1041,
+   "url": "https://mindcology.com/narcissist/narcissistic-hoovering/",
+   "sha1": "d5c986cacc3de83ccb8e8706d5536ed7a2d1f9a5",
+   "n_chars": 6058
+  },
+  {
+   "stream_index": 1042,
+   "url": "https://www.vcstar.com/story/sports/2018/12/03/sports-academy-announces-partnership-former-kobe-bryant/2194961002/",
+   "sha1": "b147a18255e122fee8e81479ccaa655321c29b85",
+   "n_chars": 1870
+  },
+  {
+   "stream_index": 1044,
+   "url": "https://www.technextday.co.uk/asus-vp228he-215-widescreen-tn-led-black-multimedia-monitor-1920x10801msvgahdmi-90lm01k0b05170",
+   "sha1": "4f919d616900f59f4e5282d24dab3ede433270e2",
+   "n_chars": 1451
+  },
+  {
+   "stream_index": 1045,
+   "url": "https://www.simpleusability.com/inspiration/2009/05/mydeco-eye-tracking/",
+   "sha1": "3a35edb3abb9a5dda0f8936727c015e4f682a4d0",
+   "n_chars": 1948
+  },
+  {
+   "stream_index": 1048,
+   "url": "http://connectedoxford.com/not-so-pea-brained-after-all-pea-plants-demonstrate-ability-to-gamble-a-first-in-plants/",
+   "sha1": "b35afc39c845ef4a7f27427f173ed98f7de9eab5",
+   "n_chars": 2677
+  },
+  {
+   "stream_index": 1050,
+   "url": "https://screenworks.com.au/enews-articles/inside-the-writers-room-participants-announced/",
+   "sha1": "ee5f83c08e089cef0765c64b86c1456c0f9a8f29",
+   "n_chars": 8270
+  },
+  {
+   "stream_index": 1051,
+   "url": "https://forums.hextcg.com/index.php?thread/3626-card-design-contest-2018-03-27-2018-04-06/",
+   "sha1": "af031c263851be5f0901663c371ce19de21ba346",
+   "n_chars": 13473
+  },
+  {
+   "stream_index": 1052,
+   "url": "https://reviewon.com/the-self-defeating-consequences-when-reacting-to-the-scarcity-mindset.html",
+   "sha1": "7d0f433962a62267fc14ffa07be791da068508eb",
+   "n_chars": 5467
+  },
+  {
+   "stream_index": 1054,
+   "url": "http://precisionchiroga.com/whats-the-first-step/",
+   "sha1": "e0fbe2633be12ab79b0bd002fb4d07727f7e16dc",
+   "n_chars": 1410
+  },
+  {
+   "stream_index": 1055,
+   "url": "https://www.savvysme.com.au/business/s/underpinning-services",
+   "sha1": "74e1fc0b9c7f71c15ce176886f1fd62e7348fce5",
+   "n_chars": 964
+  },
+  {
+   "stream_index": 1056,
+   "url": "https://commaonline.org/index.php/shows/mainstage-season/previously-this-year",
+   "sha1": "e8f57a002ed7b8b81ec2b69feacc321de2731f63",
+   "n_chars": 9447
+  },
+  {
+   "stream_index": 1057,
+   "url": "https://ohsodelicioso.com/pigs-in-a-blanket-boon/",
+   "sha1": "6d8d1ee04b8f595dd8f387c7a70feb667795f1bd",
+   "n_chars": 2337
+  },
+  {
+   "stream_index": 1059,
+   "url": "http://olympics.com.au/games/barcelona-1992",
+   "sha1": "604b6bdfcaecc78900a44ca376e0f79f5a033d9d",
+   "n_chars": 7048
+  },
+  {
+   "stream_index": 1061,
+   "url": "http://fiberoptic.internetserviceprovidersisp.com/fiber-optic-internet-service-providers-isp-nassawadox-va",
+   "sha1": "0a0e887d68f80a86e5e97ce7962f9421022b2d5e",
+   "n_chars": 874
+  },
+  {
+   "stream_index": 1063,
+   "url": "https://www.fricktrentlizzio.com/news/2008/",
+   "sha1": "5cef05bc4597a517e2b1bc0849f94046c2e29b96",
+   "n_chars": 1016
+  },
+  {
+   "stream_index": 1064,
+   "url": "https://www.financemagnates.com/executives/moves/g-h-financials-selects-mark-ibbotson-as-group-ceo/",
+   "sha1": "d3260814195d8c6f3566b447a4e6bdc9f99b75af",
+   "n_chars": 1745
+  },
+  {
+   "stream_index": 1065,
+   "url": "http://grazetheroof.blogspot.com/2014/03/march-30th-carpentry-workshop.html",
+   "sha1": "06084d5b33c351db08bd1435b66c938515d70ebe",
+   "n_chars": 772
+  },
+  {
+   "stream_index": 1066,
+   "url": "https://plasmatreatment.co.uk/about-us/",
+   "sha1": "d3e3df4741206a060036c040da2d598b66699cf1",
+   "n_chars": 855
+  },
+  {
+   "stream_index": 1067,
+   "url": "https://brendascruggs.wordpress.com/2017/05/",
+   "sha1": "743245fcd88a47468a87243cde36971cb0effd38",
+   "n_chars": 2621
+  },
+  {
+   "stream_index": 1069,
+   "url": "https://www.bostonbarricade.com/culture-sustainability",
+   "sha1": "32bfa133623998bbfd23ee5a45ba94398618108a",
+   "n_chars": 1401
+  },
+  {
+   "stream_index": 1070,
+   "url": "https://www.theguardian.com/football/blog/audio/2011/may/16/football-weekly-podcast-manchester-city-united-west-ham",
+   "sha1": "8250f4fbbc6639c390a45d11a5d322f3f078f953",
+   "n_chars": 855
+  },
+  {
+   "stream_index": 1071,
+   "url": "https://complasweb.com.au/password-generator/",
+   "sha1": "fb641e61504c3074d9241d9838d72b574919444c",
+   "n_chars": 533
+  },
+  {
+   "stream_index": 1073,
+   "url": "https://surjpoliticaledsite.weebly.com/islamophobia.html",
+   "sha1": "f817a88a0ef511f6de373d095ff19e13b49d9768",
+   "n_chars": 6743
+  },
+  {
+   "stream_index": 1075,
+   "url": "http://comicsstation.be/gangster-disciple-720-creed.html",
+   "sha1": "02168d93d214ebb7f1537247bf3463032d76b4c2",
+   "n_chars": 5843
+  },
+  {
+   "stream_index": 1076,
+   "url": "http://www.dent-wiki.com/dental_technology/form-and-function/",
+   "sha1": "de95195abb22f2e95e9d97f07eb77d6c090a1fa2",
+   "n_chars": 4281
+  },
+  {
+   "stream_index": 1077,
+   "url": "http://www.researchforindustry.ro/story/12",
+   "sha1": "c72d44b86a7892f5bac11901679829d1b46be63d",
+   "n_chars": 1836
+  },
+  {
+   "stream_index": 1080,
+   "url": "http://dss.state.la.us/index.cfm?md=pagebuilder&tmp=home&nid=302&pid=375",
+   "sha1": "3f5b0b3b805081a298396e884ebbfb2144a1d964",
+   "n_chars": 1458
+  },
+  {
+   "stream_index": 1082,
+   "url": "http://www.agriplan-bizplan.com/products/flexsystem/",
+   "sha1": "c158362868b962f5aaae5ac9e210058252d2cfae",
+   "n_chars": 1102
+  },
+  {
+   "stream_index": 1083,
+   "url": "https://upsidedownchronicles.com/about-me/",
+   "sha1": "59387494f622a09a30d4895d5321b1ded122688e",
+   "n_chars": 1952
+  },
+  {
+   "stream_index": 1085,
+   "url": "http://www.joabbess.com/tag/journalism/",
+   "sha1": "7690710f425721d8d8f4c5a0eebd9870d75921d5",
+   "n_chars": 1036
+  },
+  {
+   "stream_index": 1086,
+   "url": "http://tjhughes1912.blogspot.com/2013/09/fragrances-2-for-16.html",
+   "sha1": "4b52e435d57f80aad7930b6af544db7d97896079",
+   "n_chars": 1321
+  },
+  {
+   "stream_index": 1087,
+   "url": "http://fashionecstasy.com/summer-soiree-2013-a-vip-event-in-support-of-summerworks-theatre-performance-festival/",
+   "sha1": "33d1a9a6223ba022eb1172b379d609cdac367acb",
+   "n_chars": 1778
+  },
+  {
+   "stream_index": 1088,
+   "url": "http://gaydar-arcadia.com/carslist/plateseries/N9/N9YK/N9YK5",
+   "sha1": "6bc680bf667845576ffd6030db58cc1f2d9ac5a0",
+   "n_chars": 502
+  },
+  {
+   "stream_index": 1089,
+   "url": "https://couponswa.com/stores/mens-wearhouse-coupons/",
+   "sha1": "1a6be0a8359fed367aa585b84d600498420b234e",
+   "n_chars": 997
+  },
+  {
+   "stream_index": 1091,
+   "url": "https://www.planbhealth.co.uk/job/rgn/rgns-needed/j20227/",
+   "sha1": "8c362b3dfbec792d4476df764a66acccfdbc1b5d",
+   "n_chars": 671
+  },
+  {
+   "stream_index": 1093,
+   "url": "http://www.wisethinks.com/2016/11/groom-suddenly-knelt-before-fiancees-6_30.html",
+   "sha1": "c366a7616281559db8365684dc3aab98cdac488a",
+   "n_chars": 1109
+  },
+  {
+   "stream_index": 1094,
+   "url": "https://www.psqh.com/analysis/bringing-innovation-facility/",
+   "sha1": "17e73b9ab0baa60db60beed152082a0e03c2ddc2",
+   "n_chars": 2639
+  },
+  {
+   "stream_index": 1095,
+   "url": "https://writersandwannabes.com/?tag=stories",
+   "sha1": "bfb6fed7222f4f415602acb6e950bdcce94c17bc",
+   "n_chars": 1803
+  },
+  {
+   "stream_index": 1096,
+   "url": "https://blog.karna.ai/a-comprehensive-analysis-on-the-newly-elected-cm-yogi-adityanath-b3268a21141d/",
+   "sha1": "d0a8b89663c296ab8313e9304a66391b35e16dbf",
+   "n_chars": 2675
+  },
+  {
+   "stream_index": 1097,
+   "url": "https://www.theferrarista.com/forum-ferrari/ferrari-articles/achat-et-revente_4/la-c%C3%B4te-sur-6-ans-des-ferrari-360-modena-et-ferrari-f430-r560/?tab=comments",
+   "sha1": "d28d926f12599bd8674bfbc47bbcb0a521340b41",
+   "n_chars": 5879
+  },
+  {
+   "stream_index": 1099,
+   "url": "https://www.lolshelf.com/new-china-cabinet-used-roselawnlutheran-74e779660f41f0d2.html",
+   "sha1": "b532c9f41208a0c12281645e22c0a3f7d5cfd0c6",
+   "n_chars": 1590
+  },
+  {
+   "stream_index": 1101,
+   "url": "http://ukrbiochemjournal.org/tag/blood-coagulation",
+   "sha1": "149e9cf5a0e093c20068868665bc9feafbb30d55",
+   "n_chars": 8482
+  },
+  {
+   "stream_index": 1103,
+   "url": "http://kr.watermanclo2.com/dp-%EB%B0%9C%EC%95%94-%EB%AC%BC%EC%A7%88%EC%9D%B4%EC%97%86%EB%8A%94-%EB%AC%BC-%EC%A0%9C%EA%B1%B0-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EC%83%9D%EC%84%B1%EA%B8%B0.html",
+   "sha1": "7110832d9e1f17d49f43cf6361c17b6295faf0ec",
+   "n_chars": 551
+  },
+  {
+   "stream_index": 1105,
+   "url": "https://www.theladders.com/job/sr-risk-control-consultant-inside-remote-consulting-hartford-ct_38893807",
+   "sha1": "b4d516aa3e0d849466c2ac93ece32e630a8763a0",
+   "n_chars": 1709
+  },
+  {
+   "stream_index": 1106,
+   "url": "https://www.keralatv.in/ccl-2014-live-kerala-strikers-vs-telegu-warriors/",
+   "sha1": "1f23cd5d11148d553694998381ef0063ec8be4d8",
+   "n_chars": 1391
+  },
+  {
+   "stream_index": 1107,
+   "url": "https://susanholtphotography.com/artist-statement/",
+   "sha1": "7443188ebb11bac237a0f66cb9e2034b1f8c9790",
+   "n_chars": 2763
+  },
+  {
+   "stream_index": 1108,
+   "url": "http://imcinsurance.com/news/2017/4/17/prom-and-graduation-safety",
+   "sha1": "c24a649c200d1df76520018b6c145ec5f6d45dcc",
+   "n_chars": 891
+  },
+  {
+   "stream_index": 1109,
+   "url": "http://www.coldbeamgames.com/blog/beat-hazard-ultra-running-on-android",
+   "sha1": "761fc53616d13dd95b12cc3ed1f9752cb4830b52",
+   "n_chars": 645
+  },
+  {
+   "stream_index": 1110,
+   "url": "https://www.radioshak.co.uk/2016/05/film-captain-america-civil-war.html",
+   "sha1": "27b3d9c94d2db0f1c7bbfa0c7dcf88b3176e9adc",
+   "n_chars": 1206
+  },
+  {
+   "stream_index": 1111,
+   "url": "https://www.operaontap.org/category/las-vegas/",
+   "sha1": "2f0f619f85a1f04330dfc88805fdd01a8c3516d6",
+   "n_chars": 910
+  },
+  {
+   "stream_index": 1113,
+   "url": "https://fraservalleypoets.com/shop/the-space-between-the-eyes/",
+   "sha1": "b91c1370bbb0b108cf3979948e4e613840c3613c",
+   "n_chars": 559
+  },
+  {
+   "stream_index": 1114,
+   "url": "https://student.unsw.edu.au/family",
+   "sha1": "a6e31e6511be5fe66c1f86a98c351697aed2d6e5",
+   "n_chars": 1250
+  },
+  {
+   "stream_index": 1115,
+   "url": "https://www.thecasesolutions.com/apple-inc-in-2010-4-38131",
+   "sha1": "c8ed12fefc65e23b4cfd3303b86d594d51d6ce3d",
+   "n_chars": 4120
+  },
+  {
+   "stream_index": 1116,
+   "url": "https://www.theguardian.com/politics/2009/may/14/simon-hoggart-sketch-mps-expenses",
+   "sha1": "8ea11e24b2a9f0cb252096620944aad3be68e7f4",
+   "n_chars": 2349
+  },
+  {
+   "stream_index": 1117,
+   "url": "https://www.cahill.com/news/rankings/2018-07-17-benchmark-litigation-names-cahill-partners-among-top-250-women-in-litigation-2018",
+   "sha1": "38ab5753dadbf9b54c4bc6ff729c5f98aad7763e",
+   "n_chars": 943
+  },
+  {
+   "stream_index": 1118,
+   "url": "http://ocsigen.org/ocsigen-toolkit/1.1.0/api/server/Ot_drawer",
+   "sha1": "37e9baff57569bcf5b974be8cd4e67f8da1ec228",
+   "n_chars": 708
+  },
+  {
+   "stream_index": 1119,
+   "url": "https://www.dandoylelaw.com/Personal-Injury/Auto-Accident/Fatal-Car-Accident-Attorney-Philadelphia.shtml",
+   "sha1": "4ce0b65a6edfc530a15225b36704d1efcef712c1",
+   "n_chars": 2737
+  },
+  {
+   "stream_index": 1120,
+   "url": "https://www.steroidsdrugs.com/genesis/trenbolone-enanthate-injection-200mg-genesis.html",
+   "sha1": "1dcdc745f244616e5622ee5056152d0a6f4bfd5f",
+   "n_chars": 2825
+  },
+  {
+   "stream_index": 1121,
+   "url": "http://ya-hudeyu.ga/cequk/american-horror-story-cast-interview-season-4-2128.php",
+   "sha1": "0227e84f942c38008bc712a611423d74718195f8",
+   "n_chars": 4567
+  },
+  {
+   "stream_index": 1122,
+   "url": "https://www.spencer-ogden.com/industrynews/uk-to-inject-pounds320m-in-energy-storage-r-and-d-72123191546",
+   "sha1": "11a87de3759a71bc9cd8896de03fa4021bf41579",
+   "n_chars": 991
+  },
+  {
+   "stream_index": 1123,
+   "url": "http://www.kensho-learnlovelive.co.uk/events-and-workshops/",
+   "sha1": "2eeb233f239fd00c7440664506ea23f2a0cba3cc",
+   "n_chars": 523
+  },
+  {
+   "stream_index": 1124,
+   "url": "https://www.uac.edu.au/future-applicants/institutions/australian-maritime-college",
+   "sha1": "5228cd935b4525b13999b3d11f2155d521065d99",
+   "n_chars": 1924
+  },
+  {
+   "stream_index": 1125,
+   "url": "https://www.dailysabah.com/columns/mahmut_ovur/2018/09/06/turkish-opposition-continues-to-ignore-changing-global-balances",
+   "sha1": "37a8e5d5cd35117235a8ed5aa1fe2473cf5b055c",
+   "n_chars": 4416
+  },
+  {
+   "stream_index": 1127,
+   "url": "http://www.hipposandhearts.com/2011/05/salute-your-shorts.html",
+   "sha1": "de4520498617590ab539b79506bf2a72af159a62",
+   "n_chars": 697
+  },
+  {
+   "stream_index": 1128,
+   "url": "http://squeakycleanak.com/About_Us.html",
+   "sha1": "fbb49066f9999f42daad4766eee6bf235e1ec299",
+   "n_chars": 874
+  },
+  {
+   "stream_index": 1129,
+   "url": "https://www.odditycentral.com/news/pregnant-woman-to-have-dolphin-assisted-birth-in-the-ocean-so-the-baby-can-speak-dolphin.html",
+   "sha1": "0010f3d50c64bee27525e52948ef2fb034ef9d95",
+   "n_chars": 3078
+  },
+  {
+   "stream_index": 1131,
+   "url": "http://www.corsets-in-berlin.com/2013/03/27/berlin-burlesque-book-by-paul-green/",
+   "sha1": "d04584c4079eb61439316b97e891e7ec26ff6a73",
+   "n_chars": 567
+  },
+  {
+   "stream_index": 1133,
+   "url": "https://preserve.lehigh.edu/etd/2670/",
+   "sha1": "30a7c6380edbdc7f8a0df42f88f5b81f7e198d22",
+   "n_chars": 1634
+  },
+  {
+   "stream_index": 1134,
+   "url": "https://www.allanswers.com/home-and-garden/popular-online-stores-to-buy-best-memory-foam-mattresses/",
+   "sha1": "4d72645117a741390508e35dddcde410fa1cd1df",
+   "n_chars": 2101
+  },
+  {
+   "stream_index": 1135,
+   "url": "http://www.buildingmysg.com/",
+   "sha1": "420e11765173d5f6c6d00cc170c1db6ab5101388",
+   "n_chars": 2525
+  },
+  {
+   "stream_index": 1137,
+   "url": "https://www.travelagentcentral.com/keyword/nairobi",
+   "sha1": "13a4f67ef1c646cc06048fca7aa0ad9507c93774",
+   "n_chars": 500
+  },
+  {
+   "stream_index": 1138,
+   "url": "https://www.acclivityhealthcare.com/2017/11/issue65/",
+   "sha1": "d7e238fff39994af91adcf28837bf1ad9239abac",
+   "n_chars": 1770
+  },
+  {
+   "stream_index": 1139,
+   "url": "http://www.doubleyouteeeff.com/the-bbfc-voice-of-reason/",
+   "sha1": "d2102624b65556562e607009310847773626aded",
+   "n_chars": 1158
+  },
+  {
+   "stream_index": 1140,
+   "url": "http://montaigo.com.au/terms-conditions/",
+   "sha1": "72c451927388fd9f59a5e6e73449c9ecd4b6c6c0",
+   "n_chars": 3154
+  },
+  {
+   "stream_index": 1141,
+   "url": "https://www.birminghamalcitycouncil.org/2017/10/31/birmingham-city-council-votes-unanimously-to-revoke-skky-nightclubs-business-license-after-public-hearing/",
+   "sha1": "2468ad3b463e1a8716b076ed8bc64bde98099cac",
+   "n_chars": 3543
+  },
+  {
+   "stream_index": 1144,
+   "url": "https://gsbwc.com/garden-state-bariatrics-wellness-center/news-blog/newsletters/the-time-machine",
+   "sha1": "7329cdb7926605e6abc9ce87e5d619306cd833f0",
+   "n_chars": 2861
+  },
+  {
+   "stream_index": 1145,
+   "url": "https://autoymotointernacional.com/guide-on-how-to-properly-inspect-used-motorcycle.html",
+   "sha1": "39a029e9c811860671e0756074966d9784f62855",
+   "n_chars": 2060
+  },
+  {
+   "stream_index": 1146,
+   "url": "https://lifewithmorecowbell.com/tag/jill-harland/",
+   "sha1": "5ba9acd9205812e632310ec22e9a42ab56bbbd38",
+   "n_chars": 2436
+  },
+  {
+   "stream_index": 1147,
+   "url": "https://www.coremortgagefinancial.com/blog/mortgage-market-update-august-21-2013",
+   "sha1": "832b2826ea11687a05f62bf6d37a27f682de520f",
+   "n_chars": 1824
+  },
+  {
+   "stream_index": 1148,
+   "url": "http://parentpreviews.com/movie-reviews/barnyard-the-original-party-animals",
+   "sha1": "0aa20f82cdb1e806304c86c927c81a8e3c8f6b91",
+   "n_chars": 4672
+  },
+  {
+   "stream_index": 1149,
+   "url": "https://translationproject.org/team/mr.html",
+   "sha1": "3c54056ecb2d9b9b1707574716d2c1bcae832e56",
+   "n_chars": 1049
+  },
+  {
+   "stream_index": 1150,
+   "url": "https://www.centrahealth.com/services/bariatric-medicine/weight-nutrition-and-heart-health",
+   "sha1": "b57e458581004f39a7d863ad34d7dd01c4c6d783",
+   "n_chars": 2097
+  },
+  {
+   "stream_index": 1152,
+   "url": "http://pixelbandits.org/2016/07/parents-guide-le-tour-de-france/",
+   "sha1": "e9b5c568fa226e6e2154432383eb1cc0f019f6f2",
+   "n_chars": 1693
+  },
+  {
+   "stream_index": 1153,
+   "url": "http://www.nobitching.com/phpbb3/viewtopic.php?f=27&t=5100&p=158470",
+   "sha1": "eab682156d078db0adfdd174593ce33337aa5d03",
+   "n_chars": 1176
+  },
+  {
+   "stream_index": 1155,
+   "url": "http://www.durhamdiagnostics.co.uk/Store/index.php?route=product/category&path=59",
+   "sha1": "60f81433821f44f9ef08910b3836f86e9202e17f",
+   "n_chars": 2068
+  },
+  {
+   "stream_index": 1156,
+   "url": "https://www.thebridesavenue.com.au/terms",
+   "sha1": "5045edefafa3c17292480a58f45658055bfde3c7",
+   "n_chars": 5548
+  },
+  {
+   "stream_index": 1157,
+   "url": "https://petfriendlysite.com/products/eagle-pack-natural-large-breed-health-formula-dry-dog-food",
+   "sha1": "571d11b3e83c67e8d38e602f3ff0e42599607308",
+   "n_chars": 1238
+  },
+  {
+   "stream_index": 1158,
+   "url": "https://kazcm.com/millennials-people-content-marketing/",
+   "sha1": "9b8b5b4977ee2440722db0c5dcec108b9bc650c9",
+   "n_chars": 3799
+  },
+  {
+   "stream_index": 1159,
+   "url": "https://thinkerviews.com/books/cuckoos-calling-cormoran-strike-series-robert-galbraith-j-k-rowling-book-reviews/",
+   "sha1": "9546c758623d065d6b52d1ae615f7d25e3edafe2",
+   "n_chars": 5049
+  },
+  {
+   "stream_index": 1160,
+   "url": "https://www.officefriendly.co.uk/office-friendly-welcomes-will-nixon-on-board/",
+   "sha1": "8fe937ac6096147f6cd1703dd40e5c67fdb6ba41",
+   "n_chars": 1324
+  },
+  {
+   "stream_index": 1161,
+   "url": "https://opulentuscomplaintsandreviews.wordpress.com/services-of-opulentus-help-desk/",
+   "sha1": "551cba6df4bea15375f31f62bd6fce51aed55227",
+   "n_chars": 1905
+  },
+  {
+   "stream_index": 1163,
+   "url": "https://www.nimh.nih.gov/about/director/messages/2017/autism-awareness-month-genes-and-development-in-autism-spectrum-disorder.shtml",
+   "sha1": "0fe9054f57bfcb4b93b56466f7aa7f9599b87c53",
+   "n_chars": 6411
+  },
+  {
+   "stream_index": 1164,
+   "url": "https://www.businessmanagementdaily.com/37215/leadership-tips-vol-1213",
+   "sha1": "d2bd798524f4deedb3a6fc77934bc59da94ea94f",
+   "n_chars": 988
+  },
+  {
+   "stream_index": 1165,
+   "url": "http://www.economywatch.com/economic-statistics/Israel/General_Government_Structural_Balance_Percentage_Potential_GDP/",
+   "sha1": "d280fc2b69cdfbdfc8ffd9b474fc2b60629188c8",
+   "n_chars": 1219
+  },
+  {
+   "stream_index": 1166,
+   "url": "https://lakeconwayprimarycare.com/about",
+   "sha1": "d60c213f1aa624c03987a7fd8a43a1c05ec6bd85",
+   "n_chars": 528
+  },
+  {
+   "stream_index": 1167,
+   "url": "https://hughescenternaples.com/articles/natural-remedies-during-cold-and-flu-season/",
+   "sha1": "59893ea57f3380a0200adc30228988f1f090e7b3",
+   "n_chars": 3487
+  },
+  {
+   "stream_index": 1168,
+   "url": "https://www.langleyalloys.com/zh-hans/privacy-policy/",
+   "sha1": "f0992c70e570272dd48eabaab3e426d6390666d9",
+   "n_chars": 2415
+  },
+  {
+   "stream_index": 1169,
+   "url": "http://travelbiz.ie/newsstory/Banff_National_Park_More",
+   "sha1": "82cbc81fe3c8e2cdb49d913fd8e6da2a0b087416",
+   "n_chars": 582
+  },
+  {
+   "stream_index": 1172,
+   "url": "https://skeverest.com/tag/whoisnext",
+   "sha1": "5ec39ec0cdd49ef7375578d160d5057d090b732d",
+   "n_chars": 1805
+  },
+  {
+   "stream_index": 1173,
+   "url": "https://kvgo1043.com/enjoy-a-great-movie-at-one-of-minnesotas-drive-in-theaters/",
+   "sha1": "ae0870d3afa608be4673f878f1fcad4b999caba2",
+   "n_chars": 1657
+  },
+  {
+   "stream_index": 1175,
+   "url": "https://shindotv.wordpress.com/2008/09/25/donttalktome/",
+   "sha1": "7bc0e622410c909831cb0abc3504e35252d85ea1",
+   "n_chars": 3847
+  },
+  {
+   "stream_index": 1176,
+   "url": "https://royal.pingdom.com/worlds-worst-offender-illegal-music-downloading/",
+   "sha1": "68f04fd82fc1c1ce2f571d96c4600dadcf344fad",
+   "n_chars": 2803
+  },
+  {
+   "stream_index": 1177,
+   "url": "https://www.nbc.ca/en/personal/banking/plan-your-travel/travel-tips0.html",
+   "sha1": "909735c1e2edebccf13a59d5d8acce459c4f2c8f",
+   "n_chars": 2180
+  },
+  {
+   "stream_index": 1180,
+   "url": "https://www.homeaway.lk/d/19901/hahn",
+   "sha1": "1f1c656eed9e44110ab9879a654f8e994d6d78a0",
+   "n_chars": 1020
+  },
+  {
+   "stream_index": 1181,
+   "url": "http://www.mypeacevow.com/tour_australia.php",
+   "sha1": "dc3530a244bbaa1f4bc020b899cd5508d6d50874",
+   "n_chars": 1306
+  },
+  {
+   "stream_index": 1182,
+   "url": "https://www.seakexperts.com/specialties/snow-sports-safety",
+   "sha1": "964c3ac17d7e3b1d1288f034c2c2d5ba1c54aaec",
+   "n_chars": 567
+  },
+  {
+   "stream_index": 1183,
+   "url": "http://asiastyle.asia/smoke-and-mirrors-with-yugnes-susela/",
+   "sha1": "d6928a1e389ba99e2104049bb3f0f56756ef1577",
+   "n_chars": 5124
+  },
+  {
+   "stream_index": 1184,
+   "url": "https://www.virgin.com/entrepreneur/what-does-leadership-look-your-business",
+   "sha1": "119282d325db87b3d7e58fb4cebb24721bf7642c",
+   "n_chars": 3463
+  },
+  {
+   "stream_index": 1185,
+   "url": "http://www.me-and-mrjones.com/blog/a-floral-romper-fit-for-spring",
+   "sha1": "3ffe80dd9b8f409408ea42d4c4119ba6924158c8",
+   "n_chars": 1632
+  },
+  {
+   "stream_index": 1187,
+   "url": "http://shopcatcarriers9.ml/14/best-henna-for-african-american-hair-wuz.php",
+   "sha1": "b59f7e167b1261606a71baf04073391612e3dc71",
+   "n_chars": 6064
+  },
+  {
+   "stream_index": 1188,
+   "url": "http://clients.itechnoweb.com/page_flooring/aboutus.php",
+   "sha1": "4b0489495eaa3884613ac3a97b29142beef79221",
+   "n_chars": 699
+  },
+  {
+   "stream_index": 1189,
+   "url": "https://www.macroaxis.com/invest/symbolRatiosCorrelations/SODA.TA",
+   "sha1": "8934ecf47badc47964a24e80d6bf72556b30475c",
+   "n_chars": 517
+  },
+  {
+   "stream_index": 1190,
+   "url": "https://www.ampal.com.au/faqs/tag/Copyright",
+   "sha1": "9cefeb1cca0e883dbf4dcf726de22fc4ba045804",
+   "n_chars": 1292
+  },
+  {
+   "stream_index": 1191,
+   "url": "http://www.fortmorgantimes.com/fort-morgan-local-news/ci_32308311/breaking-ice",
+   "sha1": "f8fed3eb074d629460cb6f05d43f8ca9e27bc581",
+   "n_chars": 2780
+  },
+  {
+   "stream_index": 1192,
+   "url": "https://kobun20.interordi.com/2010/12/",
+   "sha1": "784169689b5e6713c490f7a04d97ec68112e4558",
+   "n_chars": 680
+  },
+  {
+   "stream_index": 1194,
+   "url": "https://treegrowing.tcv.org.uk/identify/dog-rose",
+   "sha1": "2f1d1776471484675ee181beb9255fbdba053e09",
+   "n_chars": 1835
+  },
+  {
+   "stream_index": 1195,
+   "url": "https://www.cesarweber.com/Lukas4youuu/princessbunnies-jasmin.online",
+   "sha1": "ce50442fa6c4f552740de0a8999577a4994ddb30",
+   "n_chars": 1069
+  },
+  {
+   "stream_index": 1196,
+   "url": "https://greatamericanthrills.net/tag/golden-gate-bridge/",
+   "sha1": "cdd9e7a179d7aa608caa312bc77827f6e87f39ab",
+   "n_chars": 2295
+  },
+  {
+   "stream_index": 1198,
+   "url": "https://www.jscc.edu/academics/divisions/math-sciences/chemistry/chemistry-pathway.html",
+   "sha1": "480e7e3d8a95f979121e8dcbed4a39faac6f42fd",
+   "n_chars": 672
+  },
+  {
+   "stream_index": 1199,
+   "url": "https://www.talenttack.com/2019/01/16/reservation-candidates-are-under-represented-in-govts-upper-rungs/",
+   "sha1": "a8b674bac21bb1c3dc853c22de7824d282a3b235",
+   "n_chars": 3383
+  },
+  {
+   "stream_index": 1200,
+   "url": "https://www.aljazeera.com/indepth/features/2014/03/why-are-american-women-dying-childbirth-201438161633539780.html",
+   "sha1": "49daaa3c1fc87c4d6cdb1c4dc4dc636b45d9ff2f",
+   "n_chars": 8437
+  },
+  {
+   "stream_index": 1201,
+   "url": "http://blog.brooklinepolice.com/2015_08_09_archive.html",
+   "sha1": "52a66b46a801885c2ea8a3d477d2c788f4787d98",
+   "n_chars": 8806
+  },
+  {
+   "stream_index": 1202,
+   "url": "https://www.segrocers.com/jobs/fl/jacksonville/retail-2019-54072",
+   "sha1": "5e118bbcfe2cfedda8541c509887be12073cfce6",
+   "n_chars": 596
+  },
+  {
+   "stream_index": 1203,
+   "url": "http://www.developakure.eu/dak-patient-stories/anna-slovakia",
+   "sha1": "57f5d431314e8e391c1b71aa33503eae47c913ae",
+   "n_chars": 2199
+  },
+  {
+   "stream_index": 1204,
+   "url": "https://trendnewsworld.com/2019/01/10/report-patrick-mccaw-to-sign-1-year-veteran-minimum-contract-with-raptors/",
+   "sha1": "c9a51ab03025d2b8ad00f9df02ebaf6593738b0b",
+   "n_chars": 2320
+  },
+  {
+   "stream_index": 1205,
+   "url": "https://www.usemika.cz/en/restaurant/catering",
+   "sha1": "d16b2eedc55e9b1522849484817768e9148d5fe3",
+   "n_chars": 1161
+  },
+  {
+   "stream_index": 1206,
+   "url": "http://generationq.net/australian-capital-territory/leading-an-inspired-life-pdf-free.php",
+   "sha1": "cff51c59e0de54cada3bd7768dbe8c5d1822dba4",
+   "n_chars": 1145
+  },
+  {
+   "stream_index": 1207,
+   "url": "https://www.relapseprevention.co.za/nerissa-estate-drug-alcohol-rehab-cape-town/",
+   "sha1": "7fd5bcf207e50afe4cc3774d2fa24c1f3c38245e",
+   "n_chars": 3842
+  },
+  {
+   "stream_index": 1208,
+   "url": "https://www.earlysgarden.com/fertilizers",
+   "sha1": "255dcafc65a78cfb1ea3869805adad355fbff402",
+   "n_chars": 3127
+  },
+  {
+   "stream_index": 1209,
+   "url": "https://www.happyherald.com/article-2202-adventurous-travel-for-the-winter-season.html",
+   "sha1": "c7c36522d11a36311380de1551b93fb2afb8010b",
+   "n_chars": 2203
+  },
+  {
+   "stream_index": 1213,
+   "url": "https://libertyunderattack.com/lua-koozies-now-available/",
+   "sha1": "3e1538645a432d18527326a062fbbbd1f832e64f",
+   "n_chars": 531
+  },
+  {
+   "stream_index": 1215,
+   "url": "https://academy-british.co.uk/index.php/en/academy/trainings/238-the-franchise-show",
+   "sha1": "3d168d91f361e9f0b9dc000e483f5bdcb199c4d5",
+   "n_chars": 708
+  },
+  {
+   "stream_index": 1216,
+   "url": "http://peterdaley.net/home/december-2010-fitness-diary/",
+   "sha1": "ef13ae0fc1612b4f0287a4a9a5fd780c1ba2842c",
+   "n_chars": 2498
+  },
+  {
+   "stream_index": 1217,
+   "url": "https://zabelyesayan.com/the-creation-coloring-pages-for-children/",
+   "sha1": "38bacdb7257fd85e5f73d2a23bac7141025cd2b5",
+   "n_chars": 2849
+  },
+  {
+   "stream_index": 1218,
+   "url": "https://lynnschneiderbooks.com/2012/09/10/book-review-anne-of-green-gables-by-lucy-maud-montgomery/",
+   "sha1": "62618fd0605194c6a9a990c517be0e2870c85aa2",
+   "n_chars": 671
+  },
+  {
+   "stream_index": 1219,
+   "url": "https://sherryphillipsswatek.com/",
+   "sha1": "f7077df38f2efbec32bdf9bb9dcc9099611cc05d",
+   "n_chars": 13788
+  },
+  {
+   "stream_index": 1220,
+   "url": "https://www.travelbite.co.uk/netflights-archive-3/",
+   "sha1": "1fe0023ddcb2431181b388bbabd25a965bfaba1f",
+   "n_chars": 1375
+  },
+  {
+   "stream_index": 1221,
+   "url": "https://www.healthgrades.com/physician/dr-raghunath-reddy-x2shy",
+   "sha1": "fd99b54491faad305db022a1682c4fd37bc99bef",
+   "n_chars": 760
+  },
+  {
+   "stream_index": 1222,
+   "url": "http://www.asbestosshingleguys.com/wa/asbestos-shingles-in-bridgeport/",
+   "sha1": "e10f0f47f50f5aaff95c894a571b83709f8c8b8c",
+   "n_chars": 2327
+  },
+  {
+   "stream_index": 1223,
+   "url": "https://iccwbo.org/event/icc-prague-arbitration-day-2019/",
+   "sha1": "59cc8eaa299b98af6923411a45eb28fdfead45e9",
+   "n_chars": 919
+  },
+  {
+   "stream_index": 1224,
+   "url": "https://www.gemiris.com/collections/all/Quartz",
+   "sha1": "9a6b53962fc957e446ec62ddb5d4014fd1b69d0a",
+   "n_chars": 3625
+  },
+  {
+   "stream_index": 1225,
+   "url": "https://shareinvesta.com/bnp-paribas-dynamic-equity-fund-nfo/",
+   "sha1": "1e3940e7e90d0ccdb7c620bc7d6aca05d213a5f6",
+   "n_chars": 1218
+  },
+  {
+   "stream_index": 1226,
+   "url": "https://worldofwonder.net/lgbtq-grindr-profile-posts-threatening-message-about-attacks-on-gay-bars/",
+   "sha1": "321a65c295dc614e32d48fb4e94a6062395efbd1",
+   "n_chars": 559
+  },
+  {
+   "stream_index": 1228,
+   "url": "https://owlpower.eu/wp-services/owl-wps-3-5-2-wordpress-services/",
+   "sha1": "bde3fc55d0d7e19b614f7edef0268a6c42eb9c9a",
+   "n_chars": 890
+  },
+  {
+   "stream_index": 1229,
+   "url": "http://flemingcsr.blogspot.com/2012/02/mystery-behind-diet-soda.html",
+   "sha1": "fa95b327a6d90a8a54722c59c98885c341f7866a",
+   "n_chars": 2346
+  },
+  {
+   "stream_index": 1230,
+   "url": "https://blog.wblakegray.com/2012/05/thoughts-on-wine-judging-are-3-opinions.html",
+   "sha1": "c9666e55cd4dc756b94e898519b45d42f6533eb0",
+   "n_chars": 8945
+  },
+  {
+   "stream_index": 1231,
+   "url": "http://www.greenovateboston.org/boston_arbor_day_2015",
+   "sha1": "14f1387843773267e4ed3f4defb19c5526c88e60",
+   "n_chars": 735
+  },
+  {
+   "stream_index": 1232,
+   "url": "https://paw.princeton.edu/node/194056",
+   "sha1": "817710a764e7d341db4c520472c9b463872249f6",
+   "n_chars": 1118
+  },
+  {
+   "stream_index": 1234,
+   "url": "https://www.corsewallestate.com/activities-for-children/",
+   "sha1": "f7f0df2cc8c0db86a6c0ddf2eaf6253b6dd31ad2",
+   "n_chars": 1643
+  },
+  {
+   "stream_index": 1235,
+   "url": "https://tunesoc.nz/2017/03/28/review-scarfies-on-tour/",
+   "sha1": "d9315e5dfb098b2876c138e97e7d6f7f2274440f",
+   "n_chars": 869
+  },
+  {
+   "stream_index": 1236,
+   "url": "https://baconinflate.co.uk/self-employed-event-crew-jobs/",
+   "sha1": "bc2f56727151ba616875c5a91f139fce11445556",
+   "n_chars": 807
+  },
+  {
+   "stream_index": 1237,
+   "url": "https://www.slaughterandmay.com/news-and-recent-work/recent-work/2018/anglogold-ashanti-on-a-new-five-year-revolving-credit-facility-with-a-syndicate-of-fourteen-banks/",
+   "sha1": "bf6794c1b609a9935b8395c1328bc24887a18441",
+   "n_chars": 612
+  },
+  {
+   "stream_index": 1238,
+   "url": "https://blakeniemyjski.com/public-speaking/speaking-at-the-north-dallas-net-user-group/",
+   "sha1": "9eeef9c057e08b2516268d1533a203c120149d25",
+   "n_chars": 700
+  },
+  {
+   "stream_index": 1239,
+   "url": "http://www.texarkanagazette.com/news/arkansas/story/2016/aug/03/project-gives-view-history-arkansas-ghost-town-hotel/634242/",
+   "sha1": "9f56f1a084b5148afd829c795df52e32a3d70d34",
+   "n_chars": 6557
+  },
+  {
+   "stream_index": 1240,
+   "url": "https://sweepstakesrush.com/radio-disney-american-idol-live-sweepstakes/",
+   "sha1": "3a506db52ab5d0c27e84c36079bec96239bc3289",
+   "n_chars": 1310
+  },
+  {
+   "stream_index": 1242,
+   "url": "https://www.crossfitestero.com/about-crossfit",
+   "sha1": "5b17be3262f4eac5235078247e4686e61a81f5d1",
+   "n_chars": 949
+  },
+  {
+   "stream_index": 1244,
+   "url": "https://www.reluctantgourmet.com/couscous-so-good-they-named-it-twice/",
+   "sha1": "f3e2f639c9a48dd97184c1dba70d824d6ae2dc00",
+   "n_chars": 5343
+  },
+  {
+   "stream_index": 1246,
+   "url": "https://en.responsejp.com/cars-automotivebusiness/2015/09/20/mazdafanmeeting%3Aigotabitteary-eyed%2Csaysmunenoriyamaguchiwhenmazdaownerswelcomedhim.html",
+   "sha1": "a8569f466daa5e67a368798c8161bdc4ff26ab97",
+   "n_chars": 898
+  },
+  {
+   "stream_index": 1247,
+   "url": "http://libellus.tech/pennsylvania-permits-halted-for-texas-based-pipeline-company",
+   "sha1": "7cb0c7dbbeeda32ef157a7bce3b127e3ddb3a0db",
+   "n_chars": 1491
+  },
+  {
+   "stream_index": 1248,
+   "url": "http://dragonslairproject.com/tech/pages/bl.asp",
+   "sha1": "93565d70d12fedb5be224e081c397ae762b46744",
+   "n_chars": 1218
+  },
+  {
+   "stream_index": 1250,
+   "url": "https://blogs.lut.fi/studying-at-lut/category/student-services/",
+   "sha1": "5b86f93e6146e3e043472cb5c2fcbab14408a414",
+   "n_chars": 591
+  },
+  {
+   "stream_index": 1251,
+   "url": "http://tvbokep.info/?newsid=29837",
+   "sha1": "f15f5bc141f67022c1831286dac95a7999221f1a",
+   "n_chars": 9871
+  },
+  {
+   "stream_index": 1252,
+   "url": "https://www.johnstanaland.com/blog/glass-mosaic-class-near-your-laguna-beach-home",
+   "sha1": "41099b70cad7765c770821f5901508fde3202db7",
+   "n_chars": 689
+  },
+  {
+   "stream_index": 1255,
+   "url": "https://glasgowguardian.co.uk/2016/11/18/brexit-the-conversation-preview/",
+   "sha1": "2b7cea51b3558b0db0ce8a999fadf45a003c6023",
+   "n_chars": 2445
+  },
+  {
+   "stream_index": 1256,
+   "url": "https://slate.com/technology/2015/05/move-systems-redesigning-nyc-s-1970s-era-food-trucks-for-an-eco-friendly-future.html",
+   "sha1": "d070b88247541afd69fb47f6cc1517de96765d5d",
+   "n_chars": 2757
+  },
+  {
+   "stream_index": 1257,
+   "url": "https://rabbibuchwald.njop.org/2004/12/27/shemot-5765-2004/",
+   "sha1": "fd245ed135f9306e9f072b139085a5f0be9005bd",
+   "n_chars": 7357
+  },
+  {
+   "stream_index": 1258,
+   "url": "https://www.britishmuseum.org/research/publications/online_research_catalogues/search_object_details.aspx?objectid=710497&partid=1&catalogueOnly=true&catParentPageid=27094&output=bibliography/!!/OR/!!/5806/!/!/Catalogue%20of%20Drawings%20by%20Rembrandt%20and%20his%20School%20in%20the%20British%20Museum/!/!!/!!!/&catalogueName=Catalogue%20of%20Drawings%20by%20Rembrandt%20and%20his%20School%20in%20the%20British%20Museum&catalogueSection=Catalogue%20of%20Drawings%20by%20Rembrandt%20and%20his%20School%20in%20the%20British%20Museum&sortBy=catNumber",
+   "sha1": "d6ac664742c89bca144afd87f6efa83de1f21066",
+   "n_chars": 6831
+  },
+  {
+   "stream_index": 1260,
+   "url": "https://dawaibank.com/productdetails.php?drug=GESTOFIT-300-MG-TABLET-SR",
+   "sha1": "47020818eb5b91bcd296b44a0cf16650dbf78f7c",
+   "n_chars": 666
+  },
+  {
+   "stream_index": 1261,
+   "url": "https://www.waterextractionexperts.com.au/areas/water-damage-bidwill/",
+   "sha1": "b517ea296ab40854432c8bc3006171fca54412d4",
+   "n_chars": 1435
+  },
+  {
+   "stream_index": 1262,
+   "url": "http://wombokforest.com.au/jonlineournal2008.htm",
+   "sha1": "c444c9757fcf0cc06b440a622beb95f89e2f1be0",
+   "n_chars": 5246
+  },
+  {
+   "stream_index": 1263,
+   "url": "http://bct-us.com/Airblast_Equipment/view/industrial-blast-rooms",
+   "sha1": "a20c2684d80a388cc22c2661c7476e98f617c8f2",
+   "n_chars": 697
+  },
+  {
+   "stream_index": 1264,
+   "url": "https://www.rxwiki.com/cayston",
+   "sha1": "54e3656a7b575200795351f651c72f72b23e45fc",
+   "n_chars": 3145
+  },
+  {
+   "stream_index": 1265,
+   "url": "https://nabomita.com/tag/online/",
+   "sha1": "b440f43902c3353cfa97a8c12f88193d714c4a6e",
+   "n_chars": 888
+  },
+  {
+   "stream_index": 1267,
+   "url": "http://www.focusontap.com/teaching-reading-emergent-reader-1/",
+   "sha1": "3896c9896ca9961c746e700df494042de9e690aa",
+   "n_chars": 5093
+  },
+  {
+   "stream_index": 1268,
+   "url": "https://agra.org/program-development-and-innovation/training-africas-plant-breeders/",
+   "sha1": "dfb7b0035c785a4ba472d9a809aa5537afd7a2bb",
+   "n_chars": 1466
+  },
+  {
+   "stream_index": 1270,
+   "url": "http://pinwaiyi.com/zc/haibo2017-wjzp.asp",
+   "sha1": "8bc85393ab9c0620078387e5d64f71a6615a42c5",
+   "n_chars": 980
+  },
+  {
+   "stream_index": 1271,
+   "url": "https://www.govexec.com/pay-benefits/2019/03/trumps-budget-blueprint-how-ruin-civil-service/155484/?oref=relatedstories",
+   "sha1": "37783cc5b871435a37e7b5c4c4fdf5dd4d3cb3f2",
+   "n_chars": 2248
+  },
+  {
+   "stream_index": 1272,
+   "url": "http://www.shesaidshesaidph.com/2013/08/the-way-we-ate-p-f-changs.html",
+   "sha1": "8793838cb863786042d065ea2cd676d438fdd182",
+   "n_chars": 1671
+  },
+  {
+   "stream_index": 1273,
+   "url": "https://support.rinboo.com/index.php?/Knowledgebase/Article/View/80/101/im-calling-from-a-registered-phone-but-i-am-still-being-asked-for-my-pin",
+   "sha1": "f183e811bca02e3d91cd76b956b5212a44c101e0",
+   "n_chars": 699
+  },
+  {
+   "stream_index": 1275,
+   "url": "https://www.shelbystar.com/20121007/wilson-seahawks-outlast-panthers/310079869",
+   "sha1": "822e342ecba243976ec61688c5934acbfdbc4da4",
+   "n_chars": 4055
+  },
+  {
+   "stream_index": 1276,
+   "url": "http://backtodisco.net/koyopacker/blog/7142/pure-water-purification-system",
+   "sha1": "7d5b11d011bb9c6d1409473c5c700d46f7bab288",
+   "n_chars": 1749
+  },
+  {
+   "stream_index": 1277,
+   "url": "https://www.differencebetween.com/difference-between-insurance-and-assurance/",
+   "sha1": "8f833e05f22f188998cbaa872378f59757a8430d",
+   "n_chars": 3834
+  },
+  {
+   "stream_index": 1279,
+   "url": "https://www.diffusion-urbaine.com/en/request-a-quote/",
+   "sha1": "61ef97c43c779fd11248847378d16b498e32e66c",
+   "n_chars": 865
+  },
+  {
+   "stream_index": 1280,
+   "url": "http://www.stevelawson.net/2003/08/greenbelt_2003/",
+   "sha1": "ba4e38ab54d424d23e35e4a8d80b2957e05adf75",
+   "n_chars": 3095
+  },
+  {
+   "stream_index": 1281,
+   "url": "https://www.rd.com/advice/saving-money/october-sales/",
+   "sha1": "090cbc58f39ee2f78708f1e99563eedb4171fcbe",
+   "n_chars": 3544
+  },
+  {
+   "stream_index": 1282,
+   "url": "https://www.selamtamagazine.com/stories/24-hours-in-franschhoek",
+   "sha1": "cb6f47ed690f44c18ba1a21e3b5c8260293a5769",
+   "n_chars": 6991
+  },
+  {
+   "stream_index": 1283,
+   "url": "http://philipko.me/30-free-cover-letter-examples-2/free-cover-letter-examples-cover-letter-example-teacher-with-passion-teaching-job-basic-2/",
+   "sha1": "4d031d693c196f06a77beea4650c4b36566bbba1",
+   "n_chars": 1273
+  },
+  {
+   "stream_index": 1284,
+   "url": "http://www.fulvuedrive-in.com/reviews/Action/Adventure/History",
+   "sha1": "c50f1e84bc7528d2df3e049e6712002e8676eeff",
+   "n_chars": 1192
+  },
+  {
+   "stream_index": 1286,
+   "url": "https://nativecamp.net/waiting/detail/11381",
+   "sha1": "1f9275b30aa3917cf9087019d007f255c884b4b3",
+   "n_chars": 1117
+  },
+  {
+   "stream_index": 1287,
+   "url": "http://help.weatherzone.com.au/support/solutions/articles/142633-what-do-the-sea-temperature-charts-show-",
+   "sha1": "a723662760aa730eb67b6919c525c7e4402db3ad",
+   "n_chars": 3075
+  },
+  {
+   "stream_index": 1289,
+   "url": "https://www.infinitiofboerne.com/accessories-department/",
+   "sha1": "8fd242454836f35fa8e727a791627d241344b3c6",
+   "n_chars": 945
+  },
+  {
+   "stream_index": 1290,
+   "url": "https://geoforward.com/about-us/",
+   "sha1": "04c84fb3d45e6210aa1a3ac056070cc61acf3adc",
+   "n_chars": 2890
+  },
+  {
+   "stream_index": 1291,
+   "url": "http://blog.cybexintl.com/post/bid106990Don-t-Ditch-Dairy",
+   "sha1": "cf7bf85948320709efaf462172f2c54118c6c50d",
+   "n_chars": 3318
+  },
+  {
+   "stream_index": 1292,
+   "url": "http://www.reflectivejournal.net/10-tips-on-writing-a-reflective-log/",
+   "sha1": "d9a37d4bc6fbcf40625534b9419f8085ae11dfe9",
+   "n_chars": 3067
+  },
+  {
+   "stream_index": 1295,
+   "url": "https://www.kilts.com/product-category/kilt-accessories/sgian-dubhs/",
+   "sha1": "e67ed8fc64e9f06423b82e8a0f90709926495a66",
+   "n_chars": 836
+  },
+  {
+   "stream_index": 1296,
+   "url": "http://www.csan.org.uk/member/st-antonys-centre-for-church-and-industry/",
+   "sha1": "5cf52d8ab4c22c72c7f18f352e48d150ff10f54a",
+   "n_chars": 1037
+  },
+  {
+   "stream_index": 1297,
+   "url": "https://bonds4customs.com/",
+   "sha1": "30d21c732d24e1102c3185c0c8eb18c23b6d5c01",
+   "n_chars": 1623
+  },
+  {
+   "stream_index": 1298,
+   "url": "https://www.flemishmasters.com/en/events/delicious-dining-in-flanders",
+   "sha1": "0760141b7be579873cf6ea59548b72f0f5e17c46",
+   "n_chars": 692
+  },
+  {
+   "stream_index": 1299,
+   "url": "https://irp.nih.gov/pi/kong-chen",
+   "sha1": "20532e5d88f36b986504369d26c0004781e27b64",
+   "n_chars": 3139
+  },
+  {
+   "stream_index": 1301,
+   "url": "http://www.aaronwilliamsmusic.com/bio.html",
+   "sha1": "f8b27545a4bcad6a101d0e37bd1d285ff7f346b9",
+   "n_chars": 6050
+  },
+  {
+   "stream_index": 1302,
+   "url": "http://www.killbugsnaturally.com/chemical-free-bug-repellent/batch-of-3-spritzers",
+   "sha1": "68c1cfe1860b137bbcda8fd02f6ff2f44ecef3f1",
+   "n_chars": 3418
+  },
+  {
+   "stream_index": 1303,
+   "url": "https://www.joelrafael.com/news/04.18.12a.html",
+   "sha1": "090c637087a98c91fcbff1d68bf01c903d00b195",
+   "n_chars": 2413
+  },
+  {
+   "stream_index": 1304,
+   "url": "https://hackaday.com/2012/06/16/recording-off-a-reel-to-reel-with-a-credit-card-reader/",
+   "sha1": "ce1538866089b8dd00df1686cb2e9da649e8a7f5",
+   "n_chars": 6954
+  },
+  {
+   "stream_index": 1305,
+   "url": "https://www.fastcompany.com/1694259/no-pain-no-gain",
+   "sha1": "7b8ed7e697f77c60c5a697c0809f06f24b56c5c1",
+   "n_chars": 505
+  },
+  {
+   "stream_index": 1306,
+   "url": "https://blogginggazelle.com/tag/will-rogers/",
+   "sha1": "79ce6cf25c614dd97eb73d145bc0650a43b38fe2",
+   "n_chars": 501
+  },
+  {
+   "stream_index": 1307,
+   "url": "https://www.chemwatch.net/shop",
+   "sha1": "104339d0d144227f50ee0be8475a563fd5ca4cae",
+   "n_chars": 574
+  },
+  {
+   "stream_index": 1308,
+   "url": "https://www.workforceguardian.com.au/features/exiting-processes/",
+   "sha1": "aad11b7c0d42bd0ece77d678804f8eedf455d295",
+   "n_chars": 1675
+  },
+  {
+   "stream_index": 1309,
+   "url": "https://stockfutures.weebly.com/index.html",
+   "sha1": "4e79f4adca941dae719457c65af8eba897777637",
+   "n_chars": 1645
+  },
+  {
+   "stream_index": 1310,
+   "url": "https://www.6sigmaph.com/blog/archives/11-2013",
+   "sha1": "433623ac88ac4b4dc84bd9562961bb70e94cb7fa",
+   "n_chars": 2413
+  },
+  {
+   "stream_index": 1311,
+   "url": "https://fashionunited.uk/news/business/debenhams-may-close-20-stores-under-cva-this-year/2019020441365",
+   "sha1": "ad75b31fb4cad2cc190df17143448f65e19bee8c",
+   "n_chars": 1077
+  },
+  {
+   "stream_index": 1313,
+   "url": "http://www.fightsports.tv/bellator-signs-lyoto-machida/",
+   "sha1": "30f90a45fcd15ea42d2b9ffdc3046ae09d8fc220",
+   "n_chars": 713
+  },
+  {
+   "stream_index": 1315,
+   "url": "https://whizolosophy.com/category/dealing-with-addictions/article-anecdotal-story/my-once-beautiful-daughter",
+   "sha1": "ca89a2c3e4fb9b688edd4ff5296a4ffc50005be2",
+   "n_chars": 1868
+  },
+  {
+   "stream_index": 1316,
+   "url": "https://www.wordhelp.com/scrabble/LIGHT/",
+   "sha1": "782308d5f641c4db480f2a2fe5f24923ecbb5d87",
+   "n_chars": 1920
+  },
+  {
+   "stream_index": 1317,
+   "url": "http://berzerkerprime.armlessbear.com/fanfiction/DirtyWork.html",
+   "sha1": "2491361e087a352dc4ed3f0e6204392f7c6f446e",
+   "n_chars": 5713
+  },
+  {
+   "stream_index": 1318,
+   "url": "https://dome-of-heaven.com/2014/04/",
+   "sha1": "9d8f124d4224aa227822b9452d40c7729731311c",
+   "n_chars": 1017
+  },
+  {
+   "stream_index": 1320,
+   "url": "https://www.speakoutnow.org/speaker/vasquez-hugh",
+   "sha1": "75fc4c627e39c6a65f4cb7a9a0ce06d9f784eba8",
+   "n_chars": 9493
+  },
+  {
+   "stream_index": 1323,
+   "url": "https://www.ambius.com/green-walls/tray-systems/",
+   "sha1": "d1da54e874e97c367d71cc96dcff2c02b0e46c1f",
+   "n_chars": 2087
+  },
+  {
+   "stream_index": 1324,
+   "url": "https://www.precisiondoor.net/locations/virginia/northern-virginia/spotsylvania-county",
+   "sha1": "cddb7a474b366928f323652f7694cebce18d6f86",
+   "n_chars": 3741
+  },
+  {
+   "stream_index": 1325,
+   "url": "https://www.picdove.com/yum",
+   "sha1": "5cfec1943999706d0ff638fc37e23821fc31d83b",
+   "n_chars": 1775
+  },
+  {
+   "stream_index": 1327,
+   "url": "http://discuss.littlebits.cc/t/join-the-monthly-community-call/21915",
+   "sha1": "8fccbbb881efccd35bf82dda3cbf5a64889658ae",
+   "n_chars": 1060
+  },
+  {
+   "stream_index": 1328,
+   "url": "http://www.giga-sport.co.uk/nba-european-tour-tickets-matches/",
+   "sha1": "d9c2f2e2cbf4faa096c6b733c453ee40b0135b14",
+   "n_chars": 750
+  },
+  {
+   "stream_index": 1329,
+   "url": "https://www.hayesmslawyer.com/",
+   "sha1": "d0c1106418c705fb9b269ff56e2662f6c95e8c4e",
+   "n_chars": 3972
+  }
+ ]
+}

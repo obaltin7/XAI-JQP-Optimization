@@ -1,0 +1,39 @@
+# SEPARATE environment (.venv-quant) for the GPTQ / AWQ baselines: the gptq_4bit / awq_4bit
+# configurations of run_baselines_gun7.py. Do NOT install into the main environment; the main
+# requirements.txt is left untouched.
+#
+# These versions were verified together with the torch 2.4.1+cu124 / transformers 4.44.2 pins
+# (Windows, Python 3.10, RTX 2060: quantize a random mini Mistral -> save ->
+# transformers.from_pretrained -> forward pass; both GPTQ and AWQ pass). Why these versions:
+#   * autoawq 0.2.5        : requires torch>=2.0.1 (0.2.6 pins torch==2.3.1; 0.2.7+ requires torch>=2.5.1 or
+#                            transformers>=4.45 -> incompatible with the pins)
+#   * autoawq-kernels 0.0.8: built for torch>=2.4.1 (0.0.9 requires torch>=2.5.1 and would upgrade torch)
+#   * auto-gptq 0.7.1      : latest release; wheels only for cp38-cp311 (NO wheels for Python 3.12+).
+#                            The CUDA kernels in the PyPI wheel do not load with the torch 2.4.1 ABI
+#                            ("CUDA extension not installed") -> falls back to the slower but correct torch path.
+#   * peft 0.12.0          : auto-gptq 0.7.1 cannot be imported with current peft (PEFT_TYPE_TO_MODEL_MAPPING)
+#   * gptqmodel            : NOT USED -- the current release requires torch>=2.8 + transformers>=5.14, sdist only
+#
+# GPU pod (Python 3.11, main environment already has torch 2.4.1 + transformers 4.44.2 + bitsandbytes):
+#     python -m venv --system-site-packages /workspace/.venv-quant
+#     /workspace/.venv-quant/bin/pip install -r requirements-quant.txt
+# Local (Windows): venv with Python 3.10/3.11; first
+#     pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+
+torch==2.4.1
+transformers==4.44.2
+numpy<2
+accelerate>=0.33.0
+datasets>=2.20.0
+sentencepiece
+protobuf
+optimum==1.23.3
+peft==0.12.0
+auto-gptq==0.7.1
+autoawq==0.2.5
+autoawq-kernels==0.0.8
+# HQQ 2/3/4/8-bit for the mixed-precision experiment (D-2, run_mixed_bits_gun11.py). 0.2.8.post1 was verified with
+# torch 2.4.1+cu124 + transformers 4.44.2 (Windows/Python 3.10, CPU + RTX 2060: HQQLinear group_size 64, axis 1,
+# nbits 2/3/4/8 forward pass + mini-model dispatch); installing it does NOT change torch/transformers (it only adds
+# einops + termcolor). It can also be installed on its own into the main environment: pip install hqq==0.2.8.post1
+hqq==0.2.8.post1

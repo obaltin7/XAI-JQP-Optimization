@@ -1,0 +1,170 @@
+{
+ "created_at": "2026-09-21T23:07:53",
+ "source": "results/tasks_gun15_e5_wikitext.json",
+ "merged": [
+  "results/tasks_gun15_e5_c4.json:c4"
+ ],
+ "definition": "eşleştirilmiş pencere bootstrap'ı; delta = ppl_A − ppl_B; ci95 yüzdelik; excludes_zero = GA sıfırı içermiyor",
+ "pairs": [
+  {
+   "a": "c4:f0.2/xai_single",
+   "b": "f0.2/xai_single",
+   "dataset": "wikitext2",
+   "ppl_a": 11.640077288504544,
+   "ppl_b": 6.317064471255953,
+   "delta": 5.323012817248592,
+   "ci95": [
+    5.150000218925254,
+    5.495369190434847
+   ],
+   "n_windows": 653,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "c4:f0.2/xai_single",
+   "b": "f0.2/xai_single",
+   "dataset": "c4",
+   "ppl_a": 8.858793817420166,
+   "ppl_b": 9.137639706336136,
+   "delta": -0.2788458889159706,
+   "ci95": [
+    -0.3412839736006784,
+    -0.22286535027078933
+   ],
+   "n_windows": 331,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "f0.2/xai_iter_fixedq",
+   "b": "f0.2/xai_single",
+   "dataset": "wikitext2",
+   "ppl_a": 5.865386702551803,
+   "ppl_b": 6.317064471255953,
+   "delta": -0.45167776870414933,
+   "ci95": [
+    -0.4736201149234378,
+    -0.43015448927737326
+   ],
+   "n_windows": 653,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "f0.2/xai_iter_fixedq",
+   "b": "f0.2/xai_single",
+   "dataset": "c4",
+   "ppl_a": 8.643146643594818,
+   "ppl_b": 9.137639706336136,
+   "delta": -0.4944930627413182,
+   "ci95": [
+    -0.5725805424369714,
+    -0.4228196778392048
+   ],
+   "n_windows": 331,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "c4:f0.2/xai_iter_fixedq",
+   "b": "c4:f0.2/xai_single",
+   "dataset": "wikitext2",
+   "ppl_a": 11.475469819141788,
+   "ppl_b": 11.640077288504544,
+   "delta": -0.16460746936275683,
+   "ci95": [
+    -0.19104954404902214,
+    -0.13965500026781347
+   ],
+   "n_windows": 653,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "c4:f0.2/xai_iter_fixedq",
+   "b": "c4:f0.2/xai_single",
+   "dataset": "c4",
+   "ppl_a": 8.678903834661714,
+   "ppl_b": 8.858793817420166,
+   "delta": -0.1798899827584517,
+   "ci95": [
+    -0.20378021226072618,
+    -0.157247710309862
+   ],
+   "n_windows": 331,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "f0.2/xai_single",
+   "b": "f0.2/prune_random",
+   "dataset": "wikitext2",
+   "ppl_a": 6.317064471255953,
+   "ppl_b": 6.985620777225797,
+   "delta": -0.6685563059698447,
+   "ci95": [
+    -0.7262096254164326,
+    -0.6133093741335127
+   ],
+   "n_windows": 653,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "f0.2/xai_single",
+   "b": "f0.2/prune_random",
+   "dataset": "c4",
+   "ppl_a": 9.137639706336136,
+   "ppl_b": 9.877922393043374,
+   "delta": -0.7402826867072374,
+   "ci95": [
+    -0.9209225530577436,
+    -0.5631290386489782
+   ],
+   "n_windows": 331,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "c4:f0.2/xai_single",
+   "b": "c4:f0.2/prune_random",
+   "dataset": "wikitext2",
+   "ppl_a": 11.640077288504544,
+   "ppl_b": 6.998395702386138,
+   "delta": 4.641681586118406,
+   "ci95": [
+    4.460789861193001,
+    4.8220866724066465
+   ],
+   "n_windows": 653,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  },
+  {
+   "a": "c4:f0.2/xai_single",
+   "b": "c4:f0.2/prune_random",
+   "dataset": "c4",
+   "ppl_a": 8.858793817420166,
+   "ppl_b": 9.885866677604756,
+   "delta": -1.0270728601845907,
+   "ci95": [
+    -1.1783610584561917,
+    -0.8818874948628668
+   ],
+   "n_windows": 331,
+   "n_boot": 10000,
+   "seed": 42,
+   "excludes_zero": true
+  }
+ ]
+}

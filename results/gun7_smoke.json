@@ -1,0 +1,6812 @@
+{
+  "run": {
+    "started_at": "2026-09-18T21:31:46",
+    "status": "completed",
+    "args": {
+      "fractions": "0.2",
+      "configs": "xai_single,xai_iter",
+      "n_rounds": 3,
+      "seed": 42,
+      "n_repeats": 1,
+      "no_mmlu": true,
+      "mmlu_batch_size": 8,
+      "no_rescore_after": false,
+      "output": "results/gun7_smoke.json",
+      "log": "log_gun7_smoke.txt",
+      "scores_dir": "results/gun7_scores",
+      "scores": "results/importance_scores_gun3.json",
+      "baseline": "results/baseline_fp16.json",
+      "gun6_json": "results/ablation_gun6.json",
+      "skip_baseline": false,
+      "resume": false,
+      "preflight": false,
+      "dry_run": false,
+      "rescore_after": true,
+      "mmlu": false
+    },
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "fractions": [
+      0.2
+    ],
+    "config_order": [
+      "xai_single",
+      "xai_iter"
+    ],
+    "time_estimate": {
+      "per_fraction_minutes": {
+        "0.2": 29.0
+      },
+      "fp16_minutes": 1.5,
+      "total_minutes": 30.5,
+      "assumptions": "yükleme+uygulama+ppl 2.5 dk, MMLU 3 dk, attribution 6 dk/çağrı (Gün 3/5/6 ölçümleri)"
+    },
+    "finished_at": "2026-09-18T22:00:17",
+    "total_seconds": 1710.487227678299
+  },
+  "reference": {
+    "fp16_baseline_gun1": 5.219959259033203,
+    "gun6_both_perplexity": 6.317065238952637,
+    "reproduction_tolerance": 0.01,
+    "scores_file": "results/importance_scores_gun3.json",
+    "scores_dir": "results/gun7_scores",
+    "round0_scores": "Gün 3 skorları (scores_file); tur k dosyası = k. tur budaması SONRASI maskeli FP16 modelde yeniden skor",
+    "attribution": {
+      "n_steps": 8,
+      "internal_batch_size": 2,
+      "max_batches": 4,
+      "calibration": {
+        "n_passages": 16,
+        "min_chars": 200,
+        "batch_size": 4,
+        "max_length": 256
+      }
+    },
+    "rescore_after": true,
+    "n_rounds": 3,
+    "size_note": "model_bytes = parametre + buffer baytı; bnb quant_state ek yükü hariç (Gün 5/6 ile aynı ölçüm)",
+    "peak_vram_note": "konfig başına reset_peak_memory_stats; yükleme öncesi ayrılmış bellek cuda_allocated_before_load_gb",
+    "perplexity_settings": {
+      "max_length": 1024,
+      "stride": 512,
+      "dataset": "wikitext-2-raw-v1 (test split)"
+    }
+  },
+  "fp16_rerun": {
+    "status": "completed",
+    "model_load_seconds": 13.159517765045166,
+    "model_bytes": {
+      "bytes": 14496055296,
+      "gb": 14.496055296,
+      "by_dtype_bytes": {
+        "torch.float16": 14496047104,
+        "torch.float32": 8192
+      }
+    },
+    "perplexity": 5.219959259033203,
+    "peak_vram_gb": 15.184411648,
+    "seconds": 78.58279657363892,
+    "minus_gun1": 0.0
+  },
+  "fractions": {
+    "0.2": {
+      "budget": {
+        "definition": "bütçe = bu oranın tür-içi persentil planındaki (Gün 3 skorları, tier_fractions=(f,(1-f)/2,(1-f)/2)) prune head SAYISI ve INT4 modül SAYISI; seçici konfigleri (wanda/taylor/random) INT4 planını xai_single'dan aynen alır; xai_iter INT4 planını son tur skorlarından aynı oranlarla üretir (kademe sayıları eşit, modül kümesi medyan kuralı yüzünden farklı olabilir; JSON'da raporlanır)",
+        "tier_fractions": [
+          0.2,
+          0.4,
+          0.4
+        ],
+        "n_prune_heads": 205,
+        "n_heads_total": 1024,
+        "nominal_block_prune_ratio": 0.2001953125,
+        "int4_modules_single": 129,
+        "int4_layers_single": {
+          "attn": 18,
+          "mlp": 19
+        },
+        "tier_counts_single": {
+          "attn": {
+            "prune": 205,
+            "int4": 410,
+            "fp16": 409
+          },
+          "mlp": {
+            "fp16": 13,
+            "int4": 19
+          }
+        },
+        "budget_nominal_single": {
+          "params_total": 6979321856.0,
+          "params_pruned": 214958080.0,
+          "pruned_ratio": 0.030799278846153848,
+          "bits_fp16": 111669149696.0,
+          "bits_compressed": 61282975744.0,
+          "size_ratio": 0.5487905649038461,
+          "avg_bits_per_param": 8.780649038461538
+        },
+        "round_shares": [
+          69,
+          68,
+          68
+        ],
+        "plan_summary_single": [
+          {
+            "layer": 0,
+            "n_pruned_heads": 4,
+            "pruned_heads": [
+              0,
+              1,
+              6,
+              15
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 1,
+            "n_pruned_heads": 1,
+            "pruned_heads": [
+              15
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 2,
+            "n_pruned_heads": 2,
+            "pruned_heads": [
+              20,
+              23
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 3,
+            "n_pruned_heads": 1,
+            "pruned_heads": [
+              10
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 4,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 5,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 6,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "fp16",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 7,
+            "n_pruned_heads": 1,
+            "pruned_heads": [
+              16
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 8,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "fp16",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 9,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "fp16",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 10,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 11,
+            "n_pruned_heads": 2,
+            "pruned_heads": [
+              8,
+              14
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 12,
+            "n_pruned_heads": 4,
+            "pruned_heads": [
+              5,
+              7,
+              10,
+              11
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 13,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 14,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 15,
+            "n_pruned_heads": 5,
+            "pruned_heads": [
+              23,
+              24,
+              25,
+              26,
+              27
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 16,
+            "n_pruned_heads": 0,
+            "pruned_heads": [],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 17,
+            "n_pruned_heads": 1,
+            "pruned_heads": [
+              30
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 18,
+            "n_pruned_heads": 8,
+            "pruned_heads": [
+              0,
+              1,
+              2,
+              3,
+              21,
+              22,
+              23,
+              29
+            ],
+            "attn_quant": "fp16",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 19,
+            "n_pruned_heads": 3,
+            "pruned_heads": [
+              9,
+              17,
+              25
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 20,
+            "n_pruned_heads": 12,
+            "pruned_heads": [
+              6,
+              8,
+              9,
+              13,
+              14,
+              17,
+              20,
+              23,
+              28,
+              29,
+              30,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 21,
+            "n_pruned_heads": 13,
+            "pruned_heads": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              9,
+              10,
+              11,
+              16,
+              17,
+              18,
+              19,
+              27
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "fp16",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 22,
+            "n_pruned_heads": 19,
+            "pruned_heads": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              17,
+              18,
+              19,
+              26,
+              27,
+              30,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 23,
+            "n_pruned_heads": 12,
+            "pruned_heads": [
+              0,
+              6,
+              7,
+              8,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              29,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 24,
+            "n_pruned_heads": 20,
+            "pruned_heads": [
+              0,
+              1,
+              3,
+              5,
+              6,
+              7,
+              11,
+              12,
+              13,
+              15,
+              16,
+              17,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 25,
+            "n_pruned_heads": 23,
+            "pruned_heads": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              8,
+              10,
+              11,
+              12,
+              13,
+              14,
+              16,
+              18,
+              19,
+              20,
+              23,
+              24,
+              25,
+              26,
+              27,
+              29,
+              30
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 26,
+            "n_pruned_heads": 15,
+            "pruned_heads": [
+              0,
+              1,
+              2,
+              3,
+              5,
+              7,
+              12,
+              13,
+              14,
+              16,
+              17,
+              18,
+              24,
+              30,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 27,
+            "n_pruned_heads": 17,
+            "pruned_heads": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              14,
+              16,
+              17,
+              18,
+              19,
+              25,
+              26,
+              27,
+              29,
+              30,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 28,
+            "n_pruned_heads": 14,
+            "pruned_heads": [
+              1,
+              2,
+              3,
+              9,
+              11,
+              16,
+              17,
+              18,
+              19,
+              25,
+              26,
+              28,
+              29,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 29,
+            "n_pruned_heads": 10,
+            "pruned_heads": [
+              1,
+              3,
+              9,
+              10,
+              11,
+              15,
+              18,
+              20,
+              23,
+              30
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 30,
+            "n_pruned_heads": 13,
+            "pruned_heads": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              8,
+              10,
+              17,
+              24,
+              25,
+              26,
+              27,
+              31
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          },
+          {
+            "layer": 31,
+            "n_pruned_heads": 5,
+            "pruned_heads": [
+              6,
+              15,
+              18,
+              19,
+              21
+            ],
+            "attn_quant": "int4",
+            "mlp_quant": "int4",
+            "mlp_pruned": false
+          }
+        ]
+      },
+      "configs": {
+        "xai_single": {
+          "description": "Gün 3 skorlarıyla tek atış: allocate -> head maskele -> INT4 (Gün 5/6 yolu); %20'de Gün 6 both kontrolü",
+          "status": "completed",
+          "repeats": [
+            {
+              "status": "completed",
+              "seed": 42,
+              "fraction": 0.2,
+              "started_at": "2026-09-18T21:33:08",
+              "cuda_allocated_before_load_gb": 0.00851968,
+              "model_load_seconds": 12.687302827835083,
+              "model_bytes_before": {
+                "bytes": 14496055296,
+                "gb": 14.496055296,
+                "by_dtype_bytes": {
+                  "torch.float16": 14496047104,
+                  "torch.float32": 8192
+                }
+              },
+              "pruned_heads": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  1,
+                  15
+                ],
+                [
+                  2,
+                  20
+                ],
+                [
+                  2,
+                  23
+                ],
+                [
+                  3,
+                  10
+                ],
+                [
+                  7,
+                  16
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  11,
+                  14
+                ],
+                [
+                  12,
+                  5
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  12,
+                  10
+                ],
+                [
+                  12,
+                  11
+                ],
+                [
+                  15,
+                  23
+                ],
+                [
+                  15,
+                  24
+                ],
+                [
+                  15,
+                  25
+                ],
+                [
+                  15,
+                  26
+                ],
+                [
+                  15,
+                  27
+                ],
+                [
+                  17,
+                  30
+                ],
+                [
+                  18,
+                  0
+                ],
+                [
+                  18,
+                  1
+                ],
+                [
+                  18,
+                  2
+                ],
+                [
+                  18,
+                  3
+                ],
+                [
+                  18,
+                  21
+                ],
+                [
+                  18,
+                  22
+                ],
+                [
+                  18,
+                  23
+                ],
+                [
+                  18,
+                  29
+                ],
+                [
+                  19,
+                  9
+                ],
+                [
+                  19,
+                  17
+                ],
+                [
+                  19,
+                  25
+                ],
+                [
+                  20,
+                  6
+                ],
+                [
+                  20,
+                  8
+                ],
+                [
+                  20,
+                  9
+                ],
+                [
+                  20,
+                  13
+                ],
+                [
+                  20,
+                  14
+                ],
+                [
+                  20,
+                  17
+                ],
+                [
+                  20,
+                  20
+                ],
+                [
+                  20,
+                  23
+                ],
+                [
+                  20,
+                  28
+                ],
+                [
+                  20,
+                  29
+                ],
+                [
+                  20,
+                  30
+                ],
+                [
+                  20,
+                  31
+                ],
+                [
+                  21,
+                  0
+                ],
+                [
+                  21,
+                  1
+                ],
+                [
+                  21,
+                  2
+                ],
+                [
+                  21,
+                  3
+                ],
+                [
+                  21,
+                  4
+                ],
+                [
+                  21,
+                  9
+                ],
+                [
+                  21,
+                  10
+                ],
+                [
+                  21,
+                  11
+                ],
+                [
+                  21,
+                  16
+                ],
+                [
+                  21,
+                  17
+                ],
+                [
+                  21,
+                  18
+                ],
+                [
+                  21,
+                  19
+                ],
+                [
+                  21,
+                  27
+                ],
+                [
+                  22,
+                  0
+                ],
+                [
+                  22,
+                  1
+                ],
+                [
+                  22,
+                  2
+                ],
+                [
+                  22,
+                  3
+                ],
+                [
+                  22,
+                  4
+                ],
+                [
+                  22,
+                  5
+                ],
+                [
+                  22,
+                  6
+                ],
+                [
+                  22,
+                  7
+                ],
+                [
+                  22,
+                  8
+                ],
+                [
+                  22,
+                  9
+                ],
+                [
+                  22,
+                  10
+                ],
+                [
+                  22,
+                  11
+                ],
+                [
+                  22,
+                  17
+                ],
+                [
+                  22,
+                  18
+                ],
+                [
+                  22,
+                  19
+                ],
+                [
+                  22,
+                  26
+                ],
+                [
+                  22,
+                  27
+                ],
+                [
+                  22,
+                  30
+                ],
+                [
+                  22,
+                  31
+                ],
+                [
+                  23,
+                  0
+                ],
+                [
+                  23,
+                  6
+                ],
+                [
+                  23,
+                  7
+                ],
+                [
+                  23,
+                  8
+                ],
+                [
+                  23,
+                  11
+                ],
+                [
+                  23,
+                  12
+                ],
+                [
+                  23,
+                  13
+                ],
+                [
+                  23,
+                  14
+                ],
+                [
+                  23,
+                  15
+                ],
+                [
+                  23,
+                  17
+                ],
+                [
+                  23,
+                  29
+                ],
+                [
+                  23,
+                  31
+                ],
+                [
+                  24,
+                  0
+                ],
+                [
+                  24,
+                  1
+                ],
+                [
+                  24,
+                  3
+                ],
+                [
+                  24,
+                  5
+                ],
+                [
+                  24,
+                  6
+                ],
+                [
+                  24,
+                  7
+                ],
+                [
+                  24,
+                  11
+                ],
+                [
+                  24,
+                  12
+                ],
+                [
+                  24,
+                  13
+                ],
+                [
+                  24,
+                  15
+                ],
+                [
+                  24,
+                  16
+                ],
+                [
+                  24,
+                  17
+                ],
+                [
+                  24,
+                  24
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  26
+                ],
+                [
+                  24,
+                  27
+                ],
+                [
+                  24,
+                  28
+                ],
+                [
+                  24,
+                  29
+                ],
+                [
+                  24,
+                  30
+                ],
+                [
+                  24,
+                  31
+                ],
+                [
+                  25,
+                  0
+                ],
+                [
+                  25,
+                  1
+                ],
+                [
+                  25,
+                  2
+                ],
+                [
+                  25,
+                  3
+                ],
+                [
+                  25,
+                  4
+                ],
+                [
+                  25,
+                  5
+                ],
+                [
+                  25,
+                  8
+                ],
+                [
+                  25,
+                  10
+                ],
+                [
+                  25,
+                  11
+                ],
+                [
+                  25,
+                  12
+                ],
+                [
+                  25,
+                  13
+                ],
+                [
+                  25,
+                  14
+                ],
+                [
+                  25,
+                  16
+                ],
+                [
+                  25,
+                  18
+                ],
+                [
+                  25,
+                  19
+                ],
+                [
+                  25,
+                  20
+                ],
+                [
+                  25,
+                  23
+                ],
+                [
+                  25,
+                  24
+                ],
+                [
+                  25,
+                  25
+                ],
+                [
+                  25,
+                  26
+                ],
+                [
+                  25,
+                  27
+                ],
+                [
+                  25,
+                  29
+                ],
+                [
+                  25,
+                  30
+                ],
+                [
+                  26,
+                  0
+                ],
+                [
+                  26,
+                  1
+                ],
+                [
+                  26,
+                  2
+                ],
+                [
+                  26,
+                  3
+                ],
+                [
+                  26,
+                  5
+                ],
+                [
+                  26,
+                  7
+                ],
+                [
+                  26,
+                  12
+                ],
+                [
+                  26,
+                  13
+                ],
+                [
+                  26,
+                  14
+                ],
+                [
+                  26,
+                  16
+                ],
+                [
+                  26,
+                  17
+                ],
+                [
+                  26,
+                  18
+                ],
+                [
+                  26,
+                  24
+                ],
+                [
+                  26,
+                  30
+                ],
+                [
+                  26,
+                  31
+                ],
+                [
+                  27,
+                  0
+                ],
+                [
+                  27,
+                  3
+                ],
+                [
+                  27,
+                  4
+                ],
+                [
+                  27,
+                  5
+                ],
+                [
+                  27,
+                  6
+                ],
+                [
+                  27,
+                  8
+                ],
+                [
+                  27,
+                  14
+                ],
+                [
+                  27,
+                  16
+                ],
+                [
+                  27,
+                  17
+                ],
+                [
+                  27,
+                  18
+                ],
+                [
+                  27,
+                  19
+                ],
+                [
+                  27,
+                  25
+                ],
+                [
+                  27,
+                  26
+                ],
+                [
+                  27,
+                  27
+                ],
+                [
+                  27,
+                  29
+                ],
+                [
+                  27,
+                  30
+                ],
+                [
+                  27,
+                  31
+                ],
+                [
+                  28,
+                  1
+                ],
+                [
+                  28,
+                  2
+                ],
+                [
+                  28,
+                  3
+                ],
+                [
+                  28,
+                  9
+                ],
+                [
+                  28,
+                  11
+                ],
+                [
+                  28,
+                  16
+                ],
+                [
+                  28,
+                  17
+                ],
+                [
+                  28,
+                  18
+                ],
+                [
+                  28,
+                  19
+                ],
+                [
+                  28,
+                  25
+                ],
+                [
+                  28,
+                  26
+                ],
+                [
+                  28,
+                  28
+                ],
+                [
+                  28,
+                  29
+                ],
+                [
+                  28,
+                  31
+                ],
+                [
+                  29,
+                  1
+                ],
+                [
+                  29,
+                  3
+                ],
+                [
+                  29,
+                  9
+                ],
+                [
+                  29,
+                  10
+                ],
+                [
+                  29,
+                  11
+                ],
+                [
+                  29,
+                  15
+                ],
+                [
+                  29,
+                  18
+                ],
+                [
+                  29,
+                  20
+                ],
+                [
+                  29,
+                  23
+                ],
+                [
+                  29,
+                  30
+                ],
+                [
+                  30,
+                  0
+                ],
+                [
+                  30,
+                  1
+                ],
+                [
+                  30,
+                  2
+                ],
+                [
+                  30,
+                  3
+                ],
+                [
+                  30,
+                  4
+                ],
+                [
+                  30,
+                  8
+                ],
+                [
+                  30,
+                  10
+                ],
+                [
+                  30,
+                  17
+                ],
+                [
+                  30,
+                  24
+                ],
+                [
+                  30,
+                  25
+                ],
+                [
+                  30,
+                  26
+                ],
+                [
+                  30,
+                  27
+                ],
+                [
+                  30,
+                  31
+                ],
+                [
+                  31,
+                  6
+                ],
+                [
+                  31,
+                  15
+                ],
+                [
+                  31,
+                  18
+                ],
+                [
+                  31,
+                  19
+                ],
+                [
+                  31,
+                  21
+                ]
+              ],
+              "n_pruned_heads": 205,
+              "plan_summary": [
+                {
+                  "layer": 0,
+                  "n_pruned_heads": 4,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    6,
+                    15
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 1,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    15
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 2,
+                  "n_pruned_heads": 2,
+                  "pruned_heads": [
+                    20,
+                    23
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 3,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    10
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 4,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 5,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 6,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 7,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    16
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 8,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 9,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 10,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 11,
+                  "n_pruned_heads": 2,
+                  "pruned_heads": [
+                    8,
+                    14
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 12,
+                  "n_pruned_heads": 4,
+                  "pruned_heads": [
+                    5,
+                    7,
+                    10,
+                    11
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 13,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 14,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 15,
+                  "n_pruned_heads": 5,
+                  "pruned_heads": [
+                    23,
+                    24,
+                    25,
+                    26,
+                    27
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 16,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 17,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    30
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 18,
+                  "n_pruned_heads": 8,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    21,
+                    22,
+                    23,
+                    29
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 19,
+                  "n_pruned_heads": 3,
+                  "pruned_heads": [
+                    9,
+                    17,
+                    25
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 20,
+                  "n_pruned_heads": 12,
+                  "pruned_heads": [
+                    6,
+                    8,
+                    9,
+                    13,
+                    14,
+                    17,
+                    20,
+                    23,
+                    28,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 21,
+                  "n_pruned_heads": 13,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    9,
+                    10,
+                    11,
+                    16,
+                    17,
+                    18,
+                    19,
+                    27
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 22,
+                  "n_pruned_heads": 19,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    17,
+                    18,
+                    19,
+                    26,
+                    27,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 23,
+                  "n_pruned_heads": 12,
+                  "pruned_heads": [
+                    0,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    17,
+                    29,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 24,
+                  "n_pruned_heads": 20,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    3,
+                    5,
+                    6,
+                    7,
+                    11,
+                    12,
+                    13,
+                    15,
+                    16,
+                    17,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 25,
+                  "n_pruned_heads": 23,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    8,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    16,
+                    18,
+                    19,
+                    20,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    29,
+                    30
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 26,
+                  "n_pruned_heads": 15,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    5,
+                    7,
+                    12,
+                    13,
+                    14,
+                    16,
+                    17,
+                    18,
+                    24,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 27,
+                  "n_pruned_heads": 17,
+                  "pruned_heads": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    14,
+                    16,
+                    17,
+                    18,
+                    19,
+                    25,
+                    26,
+                    27,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 28,
+                  "n_pruned_heads": 14,
+                  "pruned_heads": [
+                    1,
+                    2,
+                    3,
+                    9,
+                    11,
+                    16,
+                    17,
+                    18,
+                    19,
+                    25,
+                    26,
+                    28,
+                    29,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 29,
+                  "n_pruned_heads": 10,
+                  "pruned_heads": [
+                    1,
+                    3,
+                    9,
+                    10,
+                    11,
+                    15,
+                    18,
+                    20,
+                    23,
+                    30
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 30,
+                  "n_pruned_heads": 13,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    8,
+                    10,
+                    17,
+                    24,
+                    25,
+                    26,
+                    27,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 31,
+                  "n_pruned_heads": 5,
+                  "pruned_heads": [
+                    6,
+                    15,
+                    18,
+                    19,
+                    21
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                }
+              ],
+              "budget_nominal": {
+                "params_total": 6979321856.0,
+                "params_pruned": 214958080.0,
+                "pruned_ratio": 0.030799278846153848,
+                "bits_fp16": 111669149696.0,
+                "bits_compressed": 61282975744.0,
+                "size_ratio": 0.5487905649038461,
+                "avg_bits_per_param": 8.780649038461538
+              },
+              "int4_modules_planned": 129,
+              "int4_module_set_equals_single": true,
+              "pruning": {
+                "pruned_heads": 205,
+                "pruned_mlp_blocks": 0
+              },
+              "rescore_after": {
+                "scores_file": "results/gun7_scores/f0.2_xai_single_after.json",
+                "attribution_seconds": 341.0184075832367,
+                "n_batches": 4,
+                "pruned_heads_zero_score": 205
+              },
+              "quantization_path": "primary (compressor._quantize_linear)",
+              "quantization": {
+                "int4_modules": 129,
+                "int8_modules": 0
+              },
+              "apply_seconds": 377.2132251262665,
+              "int4_modules": 129,
+              "int4_modules_equals_single": true,
+              "model_bytes_after": {
+                "bytes": 8343011328,
+                "gb": 8.343011328,
+                "by_dtype_bytes": {
+                  "torch.float16": 6291988480,
+                  "torch.uint8": 2051014656,
+                  "torch.float32": 8192
+                }
+              },
+              "measured_model_bytes_ratio": 0.575536665502521,
+              "perplexity": 6.317065238952637,
+              "perplexity_seconds": 75.71212196350098,
+              "perplexity_finite": true,
+              "peak_vram_gb": 19.974654976,
+              "cuda_allocated_after_free_gb": 0.017040384,
+              "seconds": 466.4312448501587
+            }
+          ],
+          "n_repeats": 1,
+          "stochastic": false,
+          "n_completed_repeats": 1,
+          "perplexity_values": [
+            6.317065238952637
+          ],
+          "perplexity_mean": 6.317065238952637,
+          "perplexity_std": 0.0,
+          "pruned_heads": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              2,
+              23
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              15,
+              23
+            ],
+            [
+              15,
+              24
+            ],
+            [
+              15,
+              25
+            ],
+            [
+              15,
+              26
+            ],
+            [
+              15,
+              27
+            ],
+            [
+              17,
+              30
+            ],
+            [
+              18,
+              0
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              18,
+              2
+            ],
+            [
+              18,
+              3
+            ],
+            [
+              18,
+              21
+            ],
+            [
+              18,
+              22
+            ],
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              29
+            ],
+            [
+              19,
+              9
+            ],
+            [
+              19,
+              17
+            ],
+            [
+              19,
+              25
+            ],
+            [
+              20,
+              6
+            ],
+            [
+              20,
+              8
+            ],
+            [
+              20,
+              9
+            ],
+            [
+              20,
+              13
+            ],
+            [
+              20,
+              14
+            ],
+            [
+              20,
+              17
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              20,
+              23
+            ],
+            [
+              20,
+              28
+            ],
+            [
+              20,
+              29
+            ],
+            [
+              20,
+              30
+            ],
+            [
+              20,
+              31
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              21,
+              1
+            ],
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              3
+            ],
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              9
+            ],
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              27
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              22,
+              2
+            ],
+            [
+              22,
+              3
+            ],
+            [
+              22,
+              4
+            ],
+            [
+              22,
+              5
+            ],
+            [
+              22,
+              6
+            ],
+            [
+              22,
+              7
+            ],
+            [
+              22,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              22,
+              10
+            ],
+            [
+              22,
+              11
+            ],
+            [
+              22,
+              17
+            ],
+            [
+              22,
+              18
+            ],
+            [
+              22,
+              19
+            ],
+            [
+              22,
+              26
+            ],
+            [
+              22,
+              27
+            ],
+            [
+              22,
+              30
+            ],
+            [
+              22,
+              31
+            ],
+            [
+              23,
+              0
+            ],
+            [
+              23,
+              6
+            ],
+            [
+              23,
+              7
+            ],
+            [
+              23,
+              8
+            ],
+            [
+              23,
+              11
+            ],
+            [
+              23,
+              12
+            ],
+            [
+              23,
+              13
+            ],
+            [
+              23,
+              14
+            ],
+            [
+              23,
+              15
+            ],
+            [
+              23,
+              17
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              23,
+              31
+            ],
+            [
+              24,
+              0
+            ],
+            [
+              24,
+              1
+            ],
+            [
+              24,
+              3
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              24,
+              6
+            ],
+            [
+              24,
+              7
+            ],
+            [
+              24,
+              11
+            ],
+            [
+              24,
+              12
+            ],
+            [
+              24,
+              13
+            ],
+            [
+              24,
+              15
+            ],
+            [
+              24,
+              16
+            ],
+            [
+              24,
+              17
+            ],
+            [
+              24,
+              24
+            ],
+            [
+              24,
+              25
+            ],
+            [
+              24,
+              26
+            ],
+            [
+              24,
+              27
+            ],
+            [
+              24,
+              28
+            ],
+            [
+              24,
+              29
+            ],
+            [
+              24,
+              30
+            ],
+            [
+              24,
+              31
+            ],
+            [
+              25,
+              0
+            ],
+            [
+              25,
+              1
+            ],
+            [
+              25,
+              2
+            ],
+            [
+              25,
+              3
+            ],
+            [
+              25,
+              4
+            ],
+            [
+              25,
+              5
+            ],
+            [
+              25,
+              8
+            ],
+            [
+              25,
+              10
+            ],
+            [
+              25,
+              11
+            ],
+            [
+              25,
+              12
+            ],
+            [
+              25,
+              13
+            ],
+            [
+              25,
+              14
+            ],
+            [
+              25,
+              16
+            ],
+            [
+              25,
+              18
+            ],
+            [
+              25,
+              19
+            ],
+            [
+              25,
+              20
+            ],
+            [
+              25,
+              23
+            ],
+            [
+              25,
+              24
+            ],
+            [
+              25,
+              25
+            ],
+            [
+              25,
+              26
+            ],
+            [
+              25,
+              27
+            ],
+            [
+              25,
+              29
+            ],
+            [
+              25,
+              30
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              26,
+              1
+            ],
+            [
+              26,
+              2
+            ],
+            [
+              26,
+              3
+            ],
+            [
+              26,
+              5
+            ],
+            [
+              26,
+              7
+            ],
+            [
+              26,
+              12
+            ],
+            [
+              26,
+              13
+            ],
+            [
+              26,
+              14
+            ],
+            [
+              26,
+              16
+            ],
+            [
+              26,
+              17
+            ],
+            [
+              26,
+              18
+            ],
+            [
+              26,
+              24
+            ],
+            [
+              26,
+              30
+            ],
+            [
+              26,
+              31
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              27,
+              3
+            ],
+            [
+              27,
+              4
+            ],
+            [
+              27,
+              5
+            ],
+            [
+              27,
+              6
+            ],
+            [
+              27,
+              8
+            ],
+            [
+              27,
+              14
+            ],
+            [
+              27,
+              16
+            ],
+            [
+              27,
+              17
+            ],
+            [
+              27,
+              18
+            ],
+            [
+              27,
+              19
+            ],
+            [
+              27,
+              25
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              27,
+              27
+            ],
+            [
+              27,
+              29
+            ],
+            [
+              27,
+              30
+            ],
+            [
+              27,
+              31
+            ],
+            [
+              28,
+              1
+            ],
+            [
+              28,
+              2
+            ],
+            [
+              28,
+              3
+            ],
+            [
+              28,
+              9
+            ],
+            [
+              28,
+              11
+            ],
+            [
+              28,
+              16
+            ],
+            [
+              28,
+              17
+            ],
+            [
+              28,
+              18
+            ],
+            [
+              28,
+              19
+            ],
+            [
+              28,
+              25
+            ],
+            [
+              28,
+              26
+            ],
+            [
+              28,
+              28
+            ],
+            [
+              28,
+              29
+            ],
+            [
+              28,
+              31
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              29,
+              3
+            ],
+            [
+              29,
+              9
+            ],
+            [
+              29,
+              10
+            ],
+            [
+              29,
+              11
+            ],
+            [
+              29,
+              15
+            ],
+            [
+              29,
+              18
+            ],
+            [
+              29,
+              20
+            ],
+            [
+              29,
+              23
+            ],
+            [
+              29,
+              30
+            ],
+            [
+              30,
+              0
+            ],
+            [
+              30,
+              1
+            ],
+            [
+              30,
+              2
+            ],
+            [
+              30,
+              3
+            ],
+            [
+              30,
+              4
+            ],
+            [
+              30,
+              8
+            ],
+            [
+              30,
+              10
+            ],
+            [
+              30,
+              17
+            ],
+            [
+              30,
+              24
+            ],
+            [
+              30,
+              25
+            ],
+            [
+              30,
+              26
+            ],
+            [
+              30,
+              27
+            ],
+            [
+              30,
+              31
+            ],
+            [
+              31,
+              6
+            ],
+            [
+              31,
+              15
+            ],
+            [
+              31,
+              18
+            ],
+            [
+              31,
+              19
+            ],
+            [
+              31,
+              21
+            ]
+          ],
+          "n_pruned_heads": 205,
+          "int4_modules": 129,
+          "int4_modules_equals_single": true,
+          "int4_module_set_equals_single": true,
+          "measured_model_bytes_ratio": 0.575536665502521,
+          "budget_nominal": {
+            "params_total": 6979321856.0,
+            "params_pruned": 214958080.0,
+            "pruned_ratio": 0.030799278846153848,
+            "bits_fp16": 111669149696.0,
+            "bits_compressed": 61282975744.0,
+            "size_ratio": 0.5487905649038461,
+            "avg_bits_per_param": 8.780649038461538
+          },
+          "model_bytes_after_gb": 8.343011328,
+          "pruned_heads_identical_across_repeats": true,
+          "seconds": 466.4312448501587,
+          "peak_vram_gb": 19.974654976,
+          "attribution_calls": 1,
+          "attribution_seconds_total": 341.0184075832367,
+          "delta_vs_fp16": 1.0971059799194336,
+          "ratio_vs_fp16": 1.2101751997433463,
+          "reproduction_check": {
+            "expected_gun6_both": 6.317065238952637,
+            "abs_diff": 0.0,
+            "within_tolerance": true
+          }
+        },
+        "xai_iter": {
+          "description": "n_rounds tur budama; her tur maskeli FP16 modelde yeniden skor (Gün 3 ayarları), exclude_heads ile seçim; INT4 planı son turun skorlarından, en sonda bir kez",
+          "status": "completed",
+          "repeats": [
+            {
+              "status": "completed",
+              "seed": 42,
+              "fraction": 0.2,
+              "started_at": "2026-09-18T21:40:55",
+              "cuda_allocated_before_load_gb": 0.017040384,
+              "model_load_seconds": 12.85249376296997,
+              "model_bytes_before": {
+                "bytes": 14496055296,
+                "gb": 14.496055296,
+                "by_dtype_bytes": {
+                  "torch.float16": 14496047104,
+                  "torch.float32": 8192
+                }
+              },
+              "rounds": [
+                {
+                  "round": 1,
+                  "share": 69,
+                  "pruned_heads": [
+                    [
+                      2,
+                      20
+                    ],
+                    [
+                      3,
+                      10
+                    ],
+                    [
+                      7,
+                      16
+                    ],
+                    [
+                      12,
+                      5
+                    ],
+                    [
+                      12,
+                      10
+                    ],
+                    [
+                      15,
+                      24
+                    ],
+                    [
+                      15,
+                      26
+                    ],
+                    [
+                      18,
+                      0
+                    ],
+                    [
+                      18,
+                      1
+                    ],
+                    [
+                      18,
+                      3
+                    ],
+                    [
+                      20,
+                      6
+                    ],
+                    [
+                      20,
+                      29
+                    ],
+                    [
+                      20,
+                      30
+                    ],
+                    [
+                      20,
+                      31
+                    ],
+                    [
+                      21,
+                      0
+                    ],
+                    [
+                      21,
+                      1
+                    ],
+                    [
+                      21,
+                      2
+                    ],
+                    [
+                      21,
+                      3
+                    ],
+                    [
+                      21,
+                      4
+                    ],
+                    [
+                      21,
+                      11
+                    ],
+                    [
+                      21,
+                      16
+                    ],
+                    [
+                      21,
+                      18
+                    ],
+                    [
+                      21,
+                      19
+                    ],
+                    [
+                      22,
+                      0
+                    ],
+                    [
+                      22,
+                      1
+                    ],
+                    [
+                      22,
+                      3
+                    ],
+                    [
+                      22,
+                      4
+                    ],
+                    [
+                      22,
+                      6
+                    ],
+                    [
+                      22,
+                      9
+                    ],
+                    [
+                      22,
+                      10
+                    ],
+                    [
+                      23,
+                      13
+                    ],
+                    [
+                      23,
+                      14
+                    ],
+                    [
+                      23,
+                      15
+                    ],
+                    [
+                      24,
+                      5
+                    ],
+                    [
+                      24,
+                      6
+                    ],
+                    [
+                      24,
+                      11
+                    ],
+                    [
+                      24,
+                      16
+                    ],
+                    [
+                      24,
+                      25
+                    ],
+                    [
+                      24,
+                      27
+                    ],
+                    [
+                      24,
+                      28
+                    ],
+                    [
+                      24,
+                      30
+                    ],
+                    [
+                      25,
+                      2
+                    ],
+                    [
+                      25,
+                      3
+                    ],
+                    [
+                      25,
+                      23
+                    ],
+                    [
+                      25,
+                      24
+                    ],
+                    [
+                      25,
+                      25
+                    ],
+                    [
+                      25,
+                      26
+                    ],
+                    [
+                      25,
+                      27
+                    ],
+                    [
+                      25,
+                      30
+                    ],
+                    [
+                      26,
+                      2
+                    ],
+                    [
+                      26,
+                      3
+                    ],
+                    [
+                      26,
+                      5
+                    ],
+                    [
+                      26,
+                      12
+                    ],
+                    [
+                      26,
+                      13
+                    ],
+                    [
+                      26,
+                      14
+                    ],
+                    [
+                      26,
+                      16
+                    ],
+                    [
+                      26,
+                      17
+                    ],
+                    [
+                      27,
+                      16
+                    ],
+                    [
+                      27,
+                      27
+                    ],
+                    [
+                      27,
+                      30
+                    ],
+                    [
+                      28,
+                      1
+                    ],
+                    [
+                      28,
+                      3
+                    ],
+                    [
+                      28,
+                      9
+                    ],
+                    [
+                      28,
+                      11
+                    ],
+                    [
+                      28,
+                      16
+                    ],
+                    [
+                      28,
+                      25
+                    ],
+                    [
+                      28,
+                      31
+                    ],
+                    [
+                      29,
+                      3
+                    ],
+                    [
+                      30,
+                      3
+                    ]
+                  ],
+                  "n_pruned_cumulative": 69,
+                  "attribution_seconds": 345.73788046836853,
+                  "n_batches": 4,
+                  "pruned_heads_zero_score": 69,
+                  "scores_file": "results/gun7_scores/f0.2_round1.json",
+                  "seconds": 345.7483506202698
+                },
+                {
+                  "round": 2,
+                  "share": 68,
+                  "pruned_heads": [
+                    [
+                      0,
+                      6
+                    ],
+                    [
+                      2,
+                      23
+                    ],
+                    [
+                      15,
+                      23
+                    ],
+                    [
+                      18,
+                      21
+                    ],
+                    [
+                      18,
+                      23
+                    ],
+                    [
+                      19,
+                      9
+                    ],
+                    [
+                      20,
+                      9
+                    ],
+                    [
+                      20,
+                      13
+                    ],
+                    [
+                      20,
+                      14
+                    ],
+                    [
+                      21,
+                      10
+                    ],
+                    [
+                      21,
+                      27
+                    ],
+                    [
+                      22,
+                      2
+                    ],
+                    [
+                      22,
+                      7
+                    ],
+                    [
+                      22,
+                      8
+                    ],
+                    [
+                      22,
+                      11
+                    ],
+                    [
+                      22,
+                      17
+                    ],
+                    [
+                      22,
+                      18
+                    ],
+                    [
+                      22,
+                      19
+                    ],
+                    [
+                      22,
+                      27
+                    ],
+                    [
+                      22,
+                      30
+                    ],
+                    [
+                      23,
+                      7
+                    ],
+                    [
+                      23,
+                      8
+                    ],
+                    [
+                      23,
+                      11
+                    ],
+                    [
+                      23,
+                      12
+                    ],
+                    [
+                      23,
+                      29
+                    ],
+                    [
+                      24,
+                      0
+                    ],
+                    [
+                      24,
+                      7
+                    ],
+                    [
+                      24,
+                      12
+                    ],
+                    [
+                      24,
+                      26
+                    ],
+                    [
+                      24,
+                      29
+                    ],
+                    [
+                      24,
+                      31
+                    ],
+                    [
+                      25,
+                      0
+                    ],
+                    [
+                      25,
+                      5
+                    ],
+                    [
+                      25,
+                      8
+                    ],
+                    [
+                      25,
+                      10
+                    ],
+                    [
+                      25,
+                      12
+                    ],
+                    [
+                      25,
+                      13
+                    ],
+                    [
+                      25,
+                      14
+                    ],
+                    [
+                      25,
+                      18
+                    ],
+                    [
+                      25,
+                      19
+                    ],
+                    [
+                      25,
+                      20
+                    ],
+                    [
+                      25,
+                      29
+                    ],
+                    [
+                      26,
+                      1
+                    ],
+                    [
+                      26,
+                      7
+                    ],
+                    [
+                      26,
+                      18
+                    ],
+                    [
+                      26,
+                      24
+                    ],
+                    [
+                      26,
+                      31
+                    ],
+                    [
+                      27,
+                      3
+                    ],
+                    [
+                      27,
+                      5
+                    ],
+                    [
+                      27,
+                      19
+                    ],
+                    [
+                      27,
+                      29
+                    ],
+                    [
+                      27,
+                      31
+                    ],
+                    [
+                      28,
+                      17
+                    ],
+                    [
+                      28,
+                      18
+                    ],
+                    [
+                      28,
+                      19
+                    ],
+                    [
+                      28,
+                      26
+                    ],
+                    [
+                      28,
+                      28
+                    ],
+                    [
+                      28,
+                      29
+                    ],
+                    [
+                      29,
+                      1
+                    ],
+                    [
+                      29,
+                      9
+                    ],
+                    [
+                      29,
+                      10
+                    ],
+                    [
+                      29,
+                      18
+                    ],
+                    [
+                      29,
+                      20
+                    ],
+                    [
+                      30,
+                      0
+                    ],
+                    [
+                      30,
+                      2
+                    ],
+                    [
+                      30,
+                      8
+                    ],
+                    [
+                      30,
+                      24
+                    ],
+                    [
+                      31,
+                      18
+                    ]
+                  ],
+                  "n_pruned_cumulative": 137,
+                  "attribution_seconds": 345.8789668083191,
+                  "n_batches": 4,
+                  "pruned_heads_zero_score": 137,
+                  "scores_file": "results/gun7_scores/f0.2_round2.json",
+                  "seconds": 345.8884527683258
+                },
+                {
+                  "round": 3,
+                  "share": 68,
+                  "pruned_heads": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      9
+                    ],
+                    [
+                      0,
+                      15
+                    ],
+                    [
+                      1,
+                      15
+                    ],
+                    [
+                      11,
+                      8
+                    ],
+                    [
+                      11,
+                      14
+                    ],
+                    [
+                      12,
+                      7
+                    ],
+                    [
+                      12,
+                      11
+                    ],
+                    [
+                      15,
+                      25
+                    ],
+                    [
+                      15,
+                      27
+                    ],
+                    [
+                      17,
+                      30
+                    ],
+                    [
+                      18,
+                      22
+                    ],
+                    [
+                      18,
+                      29
+                    ],
+                    [
+                      19,
+                      17
+                    ],
+                    [
+                      19,
+                      25
+                    ],
+                    [
+                      20,
+                      8
+                    ],
+                    [
+                      20,
+                      17
+                    ],
+                    [
+                      20,
+                      20
+                    ],
+                    [
+                      20,
+                      23
+                    ],
+                    [
+                      21,
+                      17
+                    ],
+                    [
+                      22,
+                      5
+                    ],
+                    [
+                      22,
+                      26
+                    ],
+                    [
+                      22,
+                      31
+                    ],
+                    [
+                      23,
+                      0
+                    ],
+                    [
+                      23,
+                      5
+                    ],
+                    [
+                      23,
+                      6
+                    ],
+                    [
+                      23,
+                      17
+                    ],
+                    [
+                      24,
+                      1
+                    ],
+                    [
+                      24,
+                      3
+                    ],
+                    [
+                      24,
+                      9
+                    ],
+                    [
+                      24,
+                      13
+                    ],
+                    [
+                      24,
+                      14
+                    ],
+                    [
+                      24,
+                      15
+                    ],
+                    [
+                      24,
+                      17
+                    ],
+                    [
+                      24,
+                      21
+                    ],
+                    [
+                      24,
+                      24
+                    ],
+                    [
+                      25,
+                      1
+                    ],
+                    [
+                      25,
+                      4
+                    ],
+                    [
+                      25,
+                      11
+                    ],
+                    [
+                      25,
+                      16
+                    ],
+                    [
+                      25,
+                      31
+                    ],
+                    [
+                      26,
+                      0
+                    ],
+                    [
+                      26,
+                      28
+                    ],
+                    [
+                      26,
+                      30
+                    ],
+                    [
+                      27,
+                      0
+                    ],
+                    [
+                      27,
+                      4
+                    ],
+                    [
+                      27,
+                      6
+                    ],
+                    [
+                      27,
+                      8
+                    ],
+                    [
+                      27,
+                      14
+                    ],
+                    [
+                      27,
+                      17
+                    ],
+                    [
+                      27,
+                      18
+                    ],
+                    [
+                      27,
+                      22
+                    ],
+                    [
+                      27,
+                      25
+                    ],
+                    [
+                      27,
+                      26
+                    ],
+                    [
+                      28,
+                      2
+                    ],
+                    [
+                      29,
+                      15
+                    ],
+                    [
+                      29,
+                      21
+                    ],
+                    [
+                      29,
+                      23
+                    ],
+                    [
+                      29,
+                      30
+                    ],
+                    [
+                      30,
+                      10
+                    ],
+                    [
+                      30,
+                      25
+                    ],
+                    [
+                      30,
+                      26
+                    ],
+                    [
+                      30,
+                      27
+                    ],
+                    [
+                      30,
+                      31
+                    ],
+                    [
+                      31,
+                      6
+                    ],
+                    [
+                      31,
+                      15
+                    ],
+                    [
+                      31,
+                      21
+                    ]
+                  ],
+                  "n_pruned_cumulative": 205,
+                  "attribution_seconds": 345.05474162101746,
+                  "n_batches": 4,
+                  "pruned_heads_zero_score": 205,
+                  "scores_file": "results/gun7_scores/f0.2_round3.json",
+                  "seconds": 345.0639533996582
+                }
+              ],
+              "final_prune_tier_matches_pruned": true,
+              "final_tier_counts": {
+                "attn": {
+                  "prune": 205,
+                  "int4": 410,
+                  "fp16": 409
+                },
+                "mlp": {
+                  "fp16": 13,
+                  "int4": 19
+                }
+              },
+              "attribution_calls": 3,
+              "attribution_seconds_total": 1036.671588897705,
+              "round_shares": [
+                69,
+                68,
+                68
+              ],
+              "overlap_with_xai_heads": 196,
+              "last_scores_file": "results/gun7_scores/f0.2_round3.json",
+              "pruned_heads": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  9
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  1,
+                  15
+                ],
+                [
+                  2,
+                  20
+                ],
+                [
+                  2,
+                  23
+                ],
+                [
+                  3,
+                  10
+                ],
+                [
+                  7,
+                  16
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  11,
+                  14
+                ],
+                [
+                  12,
+                  5
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  12,
+                  10
+                ],
+                [
+                  12,
+                  11
+                ],
+                [
+                  15,
+                  23
+                ],
+                [
+                  15,
+                  24
+                ],
+                [
+                  15,
+                  25
+                ],
+                [
+                  15,
+                  26
+                ],
+                [
+                  15,
+                  27
+                ],
+                [
+                  17,
+                  30
+                ],
+                [
+                  18,
+                  0
+                ],
+                [
+                  18,
+                  1
+                ],
+                [
+                  18,
+                  3
+                ],
+                [
+                  18,
+                  21
+                ],
+                [
+                  18,
+                  22
+                ],
+                [
+                  18,
+                  23
+                ],
+                [
+                  18,
+                  29
+                ],
+                [
+                  19,
+                  9
+                ],
+                [
+                  19,
+                  17
+                ],
+                [
+                  19,
+                  25
+                ],
+                [
+                  20,
+                  6
+                ],
+                [
+                  20,
+                  8
+                ],
+                [
+                  20,
+                  9
+                ],
+                [
+                  20,
+                  13
+                ],
+                [
+                  20,
+                  14
+                ],
+                [
+                  20,
+                  17
+                ],
+                [
+                  20,
+                  20
+                ],
+                [
+                  20,
+                  23
+                ],
+                [
+                  20,
+                  29
+                ],
+                [
+                  20,
+                  30
+                ],
+                [
+                  20,
+                  31
+                ],
+                [
+                  21,
+                  0
+                ],
+                [
+                  21,
+                  1
+                ],
+                [
+                  21,
+                  2
+                ],
+                [
+                  21,
+                  3
+                ],
+                [
+                  21,
+                  4
+                ],
+                [
+                  21,
+                  10
+                ],
+                [
+                  21,
+                  11
+                ],
+                [
+                  21,
+                  16
+                ],
+                [
+                  21,
+                  17
+                ],
+                [
+                  21,
+                  18
+                ],
+                [
+                  21,
+                  19
+                ],
+                [
+                  21,
+                  27
+                ],
+                [
+                  22,
+                  0
+                ],
+                [
+                  22,
+                  1
+                ],
+                [
+                  22,
+                  2
+                ],
+                [
+                  22,
+                  3
+                ],
+                [
+                  22,
+                  4
+                ],
+                [
+                  22,
+                  5
+                ],
+                [
+                  22,
+                  6
+                ],
+                [
+                  22,
+                  7
+                ],
+                [
+                  22,
+                  8
+                ],
+                [
+                  22,
+                  9
+                ],
+                [
+                  22,
+                  10
+                ],
+                [
+                  22,
+                  11
+                ],
+                [
+                  22,
+                  17
+                ],
+                [
+                  22,
+                  18
+                ],
+                [
+                  22,
+                  19
+                ],
+                [
+                  22,
+                  26
+                ],
+                [
+                  22,
+                  27
+                ],
+                [
+                  22,
+                  30
+                ],
+                [
+                  22,
+                  31
+                ],
+                [
+                  23,
+                  0
+                ],
+                [
+                  23,
+                  5
+                ],
+                [
+                  23,
+                  6
+                ],
+                [
+                  23,
+                  7
+                ],
+                [
+                  23,
+                  8
+                ],
+                [
+                  23,
+                  11
+                ],
+                [
+                  23,
+                  12
+                ],
+                [
+                  23,
+                  13
+                ],
+                [
+                  23,
+                  14
+                ],
+                [
+                  23,
+                  15
+                ],
+                [
+                  23,
+                  17
+                ],
+                [
+                  23,
+                  29
+                ],
+                [
+                  24,
+                  0
+                ],
+                [
+                  24,
+                  1
+                ],
+                [
+                  24,
+                  3
+                ],
+                [
+                  24,
+                  5
+                ],
+                [
+                  24,
+                  6
+                ],
+                [
+                  24,
+                  7
+                ],
+                [
+                  24,
+                  9
+                ],
+                [
+                  24,
+                  11
+                ],
+                [
+                  24,
+                  12
+                ],
+                [
+                  24,
+                  13
+                ],
+                [
+                  24,
+                  14
+                ],
+                [
+                  24,
+                  15
+                ],
+                [
+                  24,
+                  16
+                ],
+                [
+                  24,
+                  17
+                ],
+                [
+                  24,
+                  21
+                ],
+                [
+                  24,
+                  24
+                ],
+                [
+                  24,
+                  25
+                ],
+                [
+                  24,
+                  26
+                ],
+                [
+                  24,
+                  27
+                ],
+                [
+                  24,
+                  28
+                ],
+                [
+                  24,
+                  29
+                ],
+                [
+                  24,
+                  30
+                ],
+                [
+                  24,
+                  31
+                ],
+                [
+                  25,
+                  0
+                ],
+                [
+                  25,
+                  1
+                ],
+                [
+                  25,
+                  2
+                ],
+                [
+                  25,
+                  3
+                ],
+                [
+                  25,
+                  4
+                ],
+                [
+                  25,
+                  5
+                ],
+                [
+                  25,
+                  8
+                ],
+                [
+                  25,
+                  10
+                ],
+                [
+                  25,
+                  11
+                ],
+                [
+                  25,
+                  12
+                ],
+                [
+                  25,
+                  13
+                ],
+                [
+                  25,
+                  14
+                ],
+                [
+                  25,
+                  16
+                ],
+                [
+                  25,
+                  18
+                ],
+                [
+                  25,
+                  19
+                ],
+                [
+                  25,
+                  20
+                ],
+                [
+                  25,
+                  23
+                ],
+                [
+                  25,
+                  24
+                ],
+                [
+                  25,
+                  25
+                ],
+                [
+                  25,
+                  26
+                ],
+                [
+                  25,
+                  27
+                ],
+                [
+                  25,
+                  29
+                ],
+                [
+                  25,
+                  30
+                ],
+                [
+                  25,
+                  31
+                ],
+                [
+                  26,
+                  0
+                ],
+                [
+                  26,
+                  1
+                ],
+                [
+                  26,
+                  2
+                ],
+                [
+                  26,
+                  3
+                ],
+                [
+                  26,
+                  5
+                ],
+                [
+                  26,
+                  7
+                ],
+                [
+                  26,
+                  12
+                ],
+                [
+                  26,
+                  13
+                ],
+                [
+                  26,
+                  14
+                ],
+                [
+                  26,
+                  16
+                ],
+                [
+                  26,
+                  17
+                ],
+                [
+                  26,
+                  18
+                ],
+                [
+                  26,
+                  24
+                ],
+                [
+                  26,
+                  28
+                ],
+                [
+                  26,
+                  30
+                ],
+                [
+                  26,
+                  31
+                ],
+                [
+                  27,
+                  0
+                ],
+                [
+                  27,
+                  3
+                ],
+                [
+                  27,
+                  4
+                ],
+                [
+                  27,
+                  5
+                ],
+                [
+                  27,
+                  6
+                ],
+                [
+                  27,
+                  8
+                ],
+                [
+                  27,
+                  14
+                ],
+                [
+                  27,
+                  16
+                ],
+                [
+                  27,
+                  17
+                ],
+                [
+                  27,
+                  18
+                ],
+                [
+                  27,
+                  19
+                ],
+                [
+                  27,
+                  22
+                ],
+                [
+                  27,
+                  25
+                ],
+                [
+                  27,
+                  26
+                ],
+                [
+                  27,
+                  27
+                ],
+                [
+                  27,
+                  29
+                ],
+                [
+                  27,
+                  30
+                ],
+                [
+                  27,
+                  31
+                ],
+                [
+                  28,
+                  1
+                ],
+                [
+                  28,
+                  2
+                ],
+                [
+                  28,
+                  3
+                ],
+                [
+                  28,
+                  9
+                ],
+                [
+                  28,
+                  11
+                ],
+                [
+                  28,
+                  16
+                ],
+                [
+                  28,
+                  17
+                ],
+                [
+                  28,
+                  18
+                ],
+                [
+                  28,
+                  19
+                ],
+                [
+                  28,
+                  25
+                ],
+                [
+                  28,
+                  26
+                ],
+                [
+                  28,
+                  28
+                ],
+                [
+                  28,
+                  29
+                ],
+                [
+                  28,
+                  31
+                ],
+                [
+                  29,
+                  1
+                ],
+                [
+                  29,
+                  3
+                ],
+                [
+                  29,
+                  9
+                ],
+                [
+                  29,
+                  10
+                ],
+                [
+                  29,
+                  15
+                ],
+                [
+                  29,
+                  18
+                ],
+                [
+                  29,
+                  20
+                ],
+                [
+                  29,
+                  21
+                ],
+                [
+                  29,
+                  23
+                ],
+                [
+                  29,
+                  30
+                ],
+                [
+                  30,
+                  0
+                ],
+                [
+                  30,
+                  2
+                ],
+                [
+                  30,
+                  3
+                ],
+                [
+                  30,
+                  8
+                ],
+                [
+                  30,
+                  10
+                ],
+                [
+                  30,
+                  24
+                ],
+                [
+                  30,
+                  25
+                ],
+                [
+                  30,
+                  26
+                ],
+                [
+                  30,
+                  27
+                ],
+                [
+                  30,
+                  31
+                ],
+                [
+                  31,
+                  6
+                ],
+                [
+                  31,
+                  15
+                ],
+                [
+                  31,
+                  18
+                ],
+                [
+                  31,
+                  21
+                ]
+              ],
+              "n_pruned_heads": 205,
+              "plan_summary": [
+                {
+                  "layer": 0,
+                  "n_pruned_heads": 5,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    6,
+                    9,
+                    15
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 1,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    15
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 2,
+                  "n_pruned_heads": 2,
+                  "pruned_heads": [
+                    20,
+                    23
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 3,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    10
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 4,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 5,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 6,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 7,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    16
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 8,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 9,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 10,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 11,
+                  "n_pruned_heads": 2,
+                  "pruned_heads": [
+                    8,
+                    14
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 12,
+                  "n_pruned_heads": 4,
+                  "pruned_heads": [
+                    5,
+                    7,
+                    10,
+                    11
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 13,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 14,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 15,
+                  "n_pruned_heads": 5,
+                  "pruned_heads": [
+                    23,
+                    24,
+                    25,
+                    26,
+                    27
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 16,
+                  "n_pruned_heads": 0,
+                  "pruned_heads": [],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 17,
+                  "n_pruned_heads": 1,
+                  "pruned_heads": [
+                    30
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 18,
+                  "n_pruned_heads": 7,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    3,
+                    21,
+                    22,
+                    23,
+                    29
+                  ],
+                  "attn_quant": "fp16",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 19,
+                  "n_pruned_heads": 3,
+                  "pruned_heads": [
+                    9,
+                    17,
+                    25
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 20,
+                  "n_pruned_heads": 11,
+                  "pruned_heads": [
+                    6,
+                    8,
+                    9,
+                    13,
+                    14,
+                    17,
+                    20,
+                    23,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 21,
+                  "n_pruned_heads": 12,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    10,
+                    11,
+                    16,
+                    17,
+                    18,
+                    19,
+                    27
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 22,
+                  "n_pruned_heads": 19,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    17,
+                    18,
+                    19,
+                    26,
+                    27,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 23,
+                  "n_pruned_heads": 12,
+                  "pruned_heads": [
+                    0,
+                    5,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    17,
+                    29
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 24,
+                  "n_pruned_heads": 23,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    3,
+                    5,
+                    6,
+                    7,
+                    9,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    21,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 25,
+                  "n_pruned_heads": 24,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    8,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    16,
+                    18,
+                    19,
+                    20,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 26,
+                  "n_pruned_heads": 16,
+                  "pruned_heads": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    5,
+                    7,
+                    12,
+                    13,
+                    14,
+                    16,
+                    17,
+                    18,
+                    24,
+                    28,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 27,
+                  "n_pruned_heads": 18,
+                  "pruned_heads": [
+                    0,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    14,
+                    16,
+                    17,
+                    18,
+                    19,
+                    22,
+                    25,
+                    26,
+                    27,
+                    29,
+                    30,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 28,
+                  "n_pruned_heads": 14,
+                  "pruned_heads": [
+                    1,
+                    2,
+                    3,
+                    9,
+                    11,
+                    16,
+                    17,
+                    18,
+                    19,
+                    25,
+                    26,
+                    28,
+                    29,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 29,
+                  "n_pruned_heads": 10,
+                  "pruned_heads": [
+                    1,
+                    3,
+                    9,
+                    10,
+                    15,
+                    18,
+                    20,
+                    21,
+                    23,
+                    30
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 30,
+                  "n_pruned_heads": 10,
+                  "pruned_heads": [
+                    0,
+                    2,
+                    3,
+                    8,
+                    10,
+                    24,
+                    25,
+                    26,
+                    27,
+                    31
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "int4",
+                  "mlp_pruned": false
+                },
+                {
+                  "layer": 31,
+                  "n_pruned_heads": 4,
+                  "pruned_heads": [
+                    6,
+                    15,
+                    18,
+                    21
+                  ],
+                  "attn_quant": "int4",
+                  "mlp_quant": "fp16",
+                  "mlp_pruned": false
+                }
+              ],
+              "budget_nominal": {
+                "params_total": 6979321856.0,
+                "params_pruned": 214958080.0,
+                "pruned_ratio": 0.030799278846153848,
+                "bits_fp16": 111669149696.0,
+                "bits_compressed": 61735960576.0,
+                "size_ratio": 0.5528470552884616,
+                "avg_bits_per_param": 8.845552884615385
+              },
+              "int4_modules_planned": 125,
+              "int4_module_set_equals_single": false,
+              "pruning": {
+                "pruned_heads": 205,
+                "pruned_mlp_blocks": 0
+              },
+              "quantization_path": "primary (compressor._quantize_linear)",
+              "quantization": {
+                "int4_modules": 125,
+                "int8_modules": 0
+              },
+              "apply_seconds": 35.30422592163086,
+              "int4_modules": 125,
+              "int4_modules_equals_single": false,
+              "model_bytes_after": {
+                "bytes": 8405925888,
+                "gb": 8.405925888,
+                "by_dtype_bytes": {
+                  "torch.float16": 6375874560,
+                  "torch.uint8": 2030043136,
+                  "torch.float32": 8192
+                }
+              },
+              "measured_model_bytes_ratio": 0.5798767813971782,
+              "perplexity": 5.874284267425537,
+              "perplexity_seconds": 76.4199287891388,
+              "perplexity_finite": true,
+              "peak_vram_gb": 19.974656,
+              "cuda_allocated_after_free_gb": 0.017040384,
+              "seconds": 1162.0959663391113
+            }
+          ],
+          "n_repeats": 1,
+          "stochastic": false,
+          "n_completed_repeats": 1,
+          "perplexity_values": [
+            5.874284267425537
+          ],
+          "perplexity_mean": 5.874284267425537,
+          "perplexity_std": 0.0,
+          "pruned_heads": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              9
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              2,
+              23
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              15,
+              23
+            ],
+            [
+              15,
+              24
+            ],
+            [
+              15,
+              25
+            ],
+            [
+              15,
+              26
+            ],
+            [
+              15,
+              27
+            ],
+            [
+              17,
+              30
+            ],
+            [
+              18,
+              0
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              18,
+              3
+            ],
+            [
+              18,
+              21
+            ],
+            [
+              18,
+              22
+            ],
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              29
+            ],
+            [
+              19,
+              9
+            ],
+            [
+              19,
+              17
+            ],
+            [
+              19,
+              25
+            ],
+            [
+              20,
+              6
+            ],
+            [
+              20,
+              8
+            ],
+            [
+              20,
+              9
+            ],
+            [
+              20,
+              13
+            ],
+            [
+              20,
+              14
+            ],
+            [
+              20,
+              17
+            ],
+            [
+              20,
+              20
+            ],
+            [
+              20,
+              23
+            ],
+            [
+              20,
+              29
+            ],
+            [
+              20,
+              30
+            ],
+            [
+              20,
+              31
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              21,
+              1
+            ],
+            [
+              21,
+              2
+            ],
+            [
+              21,
+              3
+            ],
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              10
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              21,
+              18
+            ],
+            [
+              21,
+              19
+            ],
+            [
+              21,
+              27
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              22,
+              2
+            ],
+            [
+              22,
+              3
+            ],
+            [
+              22,
+              4
+            ],
+            [
+              22,
+              5
+            ],
+            [
+              22,
+              6
+            ],
+            [
+              22,
+              7
+            ],
+            [
+              22,
+              8
+            ],
+            [
+              22,
+              9
+            ],
+            [
+              22,
+              10
+            ],
+            [
+              22,
+              11
+            ],
+            [
+              22,
+              17
+            ],
+            [
+              22,
+              18
+            ],
+            [
+              22,
+              19
+            ],
+            [
+              22,
+              26
+            ],
+            [
+              22,
+              27
+            ],
+            [
+              22,
+              30
+            ],
+            [
+              22,
+              31
+            ],
+            [
+              23,
+              0
+            ],
+            [
+              23,
+              5
+            ],
+            [
+              23,
+              6
+            ],
+            [
+              23,
+              7
+            ],
+            [
+              23,
+              8
+            ],
+            [
+              23,
+              11
+            ],
+            [
+              23,
+              12
+            ],
+            [
+              23,
+              13
+            ],
+            [
+              23,
+              14
+            ],
+            [
+              23,
+              15
+            ],
+            [
+              23,
+              17
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              24,
+              0
+            ],
+            [
+              24,
+              1
+            ],
+            [
+              24,
+              3
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              24,
+              6
+            ],
+            [
+              24,
+              7
+            ],
+            [
+              24,
+              9
+            ],
+            [
+              24,
+              11
+            ],
+            [
+              24,
+              12
+            ],
+            [
+              24,
+              13
+            ],
+            [
+              24,
+              14
+            ],
+            [
+              24,
+              15
+            ],
+            [
+              24,
+              16
+            ],
+            [
+              24,
+              17
+            ],
+            [
+              24,
+              21
+            ],
+            [
+              24,
+              24
+            ],
+            [
+              24,
+              25
+            ],
+            [
+              24,
+              26
+            ],
+            [
+              24,
+              27
+            ],
+            [
+              24,
+              28
+            ],
+            [
+              24,
+              29
+            ],
+            [
+              24,
+              30
+            ],
+            [
+              24,
+              31
+            ],
+            [
+              25,
+              0
+            ],
+            [
+              25,
+              1
+            ],
+            [
+              25,
+              2
+            ],
+            [
+              25,
+              3
+            ],
+            [
+              25,
+              4
+            ],
+            [
+              25,
+              5
+            ],
+            [
+              25,
+              8
+            ],
+            [
+              25,
+              10
+            ],
+            [
+              25,
+              11
+            ],
+            [
+              25,
+              12
+            ],
+            [
+              25,
+              13
+            ],
+            [
+              25,
+              14
+            ],
+            [
+              25,
+              16
+            ],
+            [
+              25,
+              18
+            ],
+            [
+              25,
+              19
+            ],
+            [
+              25,
+              20
+            ],
+            [
+              25,
+              23
+            ],
+            [
+              25,
+              24
+            ],
+            [
+              25,
+              25
+            ],
+            [
+              25,
+              26
+            ],
+            [
+              25,
+              27
+            ],
+            [
+              25,
+              29
+            ],
+            [
+              25,
+              30
+            ],
+            [
+              25,
+              31
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              26,
+              1
+            ],
+            [
+              26,
+              2
+            ],
+            [
+              26,
+              3
+            ],
+            [
+              26,
+              5
+            ],
+            [
+              26,
+              7
+            ],
+            [
+              26,
+              12
+            ],
+            [
+              26,
+              13
+            ],
+            [
+              26,
+              14
+            ],
+            [
+              26,
+              16
+            ],
+            [
+              26,
+              17
+            ],
+            [
+              26,
+              18
+            ],
+            [
+              26,
+              24
+            ],
+            [
+              26,
+              28
+            ],
+            [
+              26,
+              30
+            ],
+            [
+              26,
+              31
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              27,
+              3
+            ],
+            [
+              27,
+              4
+            ],
+            [
+              27,
+              5
+            ],
+            [
+              27,
+              6
+            ],
+            [
+              27,
+              8
+            ],
+            [
+              27,
+              14
+            ],
+            [
+              27,
+              16
+            ],
+            [
+              27,
+              17
+            ],
+            [
+              27,
+              18
+            ],
+            [
+              27,
+              19
+            ],
+            [
+              27,
+              22
+            ],
+            [
+              27,
+              25
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              27,
+              27
+            ],
+            [
+              27,
+              29
+            ],
+            [
+              27,
+              30
+            ],
+            [
+              27,
+              31
+            ],
+            [
+              28,
+              1
+            ],
+            [
+              28,
+              2
+            ],
+            [
+              28,
+              3
+            ],
+            [
+              28,
+              9
+            ],
+            [
+              28,
+              11
+            ],
+            [
+              28,
+              16
+            ],
+            [
+              28,
+              17
+            ],
+            [
+              28,
+              18
+            ],
+            [
+              28,
+              19
+            ],
+            [
+              28,
+              25
+            ],
+            [
+              28,
+              26
+            ],
+            [
+              28,
+              28
+            ],
+            [
+              28,
+              29
+            ],
+            [
+              28,
+              31
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              29,
+              3
+            ],
+            [
+              29,
+              9
+            ],
+            [
+              29,
+              10
+            ],
+            [
+              29,
+              15
+            ],
+            [
+              29,
+              18
+            ],
+            [
+              29,
+              20
+            ],
+            [
+              29,
+              21
+            ],
+            [
+              29,
+              23
+            ],
+            [
+              29,
+              30
+            ],
+            [
+              30,
+              0
+            ],
+            [
+              30,
+              2
+            ],
+            [
+              30,
+              3
+            ],
+            [
+              30,
+              8
+            ],
+            [
+              30,
+              10
+            ],
+            [
+              30,
+              24
+            ],
+            [
+              30,
+              25
+            ],
+            [
+              30,
+              26
+            ],
+            [
+              30,
+              27
+            ],
+            [
+              30,
+              31
+            ],
+            [
+              31,
+              6
+            ],
+            [
+              31,
+              15
+            ],
+            [
+              31,
+              18
+            ],
+            [
+              31,
+              21
+            ]
+          ],
+          "n_pruned_heads": 205,
+          "int4_modules": 125,
+          "int4_modules_equals_single": false,
+          "int4_module_set_equals_single": false,
+          "measured_model_bytes_ratio": 0.5798767813971782,
+          "budget_nominal": {
+            "params_total": 6979321856.0,
+            "params_pruned": 214958080.0,
+            "pruned_ratio": 0.030799278846153848,
+            "bits_fp16": 111669149696.0,
+            "bits_compressed": 61735960576.0,
+            "size_ratio": 0.5528470552884616,
+            "avg_bits_per_param": 8.845552884615385
+          },
+          "model_bytes_after_gb": 8.405925888,
+          "pruned_heads_identical_across_repeats": true,
+          "seconds": 1162.0959663391113,
+          "peak_vram_gb": 19.974656,
+          "overlap_with_xai_heads": [
+            196
+          ],
+          "attribution_calls": 3,
+          "attribution_seconds_total": 1036.671588897705,
+          "round_shares": [
+            69,
+            68,
+            68
+          ],
+          "round_pruned_heads": [
+            [
+              [
+                2,
+                20
+              ],
+              [
+                3,
+                10
+              ],
+              [
+                7,
+                16
+              ],
+              [
+                12,
+                5
+              ],
+              [
+                12,
+                10
+              ],
+              [
+                15,
+                24
+              ],
+              [
+                15,
+                26
+              ],
+              [
+                18,
+                0
+              ],
+              [
+                18,
+                1
+              ],
+              [
+                18,
+                3
+              ],
+              [
+                20,
+                6
+              ],
+              [
+                20,
+                29
+              ],
+              [
+                20,
+                30
+              ],
+              [
+                20,
+                31
+              ],
+              [
+                21,
+                0
+              ],
+              [
+                21,
+                1
+              ],
+              [
+                21,
+                2
+              ],
+              [
+                21,
+                3
+              ],
+              [
+                21,
+                4
+              ],
+              [
+                21,
+                11
+              ],
+              [
+                21,
+                16
+              ],
+              [
+                21,
+                18
+              ],
+              [
+                21,
+                19
+              ],
+              [
+                22,
+                0
+              ],
+              [
+                22,
+                1
+              ],
+              [
+                22,
+                3
+              ],
+              [
+                22,
+                4
+              ],
+              [
+                22,
+                6
+              ],
+              [
+                22,
+                9
+              ],
+              [
+                22,
+                10
+              ],
+              [
+                23,
+                13
+              ],
+              [
+                23,
+                14
+              ],
+              [
+                23,
+                15
+              ],
+              [
+                24,
+                5
+              ],
+              [
+                24,
+                6
+              ],
+              [
+                24,
+                11
+              ],
+              [
+                24,
+                16
+              ],
+              [
+                24,
+                25
+              ],
+              [
+                24,
+                27
+              ],
+              [
+                24,
+                28
+              ],
+              [
+                24,
+                30
+              ],
+              [
+                25,
+                2
+              ],
+              [
+                25,
+                3
+              ],
+              [
+                25,
+                23
+              ],
+              [
+                25,
+                24
+              ],
+              [
+                25,
+                25
+              ],
+              [
+                25,
+                26
+              ],
+              [
+                25,
+                27
+              ],
+              [
+                25,
+                30
+              ],
+              [
+                26,
+                2
+              ],
+              [
+                26,
+                3
+              ],
+              [
+                26,
+                5
+              ],
+              [
+                26,
+                12
+              ],
+              [
+                26,
+                13
+              ],
+              [
+                26,
+                14
+              ],
+              [
+                26,
+                16
+              ],
+              [
+                26,
+                17
+              ],
+              [
+                27,
+                16
+              ],
+              [
+                27,
+                27
+              ],
+              [
+                27,
+                30
+              ],
+              [
+                28,
+                1
+              ],
+              [
+                28,
+                3
+              ],
+              [
+                28,
+                9
+              ],
+              [
+                28,
+                11
+              ],
+              [
+                28,
+                16
+              ],
+              [
+                28,
+                25
+              ],
+              [
+                28,
+                31
+              ],
+              [
+                29,
+                3
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                6
+              ],
+              [
+                2,
+                23
+              ],
+              [
+                15,
+                23
+              ],
+              [
+                18,
+                21
+              ],
+              [
+                18,
+                23
+              ],
+              [
+                19,
+                9
+              ],
+              [
+                20,
+                9
+              ],
+              [
+                20,
+                13
+              ],
+              [
+                20,
+                14
+              ],
+              [
+                21,
+                10
+              ],
+              [
+                21,
+                27
+              ],
+              [
+                22,
+                2
+              ],
+              [
+                22,
+                7
+              ],
+              [
+                22,
+                8
+              ],
+              [
+                22,
+                11
+              ],
+              [
+                22,
+                17
+              ],
+              [
+                22,
+                18
+              ],
+              [
+                22,
+                19
+              ],
+              [
+                22,
+                27
+              ],
+              [
+                22,
+                30
+              ],
+              [
+                23,
+                7
+              ],
+              [
+                23,
+                8
+              ],
+              [
+                23,
+                11
+              ],
+              [
+                23,
+                12
+              ],
+              [
+                23,
+                29
+              ],
+              [
+                24,
+                0
+              ],
+              [
+                24,
+                7
+              ],
+              [
+                24,
+                12
+              ],
+              [
+                24,
+                26
+              ],
+              [
+                24,
+                29
+              ],
+              [
+                24,
+                31
+              ],
+              [
+                25,
+                0
+              ],
+              [
+                25,
+                5
+              ],
+              [
+                25,
+                8
+              ],
+              [
+                25,
+                10
+              ],
+              [
+                25,
+                12
+              ],
+              [
+                25,
+                13
+              ],
+              [
+                25,
+                14
+              ],
+              [
+                25,
+                18
+              ],
+              [
+                25,
+                19
+              ],
+              [
+                25,
+                20
+              ],
+              [
+                25,
+                29
+              ],
+              [
+                26,
+                1
+              ],
+              [
+                26,
+                7
+              ],
+              [
+                26,
+                18
+              ],
+              [
+                26,
+                24
+              ],
+              [
+                26,
+                31
+              ],
+              [
+                27,
+                3
+              ],
+              [
+                27,
+                5
+              ],
+              [
+                27,
+                19
+              ],
+              [
+                27,
+                29
+              ],
+              [
+                27,
+                31
+              ],
+              [
+                28,
+                17
+              ],
+              [
+                28,
+                18
+              ],
+              [
+                28,
+                19
+              ],
+              [
+                28,
+                26
+              ],
+              [
+                28,
+                28
+              ],
+              [
+                28,
+                29
+              ],
+              [
+                29,
+                1
+              ],
+              [
+                29,
+                9
+              ],
+              [
+                29,
+                10
+              ],
+              [
+                29,
+                18
+              ],
+              [
+                29,
+                20
+              ],
+              [
+                30,
+                0
+              ],
+              [
+                30,
+                2
+              ],
+              [
+                30,
+                8
+              ],
+              [
+                30,
+                24
+              ],
+              [
+                31,
+                18
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                9
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                15
+              ],
+              [
+                11,
+                8
+              ],
+              [
+                11,
+                14
+              ],
+              [
+                12,
+                7
+              ],
+              [
+                12,
+                11
+              ],
+              [
+                15,
+                25
+              ],
+              [
+                15,
+                27
+              ],
+              [
+                17,
+                30
+              ],
+              [
+                18,
+                22
+              ],
+              [
+                18,
+                29
+              ],
+              [
+                19,
+                17
+              ],
+              [
+                19,
+                25
+              ],
+              [
+                20,
+                8
+              ],
+              [
+                20,
+                17
+              ],
+              [
+                20,
+                20
+              ],
+              [
+                20,
+                23
+              ],
+              [
+                21,
+                17
+              ],
+              [
+                22,
+                5
+              ],
+              [
+                22,
+                26
+              ],
+              [
+                22,
+                31
+              ],
+              [
+                23,
+                0
+              ],
+              [
+                23,
+                5
+              ],
+              [
+                23,
+                6
+              ],
+              [
+                23,
+                17
+              ],
+              [
+                24,
+                1
+              ],
+              [
+                24,
+                3
+              ],
+              [
+                24,
+                9
+              ],
+              [
+                24,
+                13
+              ],
+              [
+                24,
+                14
+              ],
+              [
+                24,
+                15
+              ],
+              [
+                24,
+                17
+              ],
+              [
+                24,
+                21
+              ],
+              [
+                24,
+                24
+              ],
+              [
+                25,
+                1
+              ],
+              [
+                25,
+                4
+              ],
+              [
+                25,
+                11
+              ],
+              [
+                25,
+                16
+              ],
+              [
+                25,
+                31
+              ],
+              [
+                26,
+                0
+              ],
+              [
+                26,
+                28
+              ],
+              [
+                26,
+                30
+              ],
+              [
+                27,
+                0
+              ],
+              [
+                27,
+                4
+              ],
+              [
+                27,
+                6
+              ],
+              [
+                27,
+                8
+              ],
+              [
+                27,
+                14
+              ],
+              [
+                27,
+                17
+              ],
+              [
+                27,
+                18
+              ],
+              [
+                27,
+                22
+              ],
+              [
+                27,
+                25
+              ],
+              [
+                27,
+                26
+              ],
+              [
+                28,
+                2
+              ],
+              [
+                29,
+                15
+              ],
+              [
+                29,
+                21
+              ],
+              [
+                29,
+                23
+              ],
+              [
+                29,
+                30
+              ],
+              [
+                30,
+                10
+              ],
+              [
+                30,
+                25
+              ],
+              [
+                30,
+                26
+              ],
+              [
+                30,
+                27
+              ],
+              [
+                30,
+                31
+              ],
+              [
+                31,
+                6
+              ],
+              [
+                31,
+                15
+              ],
+              [
+                31,
+                21
+              ]
+            ]
+          ],
+          "round_seconds": [
+            345.7483506202698,
+            345.8884527683258,
+            345.0639533996582
+          ],
+          "delta_vs_fp16": 0.654325008392334,
+          "ratio_vs_fp16": 1.1253505968001603
+        }
+      },
+      "comparison": {
+        "xai_iter_minus_xai_single_ppl": -0.4427809715270996
+      }
+    }
+  }
+}

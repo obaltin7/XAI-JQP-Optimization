@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+# Separate GPTQ / AWQ environment (see requirements-quant.txt)
+.venv-quant/
+
+# IDE / tooling settings (machine specific)
+.idea/
+.vscode/
+
+# Hugging Face model / dataset cache (if created locally)
+hf_cache/
+
+# Generated experiment outputs (produced at run time by the scripts).
+# results/*.json are tracked: they are the source of tools/visualization/make_figures.py.
+results/**/*.png
+figures/
+tables/
+logs/
+dryrun_out/
+log_*.txt
+nohup_*.out
+
+# OS artefacts
+.DS_Store
+Thumbs.db

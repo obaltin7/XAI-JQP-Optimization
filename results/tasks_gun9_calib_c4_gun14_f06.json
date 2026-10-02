@@ -1,0 +1,76 @@
+{
+  "run": {
+    "started_at": "2026-09-21T19:32:10",
+    "status": "completed",
+    "args": {
+      "plan": "results/calib_c4_gun14_f06.json",
+      "fractions": "0.6",
+      "configs": "xai_iter_fixedq",
+      "tasks": "hellaswag,arc_challenge",
+      "with_mmlu": true,
+      "verify_ppl": false,
+      "ppl_datasets": null,
+      "save_window_nll": false,
+      "skip_fp16": true,
+      "model": null,
+      "dtype": null,
+      "batch_size": 16,
+      "mmlu_batch_size": 8,
+      "seed": 42,
+      "random_seed": 42,
+      "output": "results/tasks_gun9_calib_c4_gun14_f06.json",
+      "log": "log_gun14_tasks_c4_f06.txt",
+      "resume": false,
+      "preflight": false,
+      "dry_run": false
+    },
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "dtype": "fp16",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "tasks": [
+      "hellaswag",
+      "arc_challenge"
+    ],
+    "entry_order": [],
+    "time_estimate": {
+      "minutes_per_entry": 5.0,
+      "total_minutes": 0.0
+    },
+    "finished_at": "2026-09-21T19:32:18",
+    "total_seconds": 8.580488204956055
+  },
+  "source": {
+    "plan_file": "results/calib_c4_gun14_f06.json",
+    "plan_model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "plan_format": "fractions",
+    "random_seed": 42,
+    "note": "planlar kaynak koşunun repeats[].pruned_heads + plan_summary alanlarından; attribution yapılmaz; budama maskeli (apply_structural_pruning), kuantizasyon bnb NF4 (Gün 5–7 ile aynı yol)",
+    "subsets": {
+      "hellaswag": {
+        "dataset": "Rowan/hellaswag",
+        "config": null,
+        "split": "validation",
+        "seed": 42,
+        "n": 500
+      },
+      "arc_challenge": {
+        "dataset": "allenai/ai2_arc",
+        "config": "ARC-Challenge",
+        "split": "test",
+        "seed": 42,
+        "n": 500
+      }
+    }
+  },
+  "entries": {}
+}

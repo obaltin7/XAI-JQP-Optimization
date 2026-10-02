@@ -1,0 +1,1404 @@
+{
+  "run": {
+    "started_at": "2026-09-20T22:04:54",
+    "status": "completed",
+    "args": {
+      "plan": "results/iterative_gun7.json",
+      "heads_from": "xai_iter_fixedq",
+      "fraction": "0.2",
+      "variants": "fp16,masked,physical,physical_int4",
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 1,
+      "attn_implementation": null,
+      "perplexity": true,
+      "seed": 42,
+      "output": "results/speed_gun8_fixedq.json",
+      "log": "log_gun8_fixedq.txt",
+      "preflight": false,
+      "dry_run": false
+    },
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "prompts": [
+      "The main causes of the French Revolution were",
+      "In computer science, a hash table is",
+      "The capital of Australia is",
+      "Photosynthesis is the process by which plants",
+      "Write a short description of the water cycle:",
+      "The theory of relativity, proposed by Albert Einstein,",
+      "A balanced diet should include",
+      "The Roman Empire fell because"
+    ],
+    "perplexity_settings": {
+      "max_length": 1024,
+      "stride": 512,
+      "dataset": "wikitext-2-raw-v1 (test split)"
+    },
+    "finished_at": "2026-09-20T22:12:15"
+  },
+  "source": {
+    "plan_file": "results/iterative_gun7.json",
+    "config": "xai_iter_fixedq",
+    "fraction": "0.2",
+    "seed": 42,
+    "perplexity_in_source": 5.865386962890625,
+    "n_heads": 205,
+    "int4_layers": {
+      "attn": 18,
+      "mlp": 19
+    },
+    "pruned_heads": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        15
+      ],
+      [
+        1,
+        15
+      ],
+      [
+        2,
+        20
+      ],
+      [
+        2,
+        23
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        7,
+        16
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        11,
+        14
+      ],
+      [
+        12,
+        5
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        15,
+        23
+      ],
+      [
+        15,
+        24
+      ],
+      [
+        15,
+        25
+      ],
+      [
+        15,
+        26
+      ],
+      [
+        15,
+        27
+      ],
+      [
+        17,
+        30
+      ],
+      [
+        18,
+        0
+      ],
+      [
+        18,
+        1
+      ],
+      [
+        18,
+        3
+      ],
+      [
+        18,
+        21
+      ],
+      [
+        18,
+        22
+      ],
+      [
+        18,
+        23
+      ],
+      [
+        18,
+        29
+      ],
+      [
+        19,
+        9
+      ],
+      [
+        19,
+        17
+      ],
+      [
+        19,
+        25
+      ],
+      [
+        20,
+        6
+      ],
+      [
+        20,
+        8
+      ],
+      [
+        20,
+        9
+      ],
+      [
+        20,
+        13
+      ],
+      [
+        20,
+        14
+      ],
+      [
+        20,
+        17
+      ],
+      [
+        20,
+        20
+      ],
+      [
+        20,
+        23
+      ],
+      [
+        20,
+        29
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        20,
+        31
+      ],
+      [
+        21,
+        0
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        21,
+        2
+      ],
+      [
+        21,
+        3
+      ],
+      [
+        21,
+        4
+      ],
+      [
+        21,
+        10
+      ],
+      [
+        21,
+        11
+      ],
+      [
+        21,
+        16
+      ],
+      [
+        21,
+        17
+      ],
+      [
+        21,
+        18
+      ],
+      [
+        21,
+        19
+      ],
+      [
+        21,
+        27
+      ],
+      [
+        22,
+        0
+      ],
+      [
+        22,
+        1
+      ],
+      [
+        22,
+        2
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        22,
+        5
+      ],
+      [
+        22,
+        6
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        22,
+        8
+      ],
+      [
+        22,
+        9
+      ],
+      [
+        22,
+        10
+      ],
+      [
+        22,
+        11
+      ],
+      [
+        22,
+        17
+      ],
+      [
+        22,
+        18
+      ],
+      [
+        22,
+        19
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        22,
+        27
+      ],
+      [
+        22,
+        30
+      ],
+      [
+        22,
+        31
+      ],
+      [
+        23,
+        0
+      ],
+      [
+        23,
+        5
+      ],
+      [
+        23,
+        6
+      ],
+      [
+        23,
+        7
+      ],
+      [
+        23,
+        8
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        13
+      ],
+      [
+        23,
+        14
+      ],
+      [
+        23,
+        15
+      ],
+      [
+        23,
+        17
+      ],
+      [
+        23,
+        29
+      ],
+      [
+        24,
+        0
+      ],
+      [
+        24,
+        1
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        24,
+        5
+      ],
+      [
+        24,
+        6
+      ],
+      [
+        24,
+        7
+      ],
+      [
+        24,
+        9
+      ],
+      [
+        24,
+        11
+      ],
+      [
+        24,
+        12
+      ],
+      [
+        24,
+        13
+      ],
+      [
+        24,
+        14
+      ],
+      [
+        24,
+        15
+      ],
+      [
+        24,
+        16
+      ],
+      [
+        24,
+        17
+      ],
+      [
+        24,
+        21
+      ],
+      [
+        24,
+        24
+      ],
+      [
+        24,
+        25
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        24,
+        27
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        24,
+        29
+      ],
+      [
+        24,
+        30
+      ],
+      [
+        24,
+        31
+      ],
+      [
+        25,
+        0
+      ],
+      [
+        25,
+        1
+      ],
+      [
+        25,
+        2
+      ],
+      [
+        25,
+        3
+      ],
+      [
+        25,
+        4
+      ],
+      [
+        25,
+        5
+      ],
+      [
+        25,
+        8
+      ],
+      [
+        25,
+        10
+      ],
+      [
+        25,
+        11
+      ],
+      [
+        25,
+        12
+      ],
+      [
+        25,
+        13
+      ],
+      [
+        25,
+        14
+      ],
+      [
+        25,
+        16
+      ],
+      [
+        25,
+        18
+      ],
+      [
+        25,
+        19
+      ],
+      [
+        25,
+        20
+      ],
+      [
+        25,
+        23
+      ],
+      [
+        25,
+        24
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        25,
+        26
+      ],
+      [
+        25,
+        27
+      ],
+      [
+        25,
+        29
+      ],
+      [
+        25,
+        30
+      ],
+      [
+        25,
+        31
+      ],
+      [
+        26,
+        0
+      ],
+      [
+        26,
+        1
+      ],
+      [
+        26,
+        2
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        26,
+        5
+      ],
+      [
+        26,
+        7
+      ],
+      [
+        26,
+        12
+      ],
+      [
+        26,
+        13
+      ],
+      [
+        26,
+        14
+      ],
+      [
+        26,
+        16
+      ],
+      [
+        26,
+        17
+      ],
+      [
+        26,
+        18
+      ],
+      [
+        26,
+        24
+      ],
+      [
+        26,
+        28
+      ],
+      [
+        26,
+        30
+      ],
+      [
+        26,
+        31
+      ],
+      [
+        27,
+        0
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        27,
+        4
+      ],
+      [
+        27,
+        5
+      ],
+      [
+        27,
+        6
+      ],
+      [
+        27,
+        8
+      ],
+      [
+        27,
+        14
+      ],
+      [
+        27,
+        16
+      ],
+      [
+        27,
+        17
+      ],
+      [
+        27,
+        18
+      ],
+      [
+        27,
+        19
+      ],
+      [
+        27,
+        22
+      ],
+      [
+        27,
+        25
+      ],
+      [
+        27,
+        26
+      ],
+      [
+        27,
+        27
+      ],
+      [
+        27,
+        29
+      ],
+      [
+        27,
+        30
+      ],
+      [
+        27,
+        31
+      ],
+      [
+        28,
+        1
+      ],
+      [
+        28,
+        2
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        28,
+        9
+      ],
+      [
+        28,
+        11
+      ],
+      [
+        28,
+        16
+      ],
+      [
+        28,
+        17
+      ],
+      [
+        28,
+        18
+      ],
+      [
+        28,
+        19
+      ],
+      [
+        28,
+        25
+      ],
+      [
+        28,
+        26
+      ],
+      [
+        28,
+        28
+      ],
+      [
+        28,
+        29
+      ],
+      [
+        28,
+        31
+      ],
+      [
+        29,
+        1
+      ],
+      [
+        29,
+        3
+      ],
+      [
+        29,
+        9
+      ],
+      [
+        29,
+        10
+      ],
+      [
+        29,
+        15
+      ],
+      [
+        29,
+        18
+      ],
+      [
+        29,
+        20
+      ],
+      [
+        29,
+        21
+      ],
+      [
+        29,
+        23
+      ],
+      [
+        29,
+        30
+      ],
+      [
+        30,
+        0
+      ],
+      [
+        30,
+        2
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        30,
+        8
+      ],
+      [
+        30,
+        10
+      ],
+      [
+        30,
+        24
+      ],
+      [
+        30,
+        25
+      ],
+      [
+        30,
+        26
+      ],
+      [
+        30,
+        27
+      ],
+      [
+        30,
+        31
+      ],
+      [
+        31,
+        6
+      ],
+      [
+        31,
+        15
+      ],
+      [
+        31,
+        18
+      ],
+      [
+        31,
+        21
+      ]
+    ]
+  },
+  "variants": {
+    "fp16": {
+      "status": "completed",
+      "started_at": "2026-09-20T22:04:57",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 12.559475183486938,
+      "params_before": 7248023552,
+      "peak_vram_load_apply_gb": 14.496063488,
+      "cuda_allocated_after_apply_gb": 14.496063488,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "wrapped_attention_class": null,
+      "n_params": 7248023552,
+      "model_bytes": {
+        "bytes": 14496055296,
+        "gb": 14.496055296,
+        "by_dtype_bytes": {
+          "torch.float16": 14496047104,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 1,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.642687196843326,
+          "ms_per_token": 25.66698745067697
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.6392745631746948,
+          "ms_per_token": 25.613665049604606
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.6410368238575757,
+          "ms_per_token": 25.64120037277462
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.6618254757486284,
+          "ms_per_token": 25.96602305857232
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 1.6570998313836753,
+          "ms_per_token": 25.892184865369927
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.6389588830061257,
+          "ms_per_token": 25.608732546970714
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.6685161432251334,
+          "ms_per_token": 26.07056473789271
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7022900679148734,
+          "ms_per_token": 26.598282311169896
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 13.251688985154033,
+          "ms_per_token": 25.88220504912897
+        }
+      ],
+      "warmup_seconds": 2.18106820108369,
+      "sample_completion": "the social, economic, and political problems that had been building up in France for many years.\n\n1. Social Problems:\n- The French society was divided into three estates: the clergy, the nobility, and the common people (third estate). The third estate made up the majority of",
+      "generated_tokens": 512,
+      "generation_seconds": 13.251688985154033,
+      "ms_per_token": 25.88220504912897,
+      "tokens_per_second": 38.63658440622908,
+      "ms_per_token_std": 0.0,
+      "perplexity": 5.219959259033203,
+      "perplexity_seconds": 63.87585997581482,
+      "peak_vram_generation_gb": 15.184411648,
+      "peak_vram_gb": 15.184411648,
+      "cuda_allocated_after_free_gb": 14.504583168,
+      "seconds": 92.24085855484009
+    },
+    "masked": {
+      "status": "completed",
+      "started_at": "2026-09-20T22:06:29",
+      "cuda_allocated_before_load_gb": 0.00851968,
+      "model_load_seconds": 12.284561157226562,
+      "params_before": 7248023552,
+      "pruning": {
+        "pruned_heads": 205,
+        "pruned_mlp_blocks": 0
+      },
+      "peak_vram_load_apply_gb": 14.504583168,
+      "cuda_allocated_after_apply_gb": 14.504583168,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "wrapped_attention_class": null,
+      "n_params": 7248023552,
+      "model_bytes": {
+        "bytes": 14496055296,
+        "gb": 14.496055296,
+        "by_dtype_bytes": {
+          "torch.float16": 14496047104,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 1,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.6726888907141984,
+          "ms_per_token": 26.13576391740935
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.671995937358588,
+          "ms_per_token": 26.124936521227937
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.6649532853625715,
+          "ms_per_token": 26.01489508379018
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.6683552521280944,
+          "ms_per_token": 26.068050814501476
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 1.660992082208395,
+          "ms_per_token": 25.953001284506172
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.6619624202139676,
+          "ms_per_token": 25.968162815843243
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.6606698506511748,
+          "ms_per_token": 25.947966416424606
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.658199102152139,
+          "ms_per_token": 25.90936097112717
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 13.319816820789129,
+          "ms_per_token": 26.015267228103767
+        }
+      ],
+      "warmup_seconds": 1.6844605142250657,
+      "sample_completion": "the social, political, and economic problems that had been building up in France for many years.\n\n1. Social Inequality: The French society was divided into three estates: the clergy, the nobility, and the common people (third estate). The first two estates were exempt from many",
+      "generated_tokens": 512,
+      "generation_seconds": 13.319816820789129,
+      "ms_per_token": 26.015267228103767,
+      "tokens_per_second": 38.43896705853247,
+      "ms_per_token_std": 0.0,
+      "perplexity": 5.81741189956665,
+      "perplexity_seconds": 65.28140044212341,
+      "peak_vram_generation_gb": 15.184411648,
+      "peak_vram_gb": 15.184411648,
+      "cuda_allocated_after_free_gb": 14.504583168,
+      "seconds": 93.68318963050842
+    },
+    "physical": {
+      "status": "completed",
+      "started_at": "2026-09-20T22:08:03",
+      "cuda_allocated_before_load_gb": 0.00851968,
+      "model_load_seconds": 12.193475008010864,
+      "params_before": 7248023552,
+      "pruning": {
+        "pruned_heads": 205,
+        "params_before": 7248023552,
+        "params_after": 7033065472,
+        "params_removed": 214958080,
+        "params_removed_expected": 214958080,
+        "num_heads_per_layer": {
+          "0": 27,
+          "1": 31,
+          "2": 30,
+          "3": 31,
+          "7": 31,
+          "11": 30,
+          "12": 28,
+          "15": 27,
+          "17": 31,
+          "18": 25,
+          "19": 29,
+          "20": 21,
+          "21": 20,
+          "22": 13,
+          "23": 20,
+          "24": 9,
+          "25": 8,
+          "26": 16,
+          "27": 14,
+          "28": 18,
+          "29": 22,
+          "30": 22,
+          "31": 28
+        }
+      },
+      "peak_vram_load_apply_gb": 14.563303424,
+      "cuda_allocated_after_apply_gb": 14.084115968,
+      "attn_implementation": "sdpa",
+      "attention_class": "PrunedHeadAttention",
+      "wrapped_attention_class": "MistralSdpaAttention",
+      "n_params": 7033065472,
+      "model_bytes": {
+        "bytes": 14066143384,
+        "gb": 14.066143384,
+        "by_dtype_bytes": {
+          "torch.float16": 14066130944,
+          "torch.int64": 4248,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 1,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.7031339290551841,
+          "ms_per_token": 26.611467641487252
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.706814092118293,
+          "ms_per_token": 26.66897018934833
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7407325902022421,
+          "ms_per_token": 27.198946721910033
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.7047948478721082,
+          "ms_per_token": 26.63741949800169
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 1.7005929248407483,
+          "ms_per_token": 26.571764450636692
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.7024917798116803,
+          "ms_per_token": 26.601434059557505
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7027210821397603,
+          "ms_per_token": 26.605016908433754
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7291896799579263,
+          "ms_per_token": 27.018588749342598
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 13.690470925997943,
+          "ms_per_token": 26.739201027339732
+        }
+      ],
+      "warmup_seconds": 1.7878761887550354,
+      "sample_completion": "the social, political, and economic problems that had been building up in France for many years.\n\n1. Social Inequality: The French society was divided into three estates: the clergy, the nobility, and the common people (third estate). The first two estates were exempt from many",
+      "generated_tokens": 512,
+      "generation_seconds": 13.690470925997943,
+      "ms_per_token": 26.739201027339732,
+      "tokens_per_second": 37.398275250541,
+      "ms_per_token_std": 0.0,
+      "perplexity": 5.817338943481445,
+      "perplexity_seconds": 74.40949368476868,
+      "peak_vram_generation_gb": 14.79009792,
+      "peak_vram_gb": 14.79009792,
+      "cuda_allocated_after_free_gb": 14.084115968,
+      "seconds": 102.72671031951904
+    },
+    "physical_int4": {
+      "status": "completed",
+      "started_at": "2026-09-20T22:09:46",
+      "cuda_allocated_before_load_gb": 0.00851968,
+      "model_load_seconds": 12.52278995513916,
+      "params_before": 7248023552,
+      "pruning": {
+        "pruned_heads": 205,
+        "params_before": 7248023552,
+        "params_after": 7033065472,
+        "params_removed": 214958080,
+        "params_removed_expected": 214958080,
+        "num_heads_per_layer": {
+          "0": 27,
+          "1": 31,
+          "2": 30,
+          "3": 31,
+          "7": 31,
+          "11": 30,
+          "12": 28,
+          "15": 27,
+          "17": 31,
+          "18": 25,
+          "19": 29,
+          "20": 21,
+          "21": 20,
+          "22": 13,
+          "23": 20,
+          "24": 9,
+          "25": 8,
+          "26": 16,
+          "27": 14,
+          "28": 18,
+          "29": 22,
+          "30": 22,
+          "31": 28
+        }
+      },
+      "quantization_path": "primary (compressor._quantize_linear)",
+      "quantization": {
+        "int4_modules": 129,
+        "int8_modules": 0
+      },
+      "peak_vram_load_apply_gb": 14.563303424,
+      "cuda_allocated_after_apply_gb": 9.168863744,
+      "attn_implementation": "sdpa",
+      "attention_class": "PrunedHeadAttention",
+      "wrapped_attention_class": "MistralSdpaAttention",
+      "n_params": 5077471232,
+      "model_bytes": {
+        "bytes": 8199360664,
+        "gb": 8.199360664,
+        "by_dtype_bytes": {
+          "torch.float16": 6243753984,
+          "torch.uint8": 1955594240,
+          "torch.int64": 4248,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 1,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 2.0692826779559255,
+          "ms_per_token": 32.332541843061335
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 2.0647880602627993,
+          "ms_per_token": 32.26231344160624
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 2.0703304121270776,
+          "ms_per_token": 32.34891268948559
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 2.0717748892493546,
+          "ms_per_token": 32.371482644521166
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 2.07211193209514,
+          "ms_per_token": 32.376748938986566
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 2.0781939402222633,
+          "ms_per_token": 32.471780315972865
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 2.062918819952756,
+          "ms_per_token": 32.233106561761815
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 2.063748558051884,
+          "ms_per_token": 32.24607121956069
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 16.5531492899172,
+          "ms_per_token": 32.33036970686953
+        }
+      ],
+      "warmup_seconds": 2.0715761319734156,
+      "sample_completion": "the social, political, and economic problems that had been building up in France for many years.\n\n1. Social Inequality: The French society was divided into three estates: the clergy, the nobility, and the common people. The first two estates were exempt from many taxes, while",
+      "generated_tokens": 512,
+      "generation_seconds": 16.5531492899172,
+      "ms_per_token": 32.33036970686953,
+      "tokens_per_second": 30.93067011193258,
+      "ms_per_token_std": 0.0,
+      "perplexity": 5.8655829429626465,
+      "perplexity_seconds": 83.20609951019287,
+      "peak_vram_generation_gb": 9.871729664,
+      "peak_vram_gb": 14.563303424,
+      "cuda_allocated_after_free_gb": 9.168863744,
+      "seconds": 149.6708426475525
+    }
+  },
+  "summary": {
+    "fp16": {
+      "ms_per_token": 25.88220504912897,
+      "ms_per_token_std": 0.0,
+      "tokens_per_second": 38.63658440622908,
+      "model_gb": 14.496055296,
+      "n_params": 7248023552,
+      "peak_vram_gb": 15.184411648,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "perplexity": 5.219959259033203,
+      "perplexity_minus_masked": -0.5974526405334473,
+      "speedup_vs_fp16": 1.0,
+      "size_ratio_vs_fp16": 1.0,
+      "param_ratio_vs_fp16": 1.0
+    },
+    "masked": {
+      "ms_per_token": 26.015267228103767,
+      "ms_per_token_std": 0.0,
+      "tokens_per_second": 38.43896705853247,
+      "model_gb": 14.496055296,
+      "n_params": 7248023552,
+      "peak_vram_gb": 15.184411648,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "perplexity": 5.81741189956665,
+      "perplexity_minus_masked": 0.0,
+      "speedup_vs_fp16": 0.9948852272856512,
+      "size_ratio_vs_fp16": 1.0,
+      "param_ratio_vs_fp16": 1.0
+    },
+    "physical": {
+      "ms_per_token": 26.739201027339732,
+      "ms_per_token_std": 0.0,
+      "tokens_per_second": 37.398275250541,
+      "model_gb": 14.066143384,
+      "n_params": 7033065472,
+      "peak_vram_gb": 14.79009792,
+      "attn_implementation": "sdpa",
+      "attention_class": "PrunedHeadAttention",
+      "perplexity": 5.817338943481445,
+      "perplexity_minus_masked": -7.295608520507812e-05,
+      "speedup_vs_fp16": 0.9679498285182673,
+      "size_ratio_vs_fp16": 0.9703428344317486,
+      "param_ratio_vs_fp16": 0.9703425246264984
+    },
+    "physical_int4": {
+      "ms_per_token": 32.33036970686953,
+      "ms_per_token_std": 0.0,
+      "tokens_per_second": 30.93067011193258,
+      "model_gb": 8.199360664,
+      "n_params": 5077471232,
+      "peak_vram_gb": 14.563303424,
+      "attn_implementation": "sdpa",
+      "attention_class": "PrunedHeadAttention",
+      "perplexity": 5.8655829429626465,
+      "perplexity_minus_masked": 0.048171043395996094,
+      "speedup_vs_fp16": 0.800553946144004,
+      "size_ratio_vs_fp16": 0.5656270272549601,
+      "param_ratio_vs_fp16": 0.7005318340334223
+    }
+  }
+}

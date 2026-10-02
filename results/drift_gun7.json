@@ -1,0 +1,1373 @@
+{
+  "round0_file": "results/importance_scores_gun3.json",
+  "scores_dir": "results/gun7_scores",
+  "ks": [
+    100,
+    200
+  ],
+  "created_at": "2026-09-22T16:10:36",
+  "n_entries": 34,
+  "definition": "tur-0 = Gün 3 skorları; her giriş için metrikler tur-0 ile o dosya arasında; 'surviving' = o dosyaya kadar budanan head'ler (skoru 0) hariç",
+  "entries": [
+    {
+      "file": "results/gun7_scores/f0.2_az_buda_cok_kuantize_after.json",
+      "fraction": "0.2",
+      "config": "az_buda_cok_kuantize",
+      "round": null,
+      "seed": null,
+      "n_pruned": 102,
+      "attribution_seconds": 344.0791611671448,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 102,
+        "excluded_zero_in_s1": 102,
+        "spearman": {
+          "heads_all": 0.9981660610269826,
+          "heads_surviving": 0.9981655740478249,
+          "mlp": 0.9915689149560117,
+          "all_blocks": 0.9983276103217221,
+          "all_surviving": 0.998343729939167
+        },
+        "pearson": {
+          "heads_all": 0.9938304811163423,
+          "heads_surviving": 0.9988365551152272
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.9801980198019802,
+            "top200": 0.9900497512437811
+          },
+          "heads_surviving": {
+            "top100": 0.9801980198019802,
+            "top200": 0.9900497512437811
+          },
+          "all_surviving": {
+            "top100": 0.9607843137254902,
+            "top200": 0.9704433497536946
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_attnconf_after.json",
+      "fraction": "0.2",
+      "config": "prune_attnconf",
+      "round": null,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 344.10454058647156,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.1712316182360116,
+          "heads_surviving": 0.8682114891489332,
+          "mlp": 0.8684017595307918,
+          "all_blocks": 0.244579214114789,
+          "all_surviving": 0.8825193422232434
+        },
+        "pearson": {
+          "heads_all": 0.3055574350518406,
+          "heads_surviving": 0.8233114254205429
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.20481927710843373,
+            "top200": 0.2618296529968454
+          },
+          "heads_surviving": {
+            "top100": 0.36054421768707484,
+            "top200": 0.5209125475285171
+          },
+          "all_surviving": {
+            "top100": 0.48148148148148145,
+            "top200": 0.5444015444015444
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_random_after_seed42.json",
+      "fraction": "0.2",
+      "config": "prune_random",
+      "round": null,
+      "seed": 42,
+      "n_pruned": 205,
+      "attribution_seconds": 343.3506965637207,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.6172305403951894,
+          "heads_surviving": 0.9686960742360587,
+          "mlp": 0.8801319648093842,
+          "all_blocks": 0.6511043729731482,
+          "all_surviving": 0.9720899336712888
+        },
+        "pearson": {
+          "heads_all": 0.7479216011926623,
+          "heads_surviving": 0.9625131492562751
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.5267175572519084,
+            "top200": 0.5503875968992248
+          },
+          "heads_surviving": {
+            "top100": 0.639344262295082,
+            "top200": 0.7543859649122807
+          },
+          "all_surviving": {
+            "top100": 0.680672268907563,
+            "top200": 0.7316017316017316
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_random_after_seed43.json",
+      "fraction": "0.2",
+      "config": "prune_random",
+      "round": null,
+      "seed": 43,
+      "n_pruned": 205,
+      "attribution_seconds": 344.2414004802704,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.6238062630514711,
+          "heads_surviving": 0.9761681954120383,
+          "mlp": 0.9134897360703812,
+          "all_blocks": 0.6570990279351402,
+          "all_surviving": 0.9787522063326249
+        },
+        "pearson": {
+          "heads_all": 0.755965751236974,
+          "heads_surviving": 0.9733783418122935
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.5625,
+            "top200": 0.6129032258064516
+          },
+          "heads_surviving": {
+            "top100": 0.6528925619834711,
+            "top200": 0.7937219730941704
+          },
+          "all_surviving": {
+            "top100": 0.7094017094017094,
+            "top200": 0.762114537444934
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_random_after_seed44.json",
+      "fraction": "0.2",
+      "config": "prune_random",
+      "round": null,
+      "seed": 44,
+      "n_pruned": 205,
+      "attribution_seconds": 344.61271572113037,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.6178621585184607,
+          "heads_surviving": 0.9366916364292475,
+          "mlp": 0.8365102639296188,
+          "all_blocks": 0.6516788712665006,
+          "all_surviving": 0.9435594947997239
+        },
+        "pearson": {
+          "heads_all": 0.6619019121878391,
+          "heads_surviving": 0.9239638677188485
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.43884892086330934,
+            "top200": 0.5503875968992248
+          },
+          "heads_surviving": {
+            "top100": 0.5151515151515151,
+            "top200": 0.639344262295082
+          },
+          "all_surviving": {
+            "top100": 0.5873015873015873,
+            "top200": 0.6666666666666666
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_taylor_after.json",
+      "fraction": "0.2",
+      "config": "prune_taylor",
+      "round": null,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 343.88506960868835,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.9410137850450044,
+          "heads_surviving": 0.9313182335187226,
+          "mlp": 0.9618768328445748,
+          "all_blocks": 0.9462327683452295,
+          "all_surviving": 0.9387764090591798
+        },
+        "pearson": {
+          "heads_all": 0.8366121304230619,
+          "heads_surviving": 0.7937743945038283
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.5873015873015873,
+            "top200": 0.6597510373443983
+          },
+          "heads_surviving": {
+            "top100": 0.5873015873015873,
+            "top200": 0.6597510373443983
+          },
+          "all_surviving": {
+            "top100": 0.6528925619834711,
+            "top200": 0.6877637130801688
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_wanda_after.json",
+      "fraction": "0.2",
+      "config": "prune_wanda",
+      "round": null,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 343.2582743167877,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.5035098455581073,
+          "heads_surviving": 0.8379895354610603,
+          "mlp": 0.7159090909090909,
+          "all_blocks": 0.5474441899132997,
+          "all_surviving": 0.8555719914287689
+        },
+        "pearson": {
+          "heads_all": 0.4452213043545635,
+          "heads_surviving": 0.6065066951902143
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.20481927710843373,
+            "top200": 0.36054421768707484
+          },
+          "heads_surviving": {
+            "top100": 0.25,
+            "top200": 0.4234875444839858
+          },
+          "all_surviving": {
+            "top100": 0.3698630136986301,
+            "top200": 0.4492753623188406
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_prune_wanda_ln_after.json",
+      "fraction": "0.2",
+      "config": "prune_wanda_ln",
+      "round": null,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 336.01997995376587,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.9028020611802069,
+          "heads_surviving": 0.9682665794658162,
+          "mlp": 0.9633431085043989,
+          "all_blocks": 0.9114030959182514,
+          "all_surviving": 0.9717115105091042
+        },
+        "pearson": {
+          "heads_all": 0.9234575038916019,
+          "heads_surviving": 0.9541342690000474
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.680672268907563,
+            "top200": 0.8099547511312217
+          },
+          "heads_surviving": {
+            "top100": 0.680672268907563,
+            "top200": 0.8099547511312217
+          },
+          "all_surviving": {
+            "top100": 0.7391304347826086,
+            "top200": 0.8018018018018018
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_round1.json",
+      "fraction": "0.2",
+      "config": "xai_iter",
+      "round": 1,
+      "seed": null,
+      "n_pruned": 69,
+      "attribution_seconds": 345.73788046836853,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 69,
+        "excluded_zero_in_s1": 69,
+        "spearman": {
+          "heads_all": 0.9993260029494292,
+          "heads_surviving": 0.9993577600809899,
+          "mlp": 0.9956011730205279,
+          "all_blocks": 0.9993853225058678,
+          "all_surviving": 0.9994180740724175
+        },
+        "pearson": {
+          "heads_all": 0.9966803064224561,
+          "heads_surviving": 0.9995246314646213
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 1.0,
+            "top200": 0.9900497512437811
+          },
+          "heads_surviving": {
+            "top100": 1.0,
+            "top200": 0.9900497512437811
+          },
+          "all_surviving": {
+            "top100": 0.9607843137254902,
+            "top200": 0.9801980198019802
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_round2.json",
+      "fraction": "0.2",
+      "config": "xai_iter",
+      "round": 2,
+      "seed": null,
+      "n_pruned": 137,
+      "attribution_seconds": 345.8789668083191,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 137,
+        "excluded_zero_in_s1": 137,
+        "spearman": {
+          "heads_all": 0.9964250924231454,
+          "heads_surviving": 0.9964486794214412,
+          "mlp": 0.9699413489736071,
+          "all_blocks": 0.9967397860335028,
+          "all_surviving": 0.9968056201048807
+        },
+        "pearson": {
+          "heads_all": 0.9907579636353243,
+          "heads_surviving": 0.997948804028147
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.9801980198019802,
+            "top200": 0.9801980198019802
+          },
+          "heads_surviving": {
+            "top100": 0.9801980198019802,
+            "top200": 0.9801980198019802
+          },
+          "all_surviving": {
+            "top100": 0.9607843137254902,
+            "top200": 0.9801980198019802
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_round3.json",
+      "fraction": "0.2",
+      "config": "xai_iter",
+      "round": 3,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 344.0721507072449,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.9872916703523763,
+          "heads_surviving": 0.9841861082841463,
+          "mlp": 0.9156891495601173,
+          "all_blocks": 0.9884134415091036,
+          "all_surviving": 0.985899331845083
+        },
+        "pearson": {
+          "heads_all": 0.9800389494127215,
+          "heads_surviving": 0.9891476978204614
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.8867924528301887,
+            "top200": 0.9047619047619048
+          },
+          "heads_surviving": {
+            "top100": 0.8867924528301887,
+            "top200": 0.9047619047619048
+          },
+          "all_surviving": {
+            "top100": 0.8867924528301887,
+            "top200": 0.9138755980861244
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.2_xai_single_after.json",
+      "fraction": "0.2",
+      "config": "xai_single",
+      "round": null,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 341.0184075832367,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.9876852913466422,
+          "heads_surviving": 0.9838521368904815,
+          "mlp": 0.8815982404692082,
+          "all_blocks": 0.9887712730435744,
+          "all_surviving": 0.9855998255378681
+        },
+        "pearson": {
+          "heads_all": 0.9804729539290375,
+          "heads_surviving": 0.9903902700942859
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.8691588785046729,
+            "top200": 0.9047619047619048
+          },
+          "heads_surviving": {
+            "top100": 0.8691588785046729,
+            "top200": 0.9047619047619048
+          },
+          "all_surviving": {
+            "top100": 0.8867924528301887,
+            "top200": 0.9047619047619048
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_attnconf_after.json",
+      "fraction": "0.4",
+      "config": "prune_attnconf",
+      "round": null,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 346.8474316596985,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": -0.35634121595689644,
+          "heads_surviving": 0.6643369716107053,
+          "mlp": 0.7265395894428153,
+          "all_blocks": -0.23306616095275504,
+          "all_surviving": 0.7117555251211777
+        },
+        "pearson": {
+          "heads_all": -0.1530096033237572,
+          "heads_surviving": 0.5658711547405959
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.0582010582010582,
+            "top200": 0.07526881720430108
+          },
+          "heads_surviving": {
+            "top100": 0.2987012987012987,
+            "top200": 0.4492753623188406
+          },
+          "all_surviving": {
+            "top100": 0.4084507042253521,
+            "top200": 0.48698884758364314
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_random_after_seed42.json",
+      "fraction": "0.4",
+      "config": "prune_random",
+      "round": null,
+      "seed": 42,
+      "n_pruned": 410,
+      "attribution_seconds": 340.1253592967987,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.3396514487150984,
+          "heads_surviving": 0.8757214355783584,
+          "mlp": 0.7712609970674487,
+          "all_blocks": 0.39964310221330823,
+          "all_surviving": 0.8932625787834501
+        },
+        "pearson": {
+          "heads_all": 0.5444789855170259,
+          "heads_surviving": 0.8470515796888711
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.2903225806451613,
+            "top200": 0.3422818791946309
+          },
+          "heads_surviving": {
+            "top100": 0.42857142857142855,
+            "top200": 0.5873015873015873
+          },
+          "all_surviving": {
+            "top100": 0.36054421768707484,
+            "top200": 0.4925373134328358
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_random_after_seed43.json",
+      "fraction": "0.4",
+      "config": "prune_random",
+      "round": null,
+      "seed": 43,
+      "n_pruned": 410,
+      "attribution_seconds": 339.4429416656494,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.32200019951073733,
+          "heads_surviving": 0.9327347631123595,
+          "mlp": 0.8566715542521994,
+          "all_blocks": 0.38359927919134873,
+          "all_surviving": 0.9422264603336032
+        },
+        "pearson": {
+          "heads_all": 0.5898242248366985,
+          "heads_surviving": 0.9356488186407815
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.3422818791946309,
+            "top200": 0.3793103448275862
+          },
+          "heads_surviving": {
+            "top100": 0.6,
+            "top200": 0.7241379310344828
+          },
+          "all_surviving": {
+            "top100": 0.6260162601626016,
+            "top200": 0.6877637130801688
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_random_after_seed44.json",
+      "fraction": "0.4",
+      "config": "prune_random",
+      "round": null,
+      "seed": 44,
+      "n_pruned": 410,
+      "attribution_seconds": 338.56875228881836,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.271517960200136,
+          "heads_surviving": 0.7827222498782049,
+          "mlp": 0.6972140762463344,
+          "all_blocks": 0.3377026813810682,
+          "all_surviving": 0.8134014408564794
+        },
+        "pearson": {
+          "heads_all": 0.3535380805773516,
+          "heads_surviving": 0.7344960755992943
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.15606936416184972,
+            "top200": 0.2987012987012987
+          },
+          "heads_surviving": {
+            "top100": 0.3422818791946309,
+            "top200": 0.5151515151515151
+          },
+          "all_surviving": {
+            "top100": 0.43884892086330934,
+            "top200": 0.5151515151515151
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_taylor_after.json",
+      "fraction": "0.4",
+      "config": "prune_taylor",
+      "round": null,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 339.507111787796,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.9069311382454974,
+          "heads_surviving": 0.8497266205027041,
+          "mlp": 0.9266862170087976,
+          "all_blocks": 0.9153460758117259,
+          "all_surviving": 0.8709614527102331
+        },
+        "pearson": {
+          "heads_all": 0.8913719969412076,
+          "heads_surviving": 0.8303552979383132
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.5037593984962406,
+            "top200": 0.6260162601626016
+          },
+          "heads_surviving": {
+            "top100": 0.5037593984962406,
+            "top200": 0.6260162601626016
+          },
+          "all_surviving": {
+            "top100": 0.6129032258064516,
+            "top200": 0.6597510373443983
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_wanda_after.json",
+      "fraction": "0.4",
+      "config": "prune_wanda",
+      "round": null,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 342.11021089553833,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.17484978964630216,
+          "heads_surviving": 0.8744283020195751,
+          "mlp": 0.7371700879765396,
+          "all_blocks": 0.2498254242391624,
+          "all_surviving": 0.8921481122741436
+        },
+        "pearson": {
+          "heads_all": 0.38778921393696886,
+          "heads_surviving": 0.7474406816285714
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.2578616352201258,
+            "top200": 0.3559322033898305
+          },
+          "heads_surviving": {
+            "top100": 0.4925373134328358,
+            "top200": 0.7241379310344828
+          },
+          "all_surviving": {
+            "top100": 0.5384615384615384,
+            "top200": 0.7391304347826086
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_prune_wanda_ln_after.json",
+      "fraction": "0.4",
+      "config": "prune_wanda_ln",
+      "round": null,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 337.7327935695648,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.7469282243878711,
+          "heads_surviving": 0.9026273644407193,
+          "mlp": 0.8475073313782991,
+          "all_blocks": 0.769889514667569,
+          "all_surviving": 0.9163741490686312
+        },
+        "pearson": {
+          "heads_all": 0.8205012108776438,
+          "heads_surviving": 0.8435933519093071
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.42857142857142855,
+            "top200": 0.5873015873015873
+          },
+          "heads_surviving": {
+            "top100": 0.42857142857142855,
+            "top200": 0.6
+          },
+          "all_surviving": {
+            "top100": 0.5384615384615384,
+            "top200": 0.6326530612244898
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_round1.json",
+      "fraction": "0.4",
+      "config": "xai_iter",
+      "round": 1,
+      "seed": null,
+      "n_pruned": 137,
+      "attribution_seconds": 342.39188265800476,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 137,
+        "excluded_zero_in_s1": 137,
+        "spearman": {
+          "heads_all": 0.996332680104245,
+          "heads_surviving": 0.9962052792878541,
+          "mlp": 0.968841642228739,
+          "all_blocks": 0.996655501143497,
+          "all_surviving": 0.996586724453387
+        },
+        "pearson": {
+          "heads_all": 0.9905792349968103,
+          "heads_surviving": 0.9977804572742655
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.9607843137254902,
+            "top200": 0.9704433497536946
+          },
+          "heads_surviving": {
+            "top100": 0.9607843137254902,
+            "top200": 0.9704433497536946
+          },
+          "all_surviving": {
+            "top100": 0.941747572815534,
+            "top200": 0.9704433497536946
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_round2.json",
+      "fraction": "0.4",
+      "config": "xai_iter",
+      "round": 2,
+      "seed": null,
+      "n_pruned": 274,
+      "attribution_seconds": 343.40643548965454,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 274,
+        "excluded_zero_in_s1": 274,
+        "spearman": {
+          "heads_all": 0.9775091852912596,
+          "heads_surviving": 0.9691064908559838,
+          "mlp": 0.8119501466275659,
+          "all_blocks": 0.9795010469332909,
+          "all_surviving": 0.9727330981894255
+        },
+        "pearson": {
+          "heads_all": 0.9699714775772517,
+          "heads_surviving": 0.9795262957205075
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.8518518518518519,
+            "top200": 0.8691588785046729
+          },
+          "heads_surviving": {
+            "top100": 0.8518518518518519,
+            "top200": 0.8691588785046729
+          },
+          "all_surviving": {
+            "top100": 0.8518518518518519,
+            "top200": 0.8691588785046729
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_round3.json",
+      "fraction": "0.4",
+      "config": "xai_iter",
+      "round": 3,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 342.4019513130188,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.939335858832799,
+          "heads_surviving": 0.8904877517405448,
+          "mlp": 0.8126832844574781,
+          "all_blocks": 0.9448010587974522,
+          "all_surviving": 0.9059464513464727
+        },
+        "pearson": {
+          "heads_all": 0.9405644616683287,
+          "heads_surviving": 0.9280082663654088
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.680672268907563,
+            "top200": 0.7543859649122807
+          },
+          "heads_surviving": {
+            "top100": 0.680672268907563,
+            "top200": 0.7543859649122807
+          },
+          "all_surviving": {
+            "top100": 0.7094017094017094,
+            "top200": 0.7699115044247787
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.4_xai_single_after.json",
+      "fraction": "0.4",
+      "config": "xai_single",
+      "round": null,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 341.89109349250793,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.9422302170247702,
+          "heads_surviving": 0.8871706236178579,
+          "mlp": 0.8163489736070382,
+          "all_blocks": 0.9474323460493761,
+          "all_surviving": 0.9030987016400623
+        },
+        "pearson": {
+          "heads_all": 0.9451856579744651,
+          "heads_surviving": 0.9351178921788417
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.6666666666666666,
+            "top200": 0.7316017316017316
+          },
+          "heads_surviving": {
+            "top100": 0.6666666666666666,
+            "top200": 0.7316017316017316
+          },
+          "all_surviving": {
+            "top100": 0.7391304347826086,
+            "top200": 0.7543859649122807
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_attnconf_after.json",
+      "fraction": "0.6",
+      "config": "prune_attnconf",
+      "round": null,
+      "seed": null,
+      "n_pruned": 614,
+      "attribution_seconds": 345.5833215713501,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": -0.5437283462020036,
+          "heads_surviving": 0.20481719613833835,
+          "mlp": 0.6037390029325513,
+          "all_blocks": -0.39151317730785506,
+          "all_surviving": 0.3651747901800067
+        },
+        "pearson": {
+          "heads_all": -0.38144335889663733,
+          "heads_surviving": 0.20247603670396697
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.0,
+            "top200": 0.015228426395939087
+          },
+          "heads_surviving": {
+            "top100": 0.17647058823529413,
+            "top200": 0.3698630136986301
+          },
+          "all_surviving": {
+            "top100": 0.32450331125827814,
+            "top200": 0.3793103448275862
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_random_after_seed42.json",
+      "fraction": "0.6",
+      "config": "prune_random",
+      "round": null,
+      "seed": 42,
+      "n_pruned": 614,
+      "attribution_seconds": 337.136430978775,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.1225206352169206,
+          "heads_surviving": 0.7354405700821772,
+          "mlp": 0.7778592375366569,
+          "all_blocks": 0.20875986397959012,
+          "all_surviving": 0.7887577326468007
+        },
+        "pearson": {
+          "heads_all": 0.30031134498745377,
+          "heads_surviving": 0.6397903774115499
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.14942528735632185,
+            "top200": 0.22324159021406728
+          },
+          "heads_surviving": {
+            "top100": 0.36054421768707484,
+            "top200": 0.6326530612244898
+          },
+          "all_surviving": {
+            "top100": 0.45985401459854014,
+            "top200": 0.6460905349794238
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_random_after_seed43.json",
+      "fraction": "0.6",
+      "config": "prune_random",
+      "round": null,
+      "seed": 43,
+      "n_pruned": 614,
+      "attribution_seconds": 338.2875430583954,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.07981910568626022,
+          "heads_surviving": 0.6879708081431107,
+          "mlp": 0.7719941348973607,
+          "all_blocks": 0.1702870583033777,
+          "all_surviving": 0.7508675288139218
+        },
+        "pearson": {
+          "heads_all": 0.19987044851374386,
+          "heads_surviving": 0.6011214786077997
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.11731843575418995,
+            "top200": 0.2012012012012012
+          },
+          "heads_surviving": {
+            "top100": 0.3333333333333333,
+            "top200": 0.639344262295082
+          },
+          "all_surviving": {
+            "top100": 0.47058823529411764,
+            "top200": 0.606425702811245
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_random_after_seed44.json",
+      "fraction": "0.6",
+      "config": "prune_random",
+      "round": null,
+      "seed": 44,
+      "n_pruned": 614,
+      "attribution_seconds": 337.28786611557007,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.1496874386829015,
+          "heads_surviving": 0.7221550192765326,
+          "mlp": 0.7371700879765396,
+          "all_blocks": 0.23323496671461705,
+          "all_surviving": 0.7781384475999117
+        },
+        "pearson": {
+          "heads_all": 0.2452530187276783,
+          "heads_surviving": 0.5886394241611007
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.14285714285714285,
+            "top200": 0.25
+          },
+          "heads_surviving": {
+            "top100": 0.3698630136986301,
+            "top200": 0.6260162601626016
+          },
+          "all_surviving": {
+            "top100": 0.4925373134328358,
+            "top200": 0.6260162601626016
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_taylor_after.json",
+      "fraction": "0.6",
+      "config": "prune_taylor",
+      "round": null,
+      "seed": null,
+      "n_pruned": 614,
+      "attribution_seconds": 337.70717573165894,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.8044910646037685,
+          "heads_surviving": 0.6279344097315476,
+          "mlp": 0.9329178885630498,
+          "all_blocks": 0.8231968032653408,
+          "all_surviving": 0.703010497479075
+        },
+        "pearson": {
+          "heads_all": 0.8403737088974174,
+          "heads_surviving": 0.7504747413682167
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.42857142857142855,
+            "top200": 0.5503875968992248
+          },
+          "heads_surviving": {
+            "top100": 0.42857142857142855,
+            "top200": 0.5503875968992248
+          },
+          "all_surviving": {
+            "top100": 0.4925373134328358,
+            "top200": 0.5936254980079682
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_wanda_after.json",
+      "fraction": "0.6",
+      "config": "prune_wanda",
+      "round": null,
+      "seed": null,
+      "n_pruned": 614,
+      "attribution_seconds": 337.54601979255676,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": -0.02251657948266663,
+          "heads_surviving": 0.7362376613432938,
+          "mlp": 0.748900293255132,
+          "all_blocks": 0.07808537508734832,
+          "all_surviving": 0.7893829523474609
+        },
+        "pearson": {
+          "heads_all": 0.2875193625802741,
+          "heads_surviving": 0.753736400770015
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.1834319526627219,
+            "top200": 0.17647058823529413
+          },
+          "heads_surviving": {
+            "top100": 0.5503875968992248,
+            "top200": 0.6597510373443983
+          },
+          "all_surviving": {
+            "top100": 0.639344262295082,
+            "top200": 0.6597510373443983
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_prune_wanda_ln_after.json",
+      "fraction": "0.6",
+      "config": "prune_wanda_ln",
+      "round": null,
+      "seed": null,
+      "n_pruned": 614,
+      "attribution_seconds": 338.64674401283264,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.5822668132643726,
+          "heads_surviving": 0.8386621472625234,
+          "mlp": 0.7712609970674487,
+          "all_blocks": 0.6229753076907892,
+          "all_surviving": 0.8711415109540951
+        },
+        "pearson": {
+          "heads_all": 0.7296249665182838,
+          "heads_surviving": 0.7808140678812614
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.42857142857142855,
+            "top200": 0.5748031496062992
+          },
+          "heads_surviving": {
+            "top100": 0.4492753623188406,
+            "top200": 0.7094017094017094
+          },
+          "all_surviving": {
+            "top100": 0.4492753623188406,
+            "top200": 0.6460905349794238
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_round1.json",
+      "fraction": "0.6",
+      "config": "xai_iter",
+      "round": 1,
+      "seed": null,
+      "n_pruned": 205,
+      "attribution_seconds": 340.9296250343323,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 205,
+        "excluded_zero_in_s1": 205,
+        "spearman": {
+          "heads_all": 0.9876852913466422,
+          "heads_surviving": 0.9838521368904815,
+          "mlp": 0.8815982404692082,
+          "all_blocks": 0.9887712730435744,
+          "all_surviving": 0.9855998255378681
+        },
+        "pearson": {
+          "heads_all": 0.9804729539290375,
+          "heads_surviving": 0.9903902700942859
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.8691588785046729,
+            "top200": 0.9047619047619048
+          },
+          "heads_surviving": {
+            "top100": 0.8691588785046729,
+            "top200": 0.9047619047619048
+          },
+          "all_surviving": {
+            "top100": 0.8867924528301887,
+            "top200": 0.9047619047619048
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_round2.json",
+      "fraction": "0.6",
+      "config": "xai_iter",
+      "round": 2,
+      "seed": null,
+      "n_pruned": 410,
+      "attribution_seconds": 341.0187885761261,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 410,
+        "excluded_zero_in_s1": 410,
+        "spearman": {
+          "heads_all": 0.9384278259095847,
+          "heads_surviving": 0.8819333393901447,
+          "mlp": 0.8192815249266863,
+          "all_blocks": 0.9439757798317665,
+          "all_surviving": 0.898602153995751
+        },
+        "pearson": {
+          "heads_all": 0.940913774670607,
+          "heads_surviving": 0.9307191190525319
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.6528925619834711,
+            "top200": 0.7391304347826086
+          },
+          "heads_surviving": {
+            "top100": 0.6528925619834711,
+            "top200": 0.7391304347826086
+          },
+          "all_surviving": {
+            "top100": 0.7391304347826086,
+            "top200": 0.7543859649122807
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_round3.json",
+      "fraction": "0.6",
+      "config": "xai_iter",
+      "round": 3,
+      "seed": null,
+      "n_pruned": 614,
+      "attribution_seconds": 338.3144905567169,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.847681856625758,
+          "heads_surviving": 0.7685031425296852,
+          "mlp": 0.8977272727272727,
+          "all_blocks": 0.8621091444753525,
+          "all_surviving": 0.8151920605019226
+        },
+        "pearson": {
+          "heads_all": 0.8930145139871036,
+          "heads_surviving": 0.9066115912261792
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.6666666666666666,
+            "top200": 0.639344262295082
+          },
+          "heads_surviving": {
+            "top100": 0.6666666666666666,
+            "top200": 0.639344262295082
+          },
+          "all_surviving": {
+            "top100": 0.639344262295082,
+            "top200": 0.7021276595744681
+          }
+        }
+      }
+    },
+    {
+      "file": "results/gun7_scores/f0.6_xai_single_after.json",
+      "fraction": "0.6",
+      "config": "xai_single",
+      "round": null,
+      "seed": null,
+      "n_pruned": 614,
+      "attribution_seconds": 336.31371450424194,
+      "metrics": {
+        "n_heads": 1024,
+        "n_mlp": 32,
+        "n_excluded": 614,
+        "excluded_zero_in_s1": 614,
+        "spearman": {
+          "heads_all": 0.8621543845913467,
+          "heads_surviving": 0.6754419542839085,
+          "mlp": 0.8519061583577713,
+          "all_blocks": 0.875146978163698,
+          "all_surviving": 0.7408979219400905
+        },
+        "pearson": {
+          "heads_all": 0.8927187217549617,
+          "heads_surviving": 0.8333316388821246
+        },
+        "jaccard": {
+          "heads_all": {
+            "top100": 0.5384615384615384,
+            "top200": 0.5810276679841897
+          },
+          "heads_surviving": {
+            "top100": 0.5384615384615384,
+            "top200": 0.5810276679841897
+          },
+          "all_surviving": {
+            "top100": 0.5748031496062992,
+            "top200": 0.6
+          }
+        }
+      }
+    }
+  ]
+}

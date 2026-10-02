@@ -1,0 +1,256 @@
+{
+  "a": "results/importance_scores_gun3.json",
+  "b": "results/importance_scores_c4.json",
+  "meta_a": {
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "precision": "fp16",
+    "calibration": {
+      "n_passages": 16,
+      "n_batches_built": 4,
+      "n_batches_used": 4,
+      "max_batches": 4,
+      "batch_size": 4,
+      "max_length": 256,
+      "min_chars": 200,
+      "n_valid_tokens": 2678
+    },
+    "attribution": {
+      "method": "captum.LayerIntegratedGradients (attribute_to_layer_input)",
+      "n_steps": 8,
+      "internal_batch_size": 2,
+      "baseline_token_id": 0
+    },
+    "seed": null,
+    "timing": {
+      "model_load_seconds": 16.0005624294281,
+      "attribution_seconds": 345.31122374534607,
+      "seconds_per_block": 5.395487871021032
+    },
+    "n_scores": 1056
+  },
+  "meta_b": {
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "precision": "fp16",
+    "calibration": {
+      "calib_dataset": "c4",
+      "passages": [
+        {
+          "stream_index": 0,
+          "url": "https://www.kentlive.news/news/sevenoaks-mum-who-died-after-2582402",
+          "sha1": "637ee2a892501bf8",
+          "n_tokens": 433,
+          "n_chars": 1625
+        },
+        {
+          "stream_index": 1,
+          "url": "https://jmtd.net/log/geek/linux/ui/",
+          "sha1": "a70dd33b0a0d1eb3",
+          "n_tokens": 678,
+          "n_chars": 2702
+        },
+        {
+          "stream_index": 2,
+          "url": "http://synergistic-technologies.com/biocmeisner.html",
+          "sha1": "3e56c3ccf1c0238a",
+          "n_tokens": 792,
+          "n_chars": 3027
+        },
+        {
+          "stream_index": 6,
+          "url": "https://butterflyinsight.com/",
+          "sha1": "0c0fbbb4ad971601",
+          "n_tokens": 268,
+          "n_chars": 1113
+        },
+        {
+          "stream_index": 8,
+          "url": "https://www.icimo.com/solutions/case-studies/Auction-uncovers-data-in-its-bid-to-gain-insights/",
+          "sha1": "ae70d5e8464fdaf1",
+          "n_tokens": 316,
+          "n_chars": 1522
+        },
+        {
+          "stream_index": 9,
+          "url": "http://iyaradayspa.com/stretch-therapy/",
+          "sha1": "09726eb3dd87a5ca",
+          "n_tokens": 454,
+          "n_chars": 2165
+        },
+        {
+          "stream_index": 10,
+          "url": "http://www.hollistonreporter.com/article/14259/bocce-ball-is-alive-and-well-in-holliston.html",
+          "sha1": "649f3aae97ba4010",
+          "n_tokens": 1417,
+          "n_chars": 5735
+        },
+        {
+          "stream_index": 11,
+          "url": "http://www.planetcustodian.com/2015/09/25/7695/indias-greenest-airport-terminal-constructed-from-55-lakh-fly-ash-bricks.html",
+          "sha1": "29ba47fc40964ed8",
+          "n_tokens": 544,
+          "n_chars": 2396
+        },
+        {
+          "stream_index": 12,
+          "url": "https://triciaannemitchell.com/2013/03/12/the-blue-skies-of-trogir-croatia/",
+          "sha1": "3a186b61cd1a5bb8",
+          "n_tokens": 1102,
+          "n_chars": 4282
+        },
+        {
+          "stream_index": 16,
+          "url": "https://anatomy4sculptors.com/collections/frontpage/products/copy-of-anatomy-for-sculptors-understanding-the-figure-hardcover",
+          "sha1": "85e2dca3563f4c00",
+          "n_tokens": 350,
+          "n_chars": 1506
+        },
+        {
+          "stream_index": 18,
+          "url": "https://www.surebetbuilders.com/nc/builder-in-mc-leansville/",
+          "sha1": "1d6c5c2e2596a1f0",
+          "n_tokens": 647,
+          "n_chars": 2842
+        },
+        {
+          "stream_index": 19,
+          "url": "http://lashmettgang.blogspot.com/2008/06/you-would-think-it-would-get-easier.html",
+          "sha1": "988f98899ff9adeb",
+          "n_tokens": 486,
+          "n_chars": 1909
+        },
+        {
+          "stream_index": 20,
+          "url": "http://www.thelocalalameda.com/about.html",
+          "sha1": "5b66f9273cce81e1",
+          "n_tokens": 259,
+          "n_chars": 1097
+        },
+        {
+          "stream_index": 21,
+          "url": "https://charlies-magazines.com/how-to-get-rid-of-alcohol-smell-fast-naturally/",
+          "sha1": "d6daf9c3863e106c",
+          "n_tokens": 1238,
+          "n_chars": 5448
+        },
+        {
+          "stream_index": 22,
+          "url": "https://www.farmmade.com/meet-the-farmers-of-farmgirlrosepetals/",
+          "sha1": "2a467c5cf4f5fea0",
+          "n_tokens": 1309,
+          "n_chars": 5730
+        },
+        {
+          "stream_index": 24,
+          "url": "http://m.greenmedinfo.com/article/thymoquinone-exhibits-regenerative-potential-treatment-damaged-peripheral-nerv",
+          "sha1": "94a1118aa12ab4d4",
+          "n_tokens": 433,
+          "n_chars": 1765
+        }
+      ],
+      "min_tokens": 256,
+      "n_passages": 16,
+      "n_batches_built": 4,
+      "n_batches_used": 4,
+      "max_batches": 4,
+      "batch_size": 4,
+      "max_length": 256,
+      "min_chars": 200,
+      "passage_offset": 0,
+      "n_valid_tokens": 4096
+    },
+    "attribution": {
+      "method": "captum.LayerIntegratedGradients (attribute_to_layer_input)",
+      "n_steps": 8,
+      "internal_batch_size": 2,
+      "baseline_token_id": 0
+    },
+    "seed": null,
+    "timing": {
+      "model_load_seconds": 13.909308433532715,
+      "attribution_seconds": 371.6273672580719,
+      "seconds_per_block": 5.806677613407373
+    },
+    "n_scores": 1056
+  },
+  "created_at": "2026-09-21T14:57:57",
+  "metrics": {
+    "n_heads": 1024,
+    "n_mlp": 32,
+    "n_excluded": 0,
+    "excluded_zero_in_s1": 0,
+    "spearman": {
+      "heads_all": 0.9268937531292468,
+      "heads_surviving": 0.9268937531292468,
+      "mlp": 0.8966275659824047,
+      "all_blocks": 0.9333375453522341,
+      "all_surviving": 0.9333375453522341
+    },
+    "pearson": {
+      "heads_all": 0.9370225331654415,
+      "heads_surviving": 0.9370225331654415
+    },
+    "jaccard": {
+      "heads_all": {
+        "top100": 0.6,
+        "top200": 0.6736401673640168
+      },
+      "heads_surviving": {
+        "top100": 0.6,
+        "top200": 0.6736401673640168
+      },
+      "all_surviving": {
+        "top100": 0.680672268907563,
+        "top200": 0.7167381974248928
+      }
+    }
+  },
+  "tiers": {
+    "tier_fractions": [
+      0.2,
+      0.4,
+      0.4
+    ],
+    "mlp_min_tier": "int4",
+    "heads": {
+      "n": 1024,
+      "n_changed": 195,
+      "changed_ratio": 0.1904296875,
+      "transitions": {
+        "fp16->int4": 50,
+        "fp16->prune": 1,
+        "int4->fp16": 51,
+        "int4->prune": 46,
+        "prune->int4": 47
+      },
+      "tier_counts": {
+        "prune": 205,
+        "int4": 410,
+        "fp16": 409
+      }
+    },
+    "mlp": {
+      "n": 32,
+      "n_changed": 4,
+      "changed_ratio": 0.125,
+      "transitions": {
+        "fp16->int4": 2,
+        "int4->fp16": 2
+      },
+      "tier_counts": {
+        "prune": 0,
+        "int4": 19,
+        "fp16": 13
+      }
+    },
+    "plan": {
+      "pruned_heads_a": 205,
+      "pruned_heads_b": 205,
+      "pruned_heads_common": 158,
+      "pruned_set_jaccard": 0.626984126984127,
+      "layers_attn_quant_changed": 4,
+      "layers_mlp_quant_changed": 4,
+      "int4_modules_a": 129,
+      "int4_modules_b": 137
+    }
+  }
+}

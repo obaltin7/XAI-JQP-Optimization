@@ -1,0 +1,870 @@
+{
+  "run": {
+    "started_at": "2026-09-21T15:49:57",
+    "status": "completed",
+    "args": {
+      "plan": "results/model2_qwen_gun9.json",
+      "heads_from": "both",
+      "fraction": null,
+      "variants": "masked,physical",
+      "max_new_tokens": 16,
+      "n_prompts": 2,
+      "n_repeats": 1,
+      "attn_implementation": "sdpa",
+      "perplexity": true,
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "dtype": "bf16",
+      "attn_kernel": "auto",
+      "seed": 42,
+      "output": "results/speed_gun12_qwen_physical.json",
+      "log": "log_gun12_qwen_physical.txt",
+      "preflight": false,
+      "dry_run": false
+    },
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "prompts": [
+      "The main causes of the French Revolution were",
+      "In computer science, a hash table is"
+    ],
+    "perplexity_settings": {
+      "max_length": 1024,
+      "stride": 512,
+      "dataset": "wikitext-2-raw-v1 (test split)"
+    },
+    "finished_at": "2026-09-21T15:52:05"
+  },
+  "source": {
+    "plan_file": "results/model2_qwen_gun9.json",
+    "config": "both",
+    "fraction": null,
+    "seed": 42,
+    "perplexity_in_source": 13.285324096679688,
+    "n_heads": 157,
+    "int4_layers": {
+      "attn": 17,
+      "mlp": 17
+    },
+    "pruned_heads": [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        4,
+        26
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        15
+      ],
+      [
+        5,
+        16
+      ],
+      [
+        5,
+        17
+      ],
+      [
+        5,
+        18
+      ],
+      [
+        5,
+        19
+      ],
+      [
+        5,
+        20
+      ],
+      [
+        5,
+        21
+      ],
+      [
+        6,
+        18
+      ],
+      [
+        6,
+        19
+      ],
+      [
+        7,
+        15
+      ],
+      [
+        8,
+        17
+      ],
+      [
+        8,
+        22
+      ],
+      [
+        8,
+        23
+      ],
+      [
+        8,
+        24
+      ],
+      [
+        8,
+        26
+      ],
+      [
+        8,
+        27
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        14,
+        5
+      ],
+      [
+        14,
+        6
+      ],
+      [
+        14,
+        7
+      ],
+      [
+        15,
+        15
+      ],
+      [
+        15,
+        17
+      ],
+      [
+        15,
+        18
+      ],
+      [
+        15,
+        19
+      ],
+      [
+        16,
+        7
+      ],
+      [
+        16,
+        9
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        16,
+        11
+      ],
+      [
+        16,
+        12
+      ],
+      [
+        16,
+        13
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        17,
+        8
+      ],
+      [
+        17,
+        10
+      ],
+      [
+        17,
+        13
+      ],
+      [
+        17,
+        14
+      ],
+      [
+        17,
+        15
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        20
+      ],
+      [
+        20,
+        9
+      ],
+      [
+        20,
+        11
+      ],
+      [
+        20,
+        12
+      ],
+      [
+        21,
+        7
+      ],
+      [
+        21,
+        13
+      ],
+      [
+        21,
+        25
+      ],
+      [
+        22,
+        0
+      ],
+      [
+        22,
+        1
+      ],
+      [
+        22,
+        2
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        22,
+        5
+      ],
+      [
+        22,
+        6
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        22,
+        8
+      ],
+      [
+        22,
+        12
+      ],
+      [
+        22,
+        13
+      ],
+      [
+        22,
+        21
+      ],
+      [
+        22,
+        22
+      ],
+      [
+        22,
+        24
+      ],
+      [
+        22,
+        25
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        22,
+        27
+      ],
+      [
+        23,
+        0
+      ],
+      [
+        23,
+        1
+      ],
+      [
+        23,
+        2
+      ],
+      [
+        23,
+        4
+      ],
+      [
+        23,
+        9
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        13
+      ],
+      [
+        23,
+        15
+      ],
+      [
+        23,
+        18
+      ],
+      [
+        23,
+        19
+      ],
+      [
+        23,
+        20
+      ],
+      [
+        24,
+        4
+      ],
+      [
+        24,
+        10
+      ],
+      [
+        24,
+        11
+      ],
+      [
+        24,
+        19
+      ],
+      [
+        24,
+        21
+      ],
+      [
+        24,
+        22
+      ],
+      [
+        24,
+        23
+      ],
+      [
+        24,
+        24
+      ],
+      [
+        24,
+        25
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        24,
+        27
+      ],
+      [
+        25,
+        0
+      ],
+      [
+        25,
+        1
+      ],
+      [
+        25,
+        6
+      ],
+      [
+        25,
+        7
+      ],
+      [
+        25,
+        8
+      ],
+      [
+        25,
+        9
+      ],
+      [
+        25,
+        10
+      ],
+      [
+        25,
+        11
+      ],
+      [
+        25,
+        12
+      ],
+      [
+        25,
+        13
+      ],
+      [
+        25,
+        21
+      ],
+      [
+        25,
+        22
+      ],
+      [
+        25,
+        23
+      ],
+      [
+        25,
+        24
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        25,
+        26
+      ],
+      [
+        25,
+        27
+      ],
+      [
+        26,
+        0
+      ],
+      [
+        26,
+        1
+      ],
+      [
+        26,
+        2
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        26,
+        4
+      ],
+      [
+        26,
+        5
+      ],
+      [
+        26,
+        6
+      ],
+      [
+        26,
+        9
+      ],
+      [
+        26,
+        13
+      ],
+      [
+        26,
+        14
+      ],
+      [
+        26,
+        15
+      ],
+      [
+        26,
+        16
+      ],
+      [
+        26,
+        17
+      ],
+      [
+        26,
+        18
+      ],
+      [
+        26,
+        19
+      ],
+      [
+        26,
+        20
+      ],
+      [
+        26,
+        25
+      ],
+      [
+        26,
+        27
+      ],
+      [
+        27,
+        0
+      ],
+      [
+        27,
+        1
+      ],
+      [
+        27,
+        2
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        27,
+        4
+      ],
+      [
+        27,
+        5
+      ],
+      [
+        27,
+        6
+      ],
+      [
+        27,
+        14
+      ],
+      [
+        27,
+        15
+      ],
+      [
+        27,
+        16
+      ],
+      [
+        27,
+        17
+      ],
+      [
+        27,
+        18
+      ],
+      [
+        27,
+        19
+      ],
+      [
+        27,
+        20
+      ],
+      [
+        27,
+        21
+      ],
+      [
+        27,
+        22
+      ],
+      [
+        27,
+        23
+      ],
+      [
+        27,
+        24
+      ],
+      [
+        27,
+        25
+      ],
+      [
+        27,
+        26
+      ],
+      [
+        27,
+        27
+      ]
+    ]
+  },
+  "variants": {
+    "masked": {
+      "status": "completed",
+      "started_at": "2026-09-21T15:50:00",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 3.4656431674957275,
+      "params_before": 7615616512,
+      "pruning": {
+        "pruned_heads": 157,
+        "pruned_mlp_blocks": 0
+      },
+      "peak_vram_load_apply_gb": 15.746622464,
+      "cuda_allocated_after_apply_gb": 15.746622464,
+      "attn_implementation": "sdpa",
+      "attention_class": "Qwen2SdpaAttention",
+      "wrapped_attention_class": null,
+      "n_params": 7615616512,
+      "model_bytes": {
+        "bytes": 15701002240,
+        "gb": 15.70100224,
+        "by_dtype_bytes": {
+          "torch.bfloat16": 15700995072,
+          "torch.float32": 7168
+        }
+      },
+      "max_new_tokens": 16,
+      "n_prompts": 2,
+      "n_repeats": 1,
+      "per_prompt": [
+        {
+          "prompt_tokens": 8,
+          "new_tokens": 16,
+          "seconds": 0.37187550542876124,
+          "ms_per_token": 23.242219089297578
+        },
+        {
+          "prompt_tokens": 8,
+          "new_tokens": 16,
+          "seconds": 0.3689894308336079,
+          "ms_per_token": 23.061839427100495
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 32,
+          "generation_seconds": 0.7408649362623692,
+          "ms_per_token": 23.152029258199036
+        }
+      ],
+      "warmup_seconds": 0.6449446701444685,
+      "sample_completion": ":\nA. The Enlightenment and the Enlightenment thinkers' advocacy of human rights, freedom",
+      "generated_tokens": 32,
+      "generation_seconds": 0.7408649362623692,
+      "ms_per_token": 23.152029258199036,
+      "tokens_per_second": 43.19275813137896,
+      "ms_per_token_std": 0.0,
+      "perplexity": 12.904181480407715,
+      "perplexity_seconds": 56.56700301170349,
+      "peak_vram_generation_gb": 17.748801024,
+      "peak_vram_gb": 17.748801024,
+      "cuda_allocated_after_free_gb": 15.755142144,
+      "seconds": 62.4583306312561
+    },
+    "physical": {
+      "status": "completed",
+      "started_at": "2026-09-21T15:51:02",
+      "cuda_allocated_before_load_gb": 0.00851968,
+      "model_load_seconds": 2.970700263977051,
+      "params_before": 7615616512,
+      "pruning": {
+        "pruned_heads": 157,
+        "params_before": 7615616512,
+        "params_after": 7471548288,
+        "params_removed": 144068224,
+        "params_removed_expected": 144068224,
+        "num_heads_per_layer": {
+          "4": 20,
+          "5": 20,
+          "6": 26,
+          "7": 27,
+          "8": 22,
+          "9": 26,
+          "10": 26,
+          "11": 27,
+          "14": 22,
+          "15": 24,
+          "16": 22,
+          "17": 19,
+          "20": 25,
+          "21": 25,
+          "22": 11,
+          "23": 16,
+          "24": 17,
+          "25": 11,
+          "26": 10,
+          "27": 7
+        }
+      },
+      "attn_kernel": "sdpa",
+      "peak_vram_load_apply_gb": 15.792397312,
+      "cuda_allocated_after_apply_gb": 15.46898432,
+      "attn_implementation": "sdpa",
+      "attention_class": "Qwen2SdpaAttention",
+      "wrapped_attention_class": null,
+      "n_params": 7471548288,
+      "model_bytes": {
+        "bytes": 15412869016,
+        "gb": 15.412869016,
+        "by_dtype_bytes": {
+          "torch.bfloat16": 15412858624,
+          "torch.float32": 7168,
+          "torch.int64": 3224
+        }
+      },
+      "max_new_tokens": 16,
+      "n_prompts": 2,
+      "n_repeats": 1,
+      "per_prompt": [
+        {
+          "prompt_tokens": 8,
+          "new_tokens": 16,
+          "seconds": 0.3631551512517035,
+          "ms_per_token": 22.69719695323147
+        },
+        {
+          "prompt_tokens": 8,
+          "new_tokens": 16,
+          "seconds": 0.3623179839923978,
+          "ms_per_token": 22.64487399952486
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 32,
+          "generation_seconds": 0.7254731352441013,
+          "ms_per_token": 22.671035476378165
+        }
+      ],
+      "warmup_seconds": 0.3660209537483752,
+      "sample_completion": ":\nA. The Enlightenment and the Enlightenment thinkers' advocacy of human rights, freedom",
+      "generated_tokens": 32,
+      "generation_seconds": 0.7254731352441013,
+      "ms_per_token": 22.671035476378165,
+      "tokens_per_second": 44.109145391349195,
+      "ms_per_token_std": 0.0,
+      "perplexity": 12.90465259552002,
+      "perplexity_seconds": 57.79486298561096,
+      "peak_vram_generation_gb": 17.4626432,
+      "peak_vram_gb": 17.4626432,
+      "cuda_allocated_after_free_gb": 15.46898432,
+      "seconds": 62.71758675575256
+    }
+  },
+  "summary": {
+    "masked": {
+      "ms_per_token": 23.152029258199036,
+      "ms_per_token_std": 0.0,
+      "tokens_per_second": 43.19275813137896,
+      "model_gb": 15.70100224,
+      "n_params": 7615616512,
+      "peak_vram_gb": 17.748801024,
+      "attn_implementation": "sdpa",
+      "attention_class": "Qwen2SdpaAttention",
+      "perplexity": 12.904181480407715,
+      "perplexity_minus_masked": 0.0
+    },
+    "physical": {
+      "ms_per_token": 22.671035476378165,
+      "ms_per_token_std": 0.0,
+      "tokens_per_second": 44.109145391349195,
+      "model_gb": 15.412869016,
+      "n_params": 7471548288,
+      "peak_vram_gb": 17.4626432,
+      "attn_implementation": "sdpa",
+      "attention_class": "Qwen2SdpaAttention",
+      "perplexity": 12.90465259552002,
+      "perplexity_minus_masked": 0.0004711151123046875
+    }
+  }
+}

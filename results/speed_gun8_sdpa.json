@@ -1,0 +1,1281 @@
+{
+  "run": {
+    "started_at": "2026-09-22T16:10:38",
+    "status": "completed",
+    "args": {
+      "plan": "results/ablation_gun6.json",
+      "heads_from": "both",
+      "fraction": null,
+      "variants": "fp16,masked,physical",
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 3,
+      "attn_implementation": "sdpa",
+      "perplexity": false,
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "dtype": "fp16",
+      "attn_kernel": "eager",
+      "seed": 42,
+      "output": "results/speed_gun8_sdpa.json",
+      "log": "log_gun11_speed_sdpa.txt",
+      "preflight": false,
+      "dry_run": false
+    },
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "prompts": [
+      "The main causes of the French Revolution were",
+      "In computer science, a hash table is",
+      "The capital of Australia is",
+      "Photosynthesis is the process by which plants",
+      "Write a short description of the water cycle:",
+      "The theory of relativity, proposed by Albert Einstein,",
+      "A balanced diet should include",
+      "The Roman Empire fell because"
+    ],
+    "finished_at": "2026-09-22T16:13:34"
+  },
+  "source": {
+    "plan_file": "results/ablation_gun6.json",
+    "config": "both",
+    "fraction": null,
+    "seed": 42,
+    "perplexity_in_source": 6.317065238952637,
+    "n_heads": 205,
+    "int4_layers": {
+      "attn": 18,
+      "mlp": 19
+    },
+    "pruned_heads": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        15
+      ],
+      [
+        1,
+        15
+      ],
+      [
+        2,
+        20
+      ],
+      [
+        2,
+        23
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        7,
+        16
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        11,
+        14
+      ],
+      [
+        12,
+        5
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        15,
+        23
+      ],
+      [
+        15,
+        24
+      ],
+      [
+        15,
+        25
+      ],
+      [
+        15,
+        26
+      ],
+      [
+        15,
+        27
+      ],
+      [
+        17,
+        30
+      ],
+      [
+        18,
+        0
+      ],
+      [
+        18,
+        1
+      ],
+      [
+        18,
+        2
+      ],
+      [
+        18,
+        3
+      ],
+      [
+        18,
+        21
+      ],
+      [
+        18,
+        22
+      ],
+      [
+        18,
+        23
+      ],
+      [
+        18,
+        29
+      ],
+      [
+        19,
+        9
+      ],
+      [
+        19,
+        17
+      ],
+      [
+        19,
+        25
+      ],
+      [
+        20,
+        6
+      ],
+      [
+        20,
+        8
+      ],
+      [
+        20,
+        9
+      ],
+      [
+        20,
+        13
+      ],
+      [
+        20,
+        14
+      ],
+      [
+        20,
+        17
+      ],
+      [
+        20,
+        20
+      ],
+      [
+        20,
+        23
+      ],
+      [
+        20,
+        28
+      ],
+      [
+        20,
+        29
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        20,
+        31
+      ],
+      [
+        21,
+        0
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        21,
+        2
+      ],
+      [
+        21,
+        3
+      ],
+      [
+        21,
+        4
+      ],
+      [
+        21,
+        9
+      ],
+      [
+        21,
+        10
+      ],
+      [
+        21,
+        11
+      ],
+      [
+        21,
+        16
+      ],
+      [
+        21,
+        17
+      ],
+      [
+        21,
+        18
+      ],
+      [
+        21,
+        19
+      ],
+      [
+        21,
+        27
+      ],
+      [
+        22,
+        0
+      ],
+      [
+        22,
+        1
+      ],
+      [
+        22,
+        2
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        22,
+        5
+      ],
+      [
+        22,
+        6
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        22,
+        8
+      ],
+      [
+        22,
+        9
+      ],
+      [
+        22,
+        10
+      ],
+      [
+        22,
+        11
+      ],
+      [
+        22,
+        17
+      ],
+      [
+        22,
+        18
+      ],
+      [
+        22,
+        19
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        22,
+        27
+      ],
+      [
+        22,
+        30
+      ],
+      [
+        22,
+        31
+      ],
+      [
+        23,
+        0
+      ],
+      [
+        23,
+        6
+      ],
+      [
+        23,
+        7
+      ],
+      [
+        23,
+        8
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        13
+      ],
+      [
+        23,
+        14
+      ],
+      [
+        23,
+        15
+      ],
+      [
+        23,
+        17
+      ],
+      [
+        23,
+        29
+      ],
+      [
+        23,
+        31
+      ],
+      [
+        24,
+        0
+      ],
+      [
+        24,
+        1
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        24,
+        5
+      ],
+      [
+        24,
+        6
+      ],
+      [
+        24,
+        7
+      ],
+      [
+        24,
+        11
+      ],
+      [
+        24,
+        12
+      ],
+      [
+        24,
+        13
+      ],
+      [
+        24,
+        15
+      ],
+      [
+        24,
+        16
+      ],
+      [
+        24,
+        17
+      ],
+      [
+        24,
+        24
+      ],
+      [
+        24,
+        25
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        24,
+        27
+      ],
+      [
+        24,
+        28
+      ],
+      [
+        24,
+        29
+      ],
+      [
+        24,
+        30
+      ],
+      [
+        24,
+        31
+      ],
+      [
+        25,
+        0
+      ],
+      [
+        25,
+        1
+      ],
+      [
+        25,
+        2
+      ],
+      [
+        25,
+        3
+      ],
+      [
+        25,
+        4
+      ],
+      [
+        25,
+        5
+      ],
+      [
+        25,
+        8
+      ],
+      [
+        25,
+        10
+      ],
+      [
+        25,
+        11
+      ],
+      [
+        25,
+        12
+      ],
+      [
+        25,
+        13
+      ],
+      [
+        25,
+        14
+      ],
+      [
+        25,
+        16
+      ],
+      [
+        25,
+        18
+      ],
+      [
+        25,
+        19
+      ],
+      [
+        25,
+        20
+      ],
+      [
+        25,
+        23
+      ],
+      [
+        25,
+        24
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        25,
+        26
+      ],
+      [
+        25,
+        27
+      ],
+      [
+        25,
+        29
+      ],
+      [
+        25,
+        30
+      ],
+      [
+        26,
+        0
+      ],
+      [
+        26,
+        1
+      ],
+      [
+        26,
+        2
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        26,
+        5
+      ],
+      [
+        26,
+        7
+      ],
+      [
+        26,
+        12
+      ],
+      [
+        26,
+        13
+      ],
+      [
+        26,
+        14
+      ],
+      [
+        26,
+        16
+      ],
+      [
+        26,
+        17
+      ],
+      [
+        26,
+        18
+      ],
+      [
+        26,
+        24
+      ],
+      [
+        26,
+        30
+      ],
+      [
+        26,
+        31
+      ],
+      [
+        27,
+        0
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        27,
+        4
+      ],
+      [
+        27,
+        5
+      ],
+      [
+        27,
+        6
+      ],
+      [
+        27,
+        8
+      ],
+      [
+        27,
+        14
+      ],
+      [
+        27,
+        16
+      ],
+      [
+        27,
+        17
+      ],
+      [
+        27,
+        18
+      ],
+      [
+        27,
+        19
+      ],
+      [
+        27,
+        25
+      ],
+      [
+        27,
+        26
+      ],
+      [
+        27,
+        27
+      ],
+      [
+        27,
+        29
+      ],
+      [
+        27,
+        30
+      ],
+      [
+        27,
+        31
+      ],
+      [
+        28,
+        1
+      ],
+      [
+        28,
+        2
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        28,
+        9
+      ],
+      [
+        28,
+        11
+      ],
+      [
+        28,
+        16
+      ],
+      [
+        28,
+        17
+      ],
+      [
+        28,
+        18
+      ],
+      [
+        28,
+        19
+      ],
+      [
+        28,
+        25
+      ],
+      [
+        28,
+        26
+      ],
+      [
+        28,
+        28
+      ],
+      [
+        28,
+        29
+      ],
+      [
+        28,
+        31
+      ],
+      [
+        29,
+        1
+      ],
+      [
+        29,
+        3
+      ],
+      [
+        29,
+        9
+      ],
+      [
+        29,
+        10
+      ],
+      [
+        29,
+        11
+      ],
+      [
+        29,
+        15
+      ],
+      [
+        29,
+        18
+      ],
+      [
+        29,
+        20
+      ],
+      [
+        29,
+        23
+      ],
+      [
+        29,
+        30
+      ],
+      [
+        30,
+        0
+      ],
+      [
+        30,
+        1
+      ],
+      [
+        30,
+        2
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        30,
+        4
+      ],
+      [
+        30,
+        8
+      ],
+      [
+        30,
+        10
+      ],
+      [
+        30,
+        17
+      ],
+      [
+        30,
+        24
+      ],
+      [
+        30,
+        25
+      ],
+      [
+        30,
+        26
+      ],
+      [
+        30,
+        27
+      ],
+      [
+        30,
+        31
+      ],
+      [
+        31,
+        6
+      ],
+      [
+        31,
+        15
+      ],
+      [
+        31,
+        18
+      ],
+      [
+        31,
+        19
+      ],
+      [
+        31,
+        21
+      ]
+    ]
+  },
+  "variants": {
+    "fp16": {
+      "status": "completed",
+      "started_at": "2026-09-22T16:10:40",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 14.145046472549438,
+      "params_before": 7248023552,
+      "peak_vram_load_apply_gb": 14.496063488,
+      "cuda_allocated_after_apply_gb": 14.496063488,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "wrapped_attention_class": null,
+      "n_params": 7248023552,
+      "model_bytes": {
+        "bytes": 14496055296,
+        "gb": 14.496055296,
+        "by_dtype_bytes": {
+          "torch.float16": 14496047104,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 3,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.736108320299536,
+          "ms_per_token": 27.12669250468025
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.7133581480011344,
+          "ms_per_token": 26.771221062517725
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.716244957409799,
+          "ms_per_token": 26.81632745952811
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.7117615742608905,
+          "ms_per_token": 26.746274597826414
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 1.7138545899651945,
+          "ms_per_token": 26.778977968206163
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.71001983480528,
+          "ms_per_token": 26.7190599188325
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7105380580760539,
+          "ms_per_token": 26.72715715743834
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7159966467879713,
+          "ms_per_token": 26.81244760606205
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 13.72788212960586,
+          "ms_per_token": 26.812269784386444
+        },
+        {
+          "repeat": 1,
+          "generated_tokens": 512,
+          "generation_seconds": 13.703874530270696,
+          "ms_per_token": 26.765379941934953
+        },
+        {
+          "repeat": 2,
+          "generated_tokens": 512,
+          "generation_seconds": 13.759469692129642,
+          "ms_per_token": 26.873964242440707
+        }
+      ],
+      "warmup_seconds": 2.386993352789432,
+      "sample_completion": "the social, economic, and political problems that had been building up in France for many years.\n\n1. Social Problems:\n- The French society was divided into three estates: the clergy, the nobility, and the common people (third estate). The third estate made up the majority of",
+      "generated_tokens": 1536,
+      "generation_seconds": 41.1912263520062,
+      "ms_per_token": 26.817204656254034,
+      "tokens_per_second": 37.289494293611625,
+      "ms_per_token_std": 0.05445972457528114,
+      "peak_vram_generation_gb": 14.515965952,
+      "peak_vram_gb": 14.515965952,
+      "cuda_allocated_after_free_gb": 14.504583168,
+      "seconds": 58.323548316955566
+    },
+    "masked": {
+      "status": "completed",
+      "started_at": "2026-09-22T16:11:38",
+      "cuda_allocated_before_load_gb": 0.00851968,
+      "model_load_seconds": 12.850750923156738,
+      "params_before": 7248023552,
+      "pruning": {
+        "pruned_heads": 205,
+        "pruned_mlp_blocks": 0
+      },
+      "peak_vram_load_apply_gb": 14.504583168,
+      "cuda_allocated_after_apply_gb": 14.504583168,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "wrapped_attention_class": null,
+      "n_params": 7248023552,
+      "model_bytes": {
+        "bytes": 14496055296,
+        "gb": 14.496055296,
+        "by_dtype_bytes": {
+          "torch.float16": 14496047104,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 3,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.7527791471220553,
+          "ms_per_token": 27.387174173782114
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.746443649288267,
+          "ms_per_token": 27.28818202012917
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7407480468973517,
+          "ms_per_token": 27.19918823277112
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.7518580621108413,
+          "ms_per_token": 27.372782220481895
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 1.7458824208006263,
+          "ms_per_token": 27.279412825009786
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.7116077938117087,
+          "ms_per_token": 26.74387177830795
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7188630462624133,
+          "ms_per_token": 26.857235097850207
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.7033007042482495,
+          "ms_per_token": 26.6140735038789
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 13.871482870541513,
+          "ms_per_token": 27.092739981526393
+        },
+        {
+          "repeat": 1,
+          "generated_tokens": 512,
+          "generation_seconds": 13.798698145896196,
+          "ms_per_token": 26.95058231620351
+        },
+        {
+          "repeat": 2,
+          "generated_tokens": 512,
+          "generation_seconds": 13.885805249679834,
+          "ms_per_token": 27.120713378280925
+        }
+      ],
+      "warmup_seconds": 1.7455664603039622,
+      "sample_completion": "the social, political, and economic problems that had been building up in France for many years.\n\n1. Economic Crisis: The French economy was in a state of crisis due to heavy government spending, corruption, and mismanagement. The French monarchy had been borrowing heavily from banks and foreign countries to finance",
+      "generated_tokens": 1536,
+      "generation_seconds": 41.55598626611754,
+      "ms_per_token": 27.054678558670275,
+      "tokens_per_second": 36.96218374324494,
+      "ms_per_token_std": 0.09122855216264725,
+      "peak_vram_generation_gb": 14.515965952,
+      "peak_vram_gb": 14.515965952,
+      "cuda_allocated_after_free_gb": 14.504583168,
+      "seconds": 57.23378229141235
+    },
+    "physical": {
+      "status": "completed",
+      "started_at": "2026-09-22T16:12:35",
+      "cuda_allocated_before_load_gb": 0.00851968,
+      "model_load_seconds": 13.260727643966675,
+      "params_before": 7248023552,
+      "pruning": {
+        "pruned_heads": 205,
+        "params_before": 7248023552,
+        "params_after": 7033065472,
+        "params_removed": 214958080,
+        "params_removed_expected": 214958080,
+        "num_heads_per_layer": {
+          "0": 28,
+          "1": 31,
+          "2": 30,
+          "3": 31,
+          "7": 31,
+          "11": 30,
+          "12": 28,
+          "15": 27,
+          "17": 31,
+          "18": 24,
+          "19": 29,
+          "20": 20,
+          "21": 19,
+          "22": 13,
+          "23": 20,
+          "24": 12,
+          "25": 9,
+          "26": 17,
+          "27": 15,
+          "28": 18,
+          "29": 22,
+          "30": 19,
+          "31": 27
+        }
+      },
+      "attn_kernel": "eager",
+      "peak_vram_load_apply_gb": 14.563303936,
+      "cuda_allocated_after_apply_gb": 14.083067392,
+      "attn_implementation": "sdpa",
+      "attention_class": "PrunedHeadAttention",
+      "wrapped_attention_class": "MistralSdpaAttention",
+      "n_params": 7033065472,
+      "model_bytes": {
+        "bytes": 14066143384,
+        "gb": 14.066143384,
+        "by_dtype_bytes": {
+          "torch.float16": 14066130944,
+          "torch.int64": 4248,
+          "torch.float32": 8192
+        }
+      },
+      "max_new_tokens": 64,
+      "n_prompts": 8,
+      "n_repeats": 3,
+      "per_prompt": [
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.870919109787792,
+          "ms_per_token": 29.23311109043425
+        },
+        {
+          "prompt_tokens": 9,
+          "new_tokens": 64,
+          "seconds": 1.8417283738963306,
+          "ms_per_token": 28.777005842130166
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.8550160201266408,
+          "ms_per_token": 28.984625314478762
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.8410732545889914,
+          "ms_per_token": 28.76676960295299
+        },
+        {
+          "prompt_tokens": 10,
+          "new_tokens": 64,
+          "seconds": 1.830211821012199,
+          "ms_per_token": 28.597059703315608
+        },
+        {
+          "prompt_tokens": 12,
+          "new_tokens": 64,
+          "seconds": 1.847505928017199,
+          "ms_per_token": 28.867280125268735
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.8522038711234927,
+          "ms_per_token": 28.940685486304574
+        },
+        {
+          "prompt_tokens": 6,
+          "new_tokens": 64,
+          "seconds": 1.8669828842394054,
+          "ms_per_token": 29.17160756624071
+        }
+      ],
+      "repeats": [
+        {
+          "repeat": 0,
+          "generated_tokens": 512,
+          "generation_seconds": 14.80564126279205,
+          "ms_per_token": 28.917268091390724
+        },
+        {
+          "repeat": 1,
+          "generated_tokens": 512,
+          "generation_seconds": 14.173807843122631,
+          "ms_per_token": 27.68321844359889
+        },
+        {
+          "repeat": 2,
+          "generated_tokens": 512,
+          "generation_seconds": 14.058914860710502,
+          "ms_per_token": 27.4588180873252
+        }
+      ],
+      "warmup_seconds": 1.9200746309943497,
+      "sample_completion": "the social, political, and economic problems that had been building up in France for many years.\n\n1. Economic Crisis: The French economy was in a state of crisis due to heavy government spending, corruption, and mismanagement. The French monarchy had been borrowing heavily from banks and foreign countries to finance",
+      "generated_tokens": 1536,
+      "generation_seconds": 43.038363966625184,
+      "ms_per_token": 28.019768207438272,
+      "tokens_per_second": 35.68908895308188,
+      "ms_per_token_std": 0.7853145599365234,
+      "peak_vram_generation_gb": 14.094388736,
+      "peak_vram_gb": 14.563303936,
+      "cuda_allocated_after_free_gb": 14.083067392,
+      "seconds": 58.78304314613342
+    }
+  },
+  "summary": {
+    "fp16": {
+      "ms_per_token": 26.817204656254034,
+      "ms_per_token_std": 0.05445972457528114,
+      "tokens_per_second": 37.289494293611625,
+      "model_gb": 14.496055296,
+      "n_params": 7248023552,
+      "peak_vram_gb": 14.515965952,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "perplexity": null,
+      "speedup_vs_fp16": 1.0,
+      "size_ratio_vs_fp16": 1.0,
+      "param_ratio_vs_fp16": 1.0
+    },
+    "masked": {
+      "ms_per_token": 27.054678558670275,
+      "ms_per_token_std": 0.09122855216264725,
+      "tokens_per_second": 36.96218374324494,
+      "model_gb": 14.496055296,
+      "n_params": 7248023552,
+      "peak_vram_gb": 14.515965952,
+      "attn_implementation": "sdpa",
+      "attention_class": "MistralSdpaAttention",
+      "perplexity": null,
+      "speedup_vs_fp16": 0.9912224459846655,
+      "size_ratio_vs_fp16": 1.0,
+      "param_ratio_vs_fp16": 1.0
+    },
+    "physical": {
+      "ms_per_token": 28.019768207438272,
+      "ms_per_token_std": 0.7853145599365234,
+      "tokens_per_second": 35.68908895308188,
+      "model_gb": 14.066143384,
+      "n_params": 7033065472,
+      "peak_vram_gb": 14.563303936,
+      "attn_implementation": "sdpa",
+      "attention_class": "PrunedHeadAttention",
+      "perplexity": null,
+      "speedup_vs_fp16": 0.9570816024500517,
+      "size_ratio_vs_fp16": 0.9703428344317486,
+      "param_ratio_vs_fp16": 0.9703425246264984
+    }
+  }
+}

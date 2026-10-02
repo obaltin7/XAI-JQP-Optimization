@@ -1,0 +1,23 @@
+# XAI-JQP — local (CPU-only) dependencies for the mini-model test-suite, drift metrics,
+# tables and figures. No 7B model is loaded locally.
+#
+# WHY A SEPARATE FILE?
+# requirements.txt pins transformers==4.44.2 for the GPU host (torch 2.4.1). On a
+# desktop with a recent Python (3.12+ / 3.13) that pin pulls in tokenizers==0.19.1,
+# which has no pre-built wheel and would need a Rust toolchain. This file leaves
+# the versions unpinned; the tests only use small randomly initialised models.
+#
+# Install:
+#     python -m pip install -r requirements-local.txt
+#
+# Do NOT copy these unpinned versions into requirements.txt.
+
+torch
+transformers
+captum
+datasets
+sentencepiece
+protobuf
+numpy
+matplotlib
+pytest

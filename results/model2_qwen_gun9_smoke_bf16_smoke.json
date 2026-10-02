@@ -1,0 +1,227 @@
+{
+  "run": {
+    "started_at": "2026-09-21T13:48:42",
+    "status": "smoke_completed",
+    "args": {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "dtype": "bf16",
+      "fraction": 0.2,
+      "configs": "quant_only,prune_only,both,prune_random,prune_reverse,prune_taylor,xai_iter_fixedq",
+      "n_rounds": 3,
+      "n_steps": 8,
+      "baseline_token": "auto",
+      "seed": 42,
+      "n_repeats": 3,
+      "scores": null,
+      "scores_dir": "results/gun9_scores",
+      "no_mmlu": false,
+      "mmlu_batch_size": 8,
+      "output": "results/model2_qwen_gun9_smoke_bf16_smoke.json",
+      "log": "log_gun9_model2.txt",
+      "skip_baseline": false,
+      "resume": false,
+      "preflight": false,
+      "smoke": true,
+      "dry_run": false,
+      "mmlu": true
+    },
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "dtype": "bf16",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "config_order": [
+      "quant_only",
+      "prune_only",
+      "both",
+      "prune_random",
+      "prune_reverse",
+      "prune_taylor",
+      "xai_iter_fixedq"
+    ],
+    "time_estimate": {
+      "per_config_minutes": {
+        "quant_only": 5.5,
+        "prune_only": 5.0,
+        "both": 5.5,
+        "prune_random": 15.0,
+        "prune_reverse": 5.0,
+        "prune_taylor": 5.5,
+        "xai_iter_fixedq": 23.5
+      },
+      "baseline_plus_attribution_minutes": 11.0,
+      "total_minutes": 76.0,
+      "assumptions": "yükleme+uygulama+ppl 2–2.5 dk, MMLU 3 dk, attribution 6 dk/çağrı (n_steps 8); ilk indirme hariç (~15 GB)"
+    }
+  },
+  "reference": {
+    "fraction": 0.2,
+    "tier_fractions": [
+      0.2,
+      0.4,
+      0.4
+    ],
+    "mlp_min_tier": "int4",
+    "attn_rule": "median",
+    "scores_file": "results/gun9_scores/importance_scores_qwen_qwen2_5_7b_instruct.json",
+    "scores_dir": "results/gun9_scores",
+    "quantized_configs": [
+      "both",
+      "prune_taylor",
+      "quant_only",
+      "xai_iter_fixedq"
+    ],
+    "config_semantics": "quant_only/prune_only/both/prune_random/prune_reverse = Gün 6 tanımları (random/reverse kuantizasyonsuz); prune_taylor/xai_iter_fixedq = Gün 7 tanımları (INT4 planı both ile aynı)",
+    "size_note": "model_bytes = parametre + buffer baytı; bnb quant_state hariç (Gün 5–7 ile aynı ölçüm)",
+    "perplexity_settings": {
+      "max_length": 1024,
+      "stride": 512,
+      "dataset": "wikitext-2-raw-v1 (test split)"
+    }
+  },
+  "attribution": {
+    "status": "pending"
+  },
+  "baseline": {
+    "status": "pending",
+    "precision": "bf16"
+  },
+  "configs": {
+    "quant_only": {
+      "description": "budama yok; planın attn/MLP INT4 kademeleri aynen uygulanır (Gün 6 tanımı)",
+      "status": "pending",
+      "quantized": true,
+      "repeats": []
+    },
+    "prune_only": {
+      "description": "xAI (LIG) seçimiyle planın prune head'leri budanır; kuantizasyon yok (Gün 6 tanımı)",
+      "status": "pending",
+      "quantized": false,
+      "repeats": []
+    },
+    "both": {
+      "description": "xAI budama + INT4 = tek-atış XAI-JQP (Gün 5/6 both, Gün 7 xai_single ile aynı yol)",
+      "status": "pending",
+      "quantized": true,
+      "repeats": []
+    },
+    "prune_random": {
+      "description": "aynı head sayısı; seed'li rastgele seçim (n_repeats tekrar); kuantizasyon yok (Gün 6 tanımı)",
+      "status": "pending",
+      "quantized": false,
+      "repeats": []
+    },
+    "prune_reverse": {
+      "description": "aynı head sayısı; en YÜKSEK xAI skorlu head'ler budanır (ters kontrol); kuantizasyon yok (Gün 6 tanımı)",
+      "status": "pending",
+      "quantized": false,
+      "repeats": []
+    },
+    "prune_taylor": {
+      "description": "aynı head sayısı; ölçüt head_taylor_scores (Σ|G⊙W|) en düşük N; INT4 planı both ile aynı (Gün 7 tanımı)",
+      "status": "pending",
+      "quantized": true,
+      "repeats": []
+    },
+    "xai_iter_fixedq": {
+      "description": "n_rounds tur budama, her tur maskeli modelde yeniden skor (exclude_heads); INT4 planı both ile birebir aynı (Gün 7 tanımı, nihai konfig)",
+      "status": "pending",
+      "quantized": true,
+      "repeats": []
+    }
+  },
+  "comparison": {},
+  "smoke": {
+    "status": "completed",
+    "started_at": "2026-09-21T13:48:45",
+    "model_load_seconds": 3.535074234008789,
+    "forward": {
+      "n_tokens": 80,
+      "finite": true,
+      "abs_max": 35.5
+    },
+    "short_perplexity": {
+      "value": 6.750404357910156,
+      "seconds": 1.6770355701446533,
+      "note": "WikiText-2 test ilk 40k karakter (tam ölçüm değil)"
+    },
+    "attribution": {
+      "n_scores": 812,
+      "finite": true,
+      "n_zero": 0,
+      "seconds": 27.979966402053833,
+      "estimated_full_seconds": 447.6794624328613,
+      "baseline_token_id": 151643,
+      "peak_vram_gb": 21.935899648,
+      "head_score_range": [
+        0.011210128407419464,
+        2.547779224537037
+      ]
+    },
+    "masked_vs_physical": {
+      "heads": [
+        [
+          0,
+          1
+        ],
+        [
+          14,
+          27
+        ],
+        [
+          27,
+          0
+        ]
+      ],
+      "max_abs_logit_diff": 17.875,
+      "mean_abs_logit_diff": 0.4776526391506195,
+      "top1_agreement": 0.9750000238418579,
+      "params_removed": 2752896,
+      "params_removed_expected": 2752896,
+      "changed_vs_unpruned": 9.59375
+    },
+    "int4_layer0": {
+      "quantization_path": "primary (compressor._quantize_linear, compute_dtype=torch.bfloat16)",
+      "counts": {
+        "int4_modules": 7,
+        "int8_modules": 0
+      },
+      "finite": true,
+      "max_abs_logit_diff_vs_physical": 17.125,
+      "top1_agreement": 0.949999988079071
+    },
+    "peak_vram_gb": 21.935899648,
+    "problems": [],
+    "seconds": 37.01785945892334
+  },
+  "model_info": {
+    "model_type": "qwen2",
+    "n_layers": 28,
+    "n_heads": 28,
+    "n_kv_heads": 4,
+    "head_dim": 128,
+    "hidden_size": 3584,
+    "intermediate_size": 18944,
+    "vocab_size": 152064,
+    "n_heads_total": 784,
+    "pad_token_id": null,
+    "attention_class": "Qwen2SdpaAttention",
+    "attention_bias": {
+      "q_proj": true,
+      "k_proj": true,
+      "v_proj": true,
+      "o_proj": false
+    },
+    "gqa_group": 7,
+    "n_params": 7615616512,
+    "attn_implementation": "sdpa"
+  }
+}

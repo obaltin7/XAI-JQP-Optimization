@@ -1,0 +1,6732 @@
+{
+  "run": {
+    "started_at": "2026-09-22T13:39:52",
+    "status": "completed",
+    "args": {
+      "plan": "results/model2_qwen_gun9.json",
+      "fractions": null,
+      "configs": "prune_random",
+      "tasks": "",
+      "with_mmlu": true,
+      "verify_ppl": false,
+      "ppl_datasets": null,
+      "save_window_nll": false,
+      "skip_fp16": true,
+      "model": null,
+      "dtype": null,
+      "batch_size": 16,
+      "mmlu_batch_size": 8,
+      "seed": 42,
+      "random_seed": 43,
+      "output": "results/tasks_gun9_model2_qwen_gun9_seed43_mmlu.json",
+      "log": "log_gun16_tasks_qwen_seeds_mmlu.txt",
+      "resume": false,
+      "preflight": false,
+      "dry_run": false
+    },
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "dtype": "bf16",
+    "env": {
+      "python": "3.11.10",
+      "torch": "2.4.1+cu124",
+      "transformers": "4.44.2",
+      "cuda_available": true,
+      "gpu": "NVIDIA L40S",
+      "bitsandbytes": "0.50.2",
+      "bnb_Params4bit_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=False, quant_state: Optional[bitsandbytes.functional.QuantState] = None, blocksize: Optional[int] = None, compress_statistics: bool = True, quant_type: str = 'fp4', quant_storage: torch.dtype = torch.uint8, module: Optional[ForwardRef('Linear4bit')] = None, bnb_quantized: bool = False, **kwargs) -> 'Params4bit'",
+      "bnb_Int8Params_signature": "(cls, data: Optional[torch.Tensor] = None, requires_grad=True, has_fp16_weights=False, CB: Optional[torch.Tensor] = None, SCB: Optional[torch.Tensor] = None, **kwargs)",
+      "bnb_Linear4bit_signature": "(self, input_features, output_features, bias=True, compute_dtype=None, compress_statistics=True, quant_type='fp4', quant_storage=torch.uint8, device=None)"
+    },
+    "tasks": [],
+    "entry_order": [
+      "prune_random"
+    ],
+    "time_estimate": {
+      "minutes_per_entry": 5.0,
+      "total_minutes": 5.0
+    },
+    "finished_at": "2026-09-22T13:40:11",
+    "total_seconds": 18.56040859222412
+  },
+  "source": {
+    "plan_file": "results/model2_qwen_gun9.json",
+    "plan_model": "Qwen/Qwen2.5-7B-Instruct",
+    "plan_format": "configs",
+    "random_seed": 43,
+    "note": "planlar kaynak koşunun repeats[].pruned_heads + plan_summary alanlarından; attribution yapılmaz; budama maskeli (apply_structural_pruning), kuantizasyon bnb NF4 (Gün 5–7 ile aynı yol)",
+    "subsets": {}
+  },
+  "entries": {
+    "prune_random": {
+      "status": "completed",
+      "fraction": "0.2",
+      "config": "prune_random",
+      "seed": 43,
+      "source": {
+        "perplexity": 14.217859268188477,
+        "mmlu_subset_acc": 0.492,
+        "int4_modules": 0,
+        "n_pruned_heads": 157,
+        "model_bytes_after_gb": 15.70100224
+      },
+      "started_at": "2026-09-22T13:40:00",
+      "cuda_allocated_before_load_gb": 0.0,
+      "model_load_seconds": 3.248277425765991,
+      "model_bytes_before": {
+        "bytes": 15701002240,
+        "gb": 15.70100224,
+        "by_dtype_bytes": {
+          "torch.bfloat16": 15700995072,
+          "torch.float32": 7168
+        }
+      },
+      "pruning": {
+        "pruned_heads": 157,
+        "pruned_mlp_blocks": 0
+      },
+      "quantization": {
+        "int4_modules": 0,
+        "int8_modules": 0
+      },
+      "n_pruned_heads": 157,
+      "int4_modules": 0,
+      "apply_seconds": 0.4910142421722412,
+      "model_bytes_after": {
+        "bytes": 15701002240,
+        "gb": 15.70100224,
+        "by_dtype_bytes": {
+          "torch.bfloat16": 15700995072,
+          "torch.float32": 7168
+        }
+      },
+      "tasks": {},
+      "summary": {},
+      "mmlu": {
+        "mmlu_subset_acc": 0.492,
+        "accuracy": 0.492,
+        "n_questions": 500,
+        "n_correct": 246,
+        "per_subject": {
+          "abstract_algebra": {
+            "accuracy": 0.38,
+            "n": 50,
+            "correct": 19
+          },
+          "anatomy": {
+            "accuracy": 0.52,
+            "n": 50,
+            "correct": 26
+          },
+          "astronomy": {
+            "accuracy": 0.58,
+            "n": 50,
+            "correct": 29
+          },
+          "college_computer_science": {
+            "accuracy": 0.54,
+            "n": 50,
+            "correct": 27
+          },
+          "high_school_mathematics": {
+            "accuracy": 0.28,
+            "n": 50,
+            "correct": 14
+          },
+          "philosophy": {
+            "accuracy": 0.48,
+            "n": 50,
+            "correct": 24
+          },
+          "world_religions": {
+            "accuracy": 0.62,
+            "n": 50,
+            "correct": 31
+          },
+          "us_foreign_policy": {
+            "accuracy": 0.74,
+            "n": 50,
+            "correct": 37
+          },
+          "econometrics": {
+            "accuracy": 0.44,
+            "n": 50,
+            "correct": 22
+          },
+          "moral_scenarios": {
+            "accuracy": 0.34,
+            "n": 50,
+            "correct": 17
+          }
+        },
+        "seconds": 6.649233341217041,
+        "predicted_letter_counts": {
+          "A": 237,
+          "B": 87,
+          "C": 104,
+          "D": 72
+        },
+        "gold_letter_counts": {
+          "A": 113,
+          "B": 109,
+          "C": 141,
+          "D": 137
+        },
+        "mean_correct_prob": 0.464588983066511,
+        "prompt_format": {
+          "style": "plain",
+          "n_shot": 0,
+          "chat_template_used": false,
+          "system_prompt": null,
+          "template": "The following are multiple choice questions (with answers) about {subject}.\n\n{question}\nA. {a}\nB. {b}\nC. {c}\nD. {d}\nAnswer:",
+          "assistant_prefix": null,
+          "scoring": "son konumda A/B/C/D token log-olasılıkları (tam sözlük log_softmax, fp32), argmax"
+        },
+        "letter_tokens": {
+          "ids": [
+            362,
+            425,
+            356,
+            422
+          ],
+          "context_stable": true,
+          "tokens": [
+            "ĠA",
+            "ĠB",
+            "ĠC",
+            "ĠD"
+          ]
+        },
+        "subset": {
+          "dataset": "cais/mmlu",
+          "split": "test",
+          "seed": 42,
+          "per_subject": 50,
+          "subjects": [
+            "abstract_algebra",
+            "anatomy",
+            "astronomy",
+            "college_computer_science",
+            "high_school_mathematics",
+            "philosophy",
+            "world_religions",
+            "us_foreign_policy",
+            "econometrics",
+            "moral_scenarios"
+          ],
+          "created_at": "2026-09-18T00:12:10",
+          "ids_file": "results/mmlu_subset_ids.json"
+        },
+        "batch_size": 8,
+        "max_length": 2048,
+        "n_truncated": 0,
+        "per_question": [
+          {
+            "subject": "abstract_algebra",
+            "index": 0,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.493417739868164,
+              -0.24341793358325958,
+              -4.118417739868164,
+              -2.868417978286743
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 2,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.960836410522461,
+              -2.585836410522461,
+              -2.710836410522461,
+              -0.8358365297317505
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 3,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.6286273002624512,
+              -3.003627300262451,
+              -0.8786273002624512,
+              -1.1286273002624512
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 4,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.955020785331726,
+              -2.3300209045410156,
+              -4.205020904541016,
+              -3.7050209045410156
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 5,
+            "gold": 0,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.165955901145935,
+              -4.290956020355225,
+              -0.41595593094825745,
+              -4.665956020355225
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 6,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.026648035272955894,
+              -4.651648044586182,
+              -4.276648044586182,
+              -6.151648044586182
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 11,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.9773646593093872,
+              -4.852364540100098,
+              -2.8523645401000977,
+              -2.2273645401000977
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 13,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.4308979511260986,
+              -3.5558979511260986,
+              -4.1808977127075195,
+              -5.0558977127075195
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 14,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.0352210998535156,
+              -2.4102210998535156,
+              -1.5352210998535156,
+              -4.535221099853516
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 16,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.698999047279358,
+              -3.9489989280700684,
+              -0.6989990472793579,
+              -3.6989989280700684
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 17,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.1690320521593094,
+              -4.419032096862793,
+              -3.169032096862793,
+              -2.669032096862793
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 19,
+            "gold": 0,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.4461889266967773,
+              -3.6961889266967773,
+              -0.8211888670921326,
+              -1.9461889266967773
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 20,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -0.9846874475479126,
+              -4.734687328338623,
+              -2.234687328338623,
+              -0.8596874475479126
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 22,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.2659077644348145,
+              -4.1409077644348145,
+              -1.2659077644348145,
+              -0.6409078240394592
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 24,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.4486757516860962,
+              -3.8236756324768066,
+              -0.8236757516860962,
+              -1.6986757516860962
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 25,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.2243335247039795,
+              -5.474333763122559,
+              -2.4743335247039795,
+              -4.974333763122559
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 27,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5014978051185608,
+              -1.251497745513916,
+              -4.251497745513916,
+              -4.251497745513916
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 28,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -0.968036949634552,
+              -3.2180368900299072,
+              -0.843036949634552,
+              -1.9680368900299072
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 29,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -3.4476113319396973,
+              -6.322611331939697,
+              -3.6976113319396973,
+              -4.072611331939697
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 31,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.09336422383785248,
+              -5.093364238739014,
+              -4.468364238739014,
+              -9.343363761901855
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 35,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.900078773498535,
+              -0.15007899701595306,
+              -3.9000790119171143,
+              -3.9000790119171143
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 38,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.05680476874113083,
+              -6.431804656982422,
+              -6.806804656982422,
+              -5.556804656982422
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 43,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.8018641471862793,
+              -6.426864147186279,
+              -3.1768641471862793,
+              -4.051864147186279
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 46,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.1827778816223145,
+              -2.6827778816223145,
+              -1.4327778816223145,
+              -0.6827778220176697
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 51,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.6501213312149048,
+              -3.5251212120056152,
+              -2.9001212120056152,
+              -3.9001212120056152
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 53,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.393235206604004,
+              -4.393235206604004,
+              -0.7682352662086487,
+              -1.518235206604004
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 54,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.514085054397583,
+              -0.264085054397583,
+              -2.264085054397583,
+              -4.389084815979004
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 57,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.04898276552557945,
+              -6.173982620239258,
+              -7.798982620239258,
+              -5.673982620239258
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 58,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.021350622177124,
+              -5.646350860595703,
+              -2.146350622177124,
+              -1.896350622177124
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 62,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.1367135047912598,
+              -4.63671350479126,
+              -0.13671360909938812,
+              -2.8867135047912598
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 64,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.9245929718017578,
+              -0.9245930314064026,
+              -5.549592971801758,
+              -5.924592971801758
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 67,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.38657376170158386,
+              -2.2615737915039062,
+              -2.8865737915039062,
+              -3.0115737915039062
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 68,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.3963721990585327,
+              -3.8963723182678223,
+              -3.6463723182678223,
+              -2.8963723182678223
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 69,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -4.84890079498291,
+              -7.97390079498291,
+              -5.59890079498291,
+              -3.97390079498291
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 71,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.1605265140533447,
+              -4.535526752471924,
+              -0.4105265438556671,
+              -4.785526752471924
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 75,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.4790868759155273,
+              -4.229086875915527,
+              -0.9790868163108826,
+              -1.2290868759155273
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 77,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.17389945685863495,
+              -5.6738996505737305,
+              -5.7988996505737305,
+              -6.2988996505737305
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 79,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.501117467880249,
+              -4.25111722946167,
+              -0.6261174082756042,
+              -1.626117467880249
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 81,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.8899154663085938,
+              -4.389915466308594,
+              -1.8899154663085938,
+              -2.5149154663085938
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 82,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.6268832683563232,
+              -4.126883506774902,
+              -3.3768832683563232,
+              -3.8768832683563232
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 84,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.598768949508667,
+              -4.348769187927246,
+              -1.598768949508667,
+              -2.723768949508667
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 86,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.336378812789917,
+              -5.461379051208496,
+              -1.086378812789917,
+              -0.836378812789917
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 88,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.4626078605651855,
+              -4.8376078605651855,
+              -2.9626078605651855,
+              -2.7126078605651855
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 89,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.5511279106140137,
+              -3.8011279106140137,
+              -2.4261279106140137,
+              -2.8011279106140137
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 90,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.350710153579712,
+              -4.850709915161133,
+              -1.100710153579712,
+              -2.100710153579712
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 93,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -2.910999298095703,
+              -2.160999298095703,
+              -2.410999298095703,
+              -4.535999298095703
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 94,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.8874445557594299,
+              -4.012444496154785,
+              -1.6374444961547852,
+              -1.3874444961547852
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 95,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.080315113067627,
+              -0.7053151726722717,
+              -1.955315113067627,
+              -3.955315113067627
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 97,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -3.495574474334717,
+              -3.495574474334717,
+              -4.870574474334717,
+              -0.49557459354400635
+            ]
+          },
+          {
+            "subject": "abstract_algebra",
+            "index": 99,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.322795867919922,
+              -2.447795867919922,
+              -0.8227958083152771,
+              -1.1977958679199219
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 7,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.360689640045166,
+              -0.36068975925445557,
+              -2.610689640045166,
+              -3.485689640045166
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 9,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.3826544284820557,
+              -4.882654190063477,
+              -1.2576544284820557,
+              -3.8826544284820557
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 10,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.2038098573684692,
+              -1.0788098573684692,
+              -2.5788097381591797,
+              -1.5788098573684692
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 11,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.9258580207824707,
+              -8.425858497619629,
+              -6.675858020782471,
+              -5.425858020782471
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 12,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.1881820112466812,
+              -2.9381821155548096,
+              -4.3131818771362305,
+              -5.5631818771362305
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 17,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.4988262951374054,
+              -6.998826503753662,
+              -4.873826503753662,
+              -4.248826503753662
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 20,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -2.6847622394561768,
+              -0.559762179851532,
+              -1.0597622394561768,
+              -5.684762001037598
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 21,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.07343089580535889,
+              -9.448431015014648,
+              -8.448431015014648,
+              -7.948431015014648
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 26,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -7.023900508880615,
+              -8.898900985717773,
+              -0.023900609463453293,
+              -7.898900508880615
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 28,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.021620273590088,
+              -2.271620035171509,
+              -0.14662005007266998,
+              -6.396620273590088
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 29,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.8715592622756958,
+              -2.1215591430664062,
+              -5.996559143066406,
+              -5.871559143066406
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 31,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.8889107704162598,
+              -2.8889107704162598,
+              -1.5139107704162598,
+              -3.3889107704162598
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 34,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.3521416485309601,
+              -1.8521416187286377,
+              -2.9771416187286377,
+              -2.9771416187286377
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 35,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.06646600365638733,
+              -6.566465854644775,
+              -5.066465854644775,
+              -4.816465854644775
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 37,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.4022376537323,
+              -9.402237892150879,
+              -0.15223775804042816,
+              -8.652237892150879
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 41,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.2206476926803589,
+              -6.970647811889648,
+              -2.3456478118896484,
+              -1.5956476926803589
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 45,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.8884109854698181,
+              -2.013411045074463,
+              -2.013411045074463,
+              -4.638411045074463
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 46,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.326265811920166,
+              -0.07626578211784363,
+              -9.201265335083008,
+              -4.826265811920166
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 47,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.43414306640625,
+              -6.43414306640625,
+              -0.059142861515283585,
+              -5.43414306640625
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 48,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.3904173374176025,
+              -4.015417575836182,
+              -3.5154173374176025,
+              -4.140417575836182
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 49,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.1692328453063965,
+              -6.1692328453063965,
+              -0.16923275589942932,
+              -6.5442328453063965
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 58,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.3205344676971436,
+              -5.070534706115723,
+              -3.0705344676971436,
+              -0.3205345571041107
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 59,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.013094858266413212,
+              -8.263094902038574,
+              -7.888094902038574,
+              -9.763094902038574
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 68,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.3688914477825165,
+              -1.4938914775848389,
+              -5.11889123916626,
+              -5.61889123916626
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 71,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.04033844172954559,
+              -8.290338516235352,
+              -10.165338516235352,
+              -9.040338516235352
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 75,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.8264975547790527,
+              -3.9514975547790527,
+              -2.3264975547790527,
+              -3.2014975547790527
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 77,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.33039137721061707,
+              -3.0803914070129395,
+              -5.7053914070129395,
+              -5.0803914070129395
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 81,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.8861479759216309,
+              -1.8861479759216309,
+              -1.7611479759216309,
+              -3.136147975921631
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 82,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.16197003424167633,
+              -3.1619701385498047,
+              -5.161970138549805,
+              -5.536970138549805
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 84,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.731216907501221,
+              -0.2312169075012207,
+              -5.856216907501221,
+              -4.981216907501221
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 85,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.4154891967773438,
+              -4.040489196777344,
+              -3.7904891967773438,
+              -0.16548924148082733
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 87,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5277325510978699,
+              -2.7777326107025146,
+              -5.1527323722839355,
+              -2.1527326107025146
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 88,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.1469368934631348,
+              -2.0219368934631348,
+              -0.7719367742538452,
+              -2.6469368934631348
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 89,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.005238378420472145,
+              -9.00523853302002,
+              -8.50523853302002,
+              -7.1302385330200195
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 92,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.2390110492706299,
+              -0.8640110492706299,
+              -2.86401104927063,
+              -3.61401104927063
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 93,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.1638542413711548,
+              -5.163854122161865,
+              -1.0388542413711548,
+              -3.5388541221618652
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 96,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.265303373336792,
+              -6.640303611755371,
+              -1.640303373336792,
+              -3.390303373336792
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 98,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.5018119812011719,
+              -2.751811981201172,
+              -1.8768119812011719,
+              -4.126811981201172
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 100,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -4.279369354248047,
+              -2.654369354248047,
+              -0.2793692648410797,
+              -3.904369354248047
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 104,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.8257481455802917,
+              -4.700747966766357,
+              -4.200747966766357,
+              -5.825747966766357
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 106,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -7.517967224121094,
+              -7.392967224121094,
+              -0.017967205494642258,
+              -7.142967224121094
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 109,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.1102718114852905,
+              -3.23527193069458,
+              -3.98527193069458,
+              -4.23527193069458
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 110,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.721357583999634,
+              -3.096357583999634,
+              -3.221357583999634,
+              -0.3463574945926666
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 111,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.3866472244262695,
+              -3.6366472244262695,
+              -0.2616472542285919,
+              -3.2616472244262695
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 113,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.01030163187533617,
+              -7.63530158996582,
+              -6.76030158996582,
+              -7.38530158996582
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 114,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.4347187578678131,
+              -2.6847188472747803,
+              -3.5597188472747803,
+              -4.184718608856201
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 117,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.237212657928467,
+              -0.11221260577440262,
+              -7.362212657928467,
+              -3.862212657928467
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 125,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -1.6264690160751343,
+              -2.751469135284424,
+              -1.5014690160751343,
+              -1.1264690160751343
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 132,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.14373549818992615,
+              -6.143735408782959,
+              -4.143735408782959,
+              -5.393735408782959
+            ]
+          },
+          {
+            "subject": "anatomy",
+            "index": 134,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -4.927617073059082,
+              -1.052617073059082,
+              -0.5526171326637268,
+              -6.552617073059082
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 1,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -4.465445041656494,
+              -6.965445041656494,
+              -5.465445041656494,
+              -0.09044526517391205
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 8,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5424655675888062,
+              -2.4174656867980957,
+              -2.9174656867980957,
+              -3.9799656867980957
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 12,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.6220437288284302,
+              -4.997043609619141,
+              -8.74704360961914,
+              -8.12204360961914
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 14,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.12164831906557083,
+              -3.6216483116149902,
+              -2.9966483116149902,
+              -5.99664831161499
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 16,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.0380446910858154,
+              -4.163044452667236,
+              -0.41304463148117065,
+              -4.538044452667236
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 19,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.8661603927612305,
+              -7.2411603927612305,
+              -4.6161603927612305,
+              -2.6161603927612305
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 20,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.4370787143707275,
+              -9.812078475952148,
+              -8.437078475952148,
+              -4.062078952789307
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 23,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.1861830949783325,
+              -2.686182975769043,
+              -3.186182975769043,
+              -1.3111830949783325
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 32,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -5.403959274291992,
+              -8.216459274291992,
+              -2.1539595127105713,
+              -1.2789595127105713
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 34,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.8798511028289795,
+              -7.6298508644104,
+              -1.5048511028289795,
+              -6.0048508644104
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 35,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.4382020235061646,
+              -3.063201904296875,
+              -4.438201904296875,
+              -2.688201904296875
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 36,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.12501807510852814,
+              -5.625018119812012,
+              -4.500018119812012,
+              -3.8750181198120117
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 48,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.0884487628936768,
+              -2.5884487628936768,
+              -1.0884487628936768,
+              -2.4634487628936768
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 49,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.1106245517730713,
+              -0.6106244921684265,
+              -6.360624313354492,
+              -4.735624313354492
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 54,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.2336241006851196,
+              -2.85862398147583,
+              -3.23362398147583,
+              -2.73362398147583
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 56,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -1.4597852230072021,
+              -4.459785461425781,
+              -1.9597852230072021,
+              -0.5847852826118469
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 58,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.9270445108413696,
+              -3.17704439163208,
+              -0.9270445108413696,
+              -1.0520445108413696
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 59,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.1017010286450386,
+              -6.226701259613037,
+              -4.851701259613037,
+              -3.226701021194458
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 63,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.8321719169616699,
+              -4.08217191696167,
+              -4.20717191696167,
+              -1.70717191696167
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 67,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.6653565764427185,
+              -1.0403566360473633,
+              -3.7903566360473633,
+              -2.7903566360473633
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 68,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.1020914316177368,
+              -2.1020913124084473,
+              -4.852091312408447,
+              -1.6020914316177368
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 70,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.907731056213379,
+              -0.032730840146541595,
+              -6.907731056213379,
+              -6.657731056213379
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 76,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.07393089681863785,
+              -3.6989309787750244,
+              -6.073930740356445,
+              -7.323930740356445
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 80,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.8986132740974426,
+              -2.398613214492798,
+              -2.648613214492798,
+              -2.898613214492798
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 87,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -5.236052513122559,
+              -6.236052513122559,
+              -4.736052513122559,
+              -0.11105260998010635
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 92,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.01822277344763279,
+              -8.26822280883789,
+              -8.14322280883789,
+              -9.39322280883789
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 96,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -5.978799819946289,
+              -4.228799819946289,
+              -4.978799819946289,
+              -0.10379990935325623
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 101,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.8171849250793457,
+              -4.192184925079346,
+              -0.5671849846839905,
+              -2.0671849250793457
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 102,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.129387855529785,
+              -3.254387855529785,
+              -0.3793877959251404,
+              -5.004387855529785
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 108,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.6071857213974,
+              -1.1071857213974,
+              -3.7321858406066895,
+              -2.1071858406066895
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 109,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.942274332046509,
+              -0.06727425754070282,
+              -5.94227409362793,
+              -5.56727409362793
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 110,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.8079915046691895,
+              -0.30799147486686707,
+              -5.9329915046691895,
+              -6.3079915046691895
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 117,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.7831802368164062,
+              -3.7831802368164062,
+              -3.4081802368164062,
+              -4.533180236816406
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 118,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.4927612841129303,
+              -7.242761135101318,
+              -8.242761611938477,
+              -6.617761135101318
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 120,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -3.5094733238220215,
+              -2.6344733238220215,
+              -0.13447341322898865,
+              -4.1344733238220215
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 125,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.350200653076172,
+              -7.100200653076172,
+              -3.100200653076172,
+              -0.22520069777965546
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 126,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -3.6900062561035156,
+              -4.627506256103516,
+              -2.3150062561035156,
+              -2.3150062561035156
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 127,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -6.883459091186523,
+              -8.008459091186523,
+              -0.008459212258458138,
+              -7.883459091186523
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 132,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.2339930534362793,
+              -5.858993053436279,
+              -0.35899317264556885,
+              -7.733993053436279
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 135,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -6.892242431640625,
+              -3.892242193222046,
+              -12.142242431640625,
+              -10.642242431640625
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 137,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.83097505569458,
+              -7.70597505569458,
+              -6.58097505569458,
+              -0.08097511529922485
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 138,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.577820360660553,
+              -8.515320777893066,
+              -5.702820301055908,
+              -2.077820301055908
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 141,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.2833553552627563,
+              -5.158355236053467,
+              -0.5333553552627563,
+              -2.408355236053467
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 143,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2009289264678955,
+              -5.325928688049316,
+              -3.0759289264678955,
+              -3.8259289264678955
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 144,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -6.186143398284912,
+              -0.18614348769187927,
+              -8.56114387512207,
+              -6.186143398284912
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 145,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.933535575866699,
+              -5.808535575866699,
+              -5.933535575866699,
+              -0.18353550136089325
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 147,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2895545959472656,
+              -3.6645545959472656,
+              -7.789554595947266,
+              -7.914554595947266
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 148,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.1018962860107422,
+              -4.601896286010742,
+              -2.601896286010742,
+              -5.226896286010742
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 149,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -2.813392162322998,
+              -1.0633922815322876,
+              -4.938392162322998,
+              -1.3133922815322876
+            ]
+          },
+          {
+            "subject": "astronomy",
+            "index": 150,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.099973201751709,
+              -2.849973201751709,
+              -0.09997329115867615,
+              -5.724973201751709
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 0,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -3.0481417179107666,
+              -0.17314180731773376,
+              -4.048141956329346,
+              -5.298141956329346
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 2,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.1595101356506348,
+              -0.65951007604599,
+              -1.4095101356506348,
+              -2.1595101356506348
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 4,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -3.696932315826416,
+              -5.571932315826416,
+              -5.071932315826416,
+              -2.321932315826416
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 7,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.39641982316970825,
+              -4.896420001983643,
+              -5.521420001983643,
+              -1.3964197635650635
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 8,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.9129183888435364,
+              -3.4129183292388916,
+              -5.537918567657471,
+              -1.1629183292388916
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 10,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.2401466369628906,
+              -2.4901466369628906,
+              -1.6151467561721802,
+              -0.7401467561721802
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 13,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.644016742706299,
+              -5.144016742706299,
+              -2.019016742706299,
+              -7.519016742706299
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 14,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -2.6452112197875977,
+              -7.020211219787598,
+              -3.8952112197875977,
+              -5.145211219787598
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 19,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.37628173828125,
+              -2.62628173828125,
+              -2.37628173828125,
+              -1.87628173828125
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 20,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.200629949569702,
+              -5.700630187988281,
+              -4.575630187988281,
+              -0.07563001662492752
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 22,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.21049609780311584,
+              -6.335495948791504,
+              -2.460496187210083,
+              -8.085495948791504
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 25,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.208237409591675,
+              -3.833237409591675,
+              -4.958237648010254,
+              -0.08323746919631958
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 30,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.862452507019043,
+              -8.862452507019043,
+              -1.1124526262283325,
+              -8.487452507019043
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 31,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.135958433151245,
+              -4.510958194732666,
+              -0.7609583735466003,
+              -2.010958433151245
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 33,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.4692484736442566,
+              -6.844248294830322,
+              -5.344248294830322,
+              -3.7192485332489014
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 34,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.9516499042510986,
+              -1.7016499042510986,
+              -6.4516496658325195,
+              -3.8266499042510986
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 35,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.2688348293304443,
+              -7.143834590911865,
+              -1.0188348293304443,
+              -3.8938348293304443
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 37,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -3.8973464965820312,
+              -0.8973463773727417,
+              -3.7723464965820312,
+              -3.6473464965820312
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 38,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.35548657178878784,
+              -3.6054866313934326,
+              -2.9804866313934326,
+              -2.6054866313934326
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 39,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.2371952533721924,
+              -0.48719534277915955,
+              -5.6121954917907715,
+              -5.1121954917907715
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 41,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.087677478790283,
+              -3.587677478790283,
+              -1.0876773595809937,
+              -1.9626773595809937
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 42,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -2.7099883556365967,
+              -3.5849883556365967,
+              -4.084988594055176,
+              -4.709988594055176
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 43,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -6.058326244354248,
+              -0.3083260953426361,
+              -5.808326244354248,
+              -4.683326244354248
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 46,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.849339485168457,
+              -4.724339485168457,
+              -6.599339485168457,
+              -1.224339485168457
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 47,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.7676860690116882,
+              -6.017685890197754,
+              -3.517686128616333,
+              -3.892686128616333
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 48,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.6601523160934448,
+              -3.5351524353027344,
+              -3.1601524353027344,
+              -5.160152435302734
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 49,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.7297611236572266,
+              -1.7297611236572266,
+              -0.4797610640525818,
+              -2.9797611236572266
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 52,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.481873035430908,
+              -3.356873035430908,
+              -0.6068729162216187,
+              -2.981873035430908
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 55,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5585859417915344,
+              -2.8085858821868896,
+              -2.6835858821868896,
+              -4.183586120605469
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 58,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.09049633890390396,
+              -3.715496301651001,
+              -6.09049654006958,
+              -4.21549654006958
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 62,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -4.240723133087158,
+              -4.865723133087158,
+              -0.11572331190109253,
+              -4.365723133087158
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 63,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.017674680799245834,
+              -7.767674446105957,
+              -8.892674446105957,
+              -6.767674446105957
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 64,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.913520097732544,
+              -4.038520336151123,
+              -3.163520097732544,
+              -2.288520097732544
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 65,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.765028476715088,
+              -4.765028476715088,
+              -2.015028476715088,
+              -5.140028476715088
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 67,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.7190337181091309,
+              -5.719033718109131,
+              -3.844033718109131,
+              -5.594033718109131
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 69,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2308388203382492,
+              -4.855838775634766,
+              -5.480838775634766,
+              -5.605838775634766
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 75,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.9759241938591003,
+              -3.475924253463745,
+              -1.6009242534637451,
+              -2.350924253463745
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 76,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.7636877298355103,
+              -5.013687610626221,
+              -5.763687610626221,
+              -4.888687610626221
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 77,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.3745834827423096,
+              -4.2495832443237305,
+              -1.6245834827423096,
+              -0.7495834827423096
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 80,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.972670555114746,
+              -4.472670555114746,
+              -3.847670555114746,
+              -3.347670555114746
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 81,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.5774476528167725,
+              -6.952447891235352,
+              -0.4524477422237396,
+              -6.452447891235352
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 82,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.1996819972991943,
+              -3.5746819972991943,
+              -2.9496819972991943,
+              -0.32468199729919434
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 87,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -1.6748028993606567,
+              -5.799802780151367,
+              -1.9248028993606567,
+              -1.2998028993606567
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 89,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.08513492345809937,
+              -8.085134506225586,
+              -6.710134983062744,
+              -7.585134983062744
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 91,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.1932268142700195,
+              -2.1932268142700195,
+              -1.693226933479309,
+              -3.3182268142700195
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 93,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.4518468379974365,
+              -6.076847076416016,
+              -0.4518468677997589,
+              -5.076847076416016
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 94,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.9185731410980225,
+              -0.5435731410980225,
+              -2.2935731410980225,
+              -2.9185731410980225
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 96,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2534238398075104,
+              -3.1284239292144775,
+              -3.8784239292144775,
+              -2.2534239292144775
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 98,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.9264075756072998,
+              -4.176407337188721,
+              -2.4264075756073,
+              -5.176407337188721
+            ]
+          },
+          {
+            "subject": "college_computer_science",
+            "index": 99,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -4.50374698638916,
+              -3.253746747970581,
+              -3.128746747970581,
+              -4.12874698638916
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 1,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.5267486572265625,
+              -5.4017486572265625,
+              -3.1517486572265625,
+              -7.4642486572265625
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 8,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.93399715423584,
+              -4.43399715423584,
+              -3.43399715423584,
+              -5.30899715423584
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 10,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.163762092590332,
+              -3.788762092590332,
+              -3.538762092590332,
+              -5.038762092590332
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 15,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -5.1457672119140625,
+              -4.6457672119140625,
+              -3.6457672119140625,
+              -5.8957672119140625
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 17,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.394101142883301,
+              -3.269101142883301,
+              -1.5191012620925903,
+              -2.144101142883301
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 18,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -5.107856750488281,
+              -3.3578567504882812,
+              -3.9828567504882812,
+              -1.4828566312789917
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 32,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.8355062007904053,
+              -4.710506439208984,
+              -0.5855062007904053,
+              -2.5855062007904053
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 33,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -3.286250352859497,
+              -1.661250352859497,
+              -3.286250352859497,
+              -2.036250352859497
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 54,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.6711567640304565,
+              -1.7961567640304565,
+              -1.9211567640304565,
+              -3.796156883239746
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 56,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.471024513244629,
+              -4.971024513244629,
+              -5.971024513244629,
+              -7.096024513244629
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 58,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.0321903228759766,
+              -2.5321903228759766,
+              -3.0321903228759766,
+              -3.6571903228759766
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 60,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.8721303939819336,
+              -3.1221303939819336,
+              -1.7471303939819336,
+              -0.6221304535865784
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 61,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.4119067192077637,
+              -1.7869068384170532,
+              -1.4119068384170532,
+              -1.2869068384170532
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 62,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.625998616218567,
+              -5.500998497009277,
+              -6.500998497009277,
+              -4.750998497009277
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 71,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.0693955421447754,
+              -1.4443954229354858,
+              -5.319395542144775,
+              -6.444395542144775
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 84,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -4.044484615325928,
+              -5.919484615325928,
+              -5.169484615325928,
+              -6.419484615325928
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 102,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -4.926516532897949,
+              -5.301516532897949,
+              -3.801516532897949,
+              -0.30151647329330444
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 104,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -4.9709625244140625,
+              -6.3459625244140625,
+              -5.2209625244140625,
+              -5.0959625244140625
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 108,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.1671373844146729,
+              -2.542137384414673,
+              -5.167137145996094,
+              -3.667137384414673
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 115,
+            "gold": 0,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -4.264527320861816,
+              -6.514527320861816,
+              -4.139527320861816,
+              -6.139527320861816
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 121,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -4.4637956619262695,
+              -6.0887956619262695,
+              -6.3387956619262695,
+              -7.0887956619262695
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 124,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.270451545715332,
+              -5.520451545715332,
+              -4.270451545715332,
+              -3.395451545715332
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 126,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -3.2796502113342285,
+              -1.404650330543518,
+              -3.7796502113342285,
+              -1.029650330543518
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 131,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -6.740824222564697,
+              -6.678324222564697,
+              -7.678324222564697,
+              -7.615824222564697
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 135,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.051733016967773,
+              -2.0517332553863525,
+              -5.676733016967773,
+              -3.9267332553863525
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 138,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -3.2903099060058594,
+              -2.4153099060058594,
+              -1.040310025215149,
+              -4.040309906005859
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 141,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.37434720993042,
+              -4.49934720993042,
+              -3.62434720993042,
+              -4.87434720993042
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 146,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -3.937504768371582,
+              -4.437504768371582,
+              -4.062504768371582,
+              -3.562504768371582
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 147,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.3980982303619385,
+              -2.8980982303619385,
+              -3.0230982303619385,
+              -2.6480982303619385
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 150,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -4.499294281005859,
+              -5.374294281005859,
+              -4.999294281005859,
+              -4.374294281005859
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 159,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.7045025825500488,
+              -3.079502582550049,
+              -3.704502582550049,
+              -2.954502582550049
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 161,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.6145423650741577,
+              -2.7395424842834473,
+              -3.3645424842834473,
+              -4.739542484283447
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 171,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.9315171241760254,
+              -3.8065171241760254,
+              -2.1815171241760254,
+              -3.6815171241760254
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 173,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.400674343109131,
+              -6.150674343109131,
+              -5.150674343109131,
+              -4.025674343109131
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 181,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.9270033836364746,
+              -1.1770033836364746,
+              -2.0520033836364746,
+              -3.0520033836364746
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 185,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.184727191925049,
+              -5.309727191925049,
+              -4.809727191925049,
+              -5.184727191925049
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 191,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.6780564785003662,
+              -5.803056716918945,
+              -6.303056716918945,
+              -6.053056716918945
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 200,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -7.436806678771973,
+              -7.311806678771973,
+              -3.9368066787719727,
+              -1.936806559562683
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 204,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -3.6544175148010254,
+              -0.40441757440567017,
+              -2.9044175148010254,
+              -1.9044175148010254
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 206,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -3.6713078022003174,
+              -3.1713078022003174,
+              -3.6713078022003174,
+              -4.921307563781738
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 216,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -4.167366981506348,
+              -4.792366981506348,
+              -6.667366981506348,
+              -7.417366981506348
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 220,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.3360761404037476,
+              -2.461076259613037,
+              -1.9610761404037476,
+              -3.961076259613037
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 224,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -5.822394371032715,
+              -7.697394371032715,
+              -5.322394371032715,
+              -6.072394371032715
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 225,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.683021545410156,
+              -1.9330215454101562,
+              -1.8080215454101562,
+              -3.0580215454101562
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 228,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.485671043395996,
+              -5.735671043395996,
+              -4.610671043395996,
+              -6.360671043395996
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 231,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.14659708738327026,
+              -4.271596908569336,
+              -3.771597146987915,
+              -3.271597146987915
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 248,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.479084014892578,
+              -4.854084014892578,
+              -3.479084014892578,
+              -5.604084014892578
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 252,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.9778661727905273,
+              -3.2278661727905273,
+              -3.7278661727905273,
+              -3.7278661727905273
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 254,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.0031957626342773,
+              -2.7531957626342773,
+              -6.003195762634277,
+              -5.253195762634277
+            ]
+          },
+          {
+            "subject": "high_school_mathematics",
+            "index": 261,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.8514530658721924,
+              -4.226452827453613,
+              -0.47645303606987,
+              -3.2264530658721924
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 1,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.3053039610385895,
+              -8.430303573608398,
+              -2.6803040504455566,
+              -1.680303931236267
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 7,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.93642520904541,
+              -4.06142520904541,
+              -3.68642520904541,
+              -0.8114251494407654
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 25,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.687649726867676,
+              -0.06264963001012802,
+              -7.937649726867676,
+              -4.312649726867676
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 27,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.737338066101074,
+              -6.737338066101074,
+              -0.8623379468917847,
+              -5.112338066101074
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 29,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7261180877685547,
+              -6.101118087768555,
+              -3.2261180877685547,
+              -2.4761180877685547
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 30,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2804739475250244,
+              -6.155473709106445,
+              -3.4054739475250244,
+              -7.030473709106445
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 31,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -6.513537883758545,
+              -0.01353774406015873,
+              -6.263537883758545,
+              -8.763537406921387
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 38,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -6.537692070007324,
+              -8.787692070007324,
+              -1.4126920700073242,
+              -0.28769204020500183
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 47,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.8290095329284668,
+              -1.4540095329284668,
+              -3.079009532928467,
+              -5.954009532928467
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 48,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.7466614246368408,
+              -0.4966614842414856,
+              -5.87166166305542,
+              -6.62166166305542
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 49,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -4.6334547996521,
+              -8.508454322814941,
+              -3.6334547996520996,
+              -0.13345476984977722
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 50,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -3.957109212875366,
+              -0.832109272480011,
+              -0.707109272480011,
+              -3.332109212875366
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 55,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.302912950515747,
+              -2.927912950515747,
+              -0.4279129207134247,
+              -4.552912712097168
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 71,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.1156543493270874,
+              -1.4906543493270874,
+              -2.615654468536377,
+              -3.490654468536377
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 79,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -7.1329731941223145,
+              -0.007973034866154194,
+              -9.507972717285156,
+              -9.007972717285156
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 84,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.327737957239151,
+              -7.327737808227539,
+              -7.327737808227539,
+              -2.952738046646118
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 85,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -9.025479316711426,
+              -8.775479316711426,
+              -0.9004790186882019,
+              -0.5254790186882019
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 93,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.2709251344203949,
+              -5.270925045013428,
+              -3.6459250450134277,
+              -3.2709250450134277
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 97,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.18922388553619385,
+              -7.814223766326904,
+              -8.439224243164062,
+              -7.314223766326904
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 98,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.324676752090454,
+              -2.199676752090454,
+              -0.8246768116950989,
+              -4.824676990509033
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 109,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.2760005295276642,
+              -4.151000499725342,
+              -2.026000499725342,
+              -4.151000499725342
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 111,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.577436685562134,
+              -4.577436923980713,
+              -2.202436685562134,
+              -0.5774367451667786
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 121,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -3.7480461597442627,
+              -1.2480461597442627,
+              -1.9980461597442627,
+              -0.6230461597442627
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 127,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.0305604934692383,
+              -1.7805604934692383,
+              -0.40556055307388306,
+              -3.6555604934692383
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 135,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.1667120456695557,
+              -2.4167120456695557,
+              -0.5417121052742004,
+              -3.6667120456695557
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 142,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.16456572711467743,
+              -5.289565563201904,
+              -3.4145658016204834,
+              -3.5395658016204834
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 146,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.95088529586792,
+              -5.70088529586792,
+              -6.07588529586792,
+              -0.07588530331850052
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 151,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.2197892665863037,
+              -0.7197892665863037,
+              -2.2197892665863037,
+              -2.8447892665863037
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 173,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.14926569163799286,
+              -5.399265766143799,
+              -6.524265766143799,
+              -2.024265766143799
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 181,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -0.9469279646873474,
+              -5.196928024291992,
+              -0.5719279646873474,
+              -4.446928024291992
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 194,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -6.022338390350342,
+              -8.2723388671875,
+              -0.02233843132853508,
+              -7.022338390350342
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 199,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.6152901649475098,
+              -0.36529016494750977,
+              -5.11529016494751,
+              -5.11529016494751
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 205,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.650572776794434,
+              -0.02557295560836792,
+              -5.275572776794434,
+              -5.900572776794434
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 206,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -2.752298593521118,
+              -0.25229859352111816,
+              -6.752298355102539,
+              -5.627298355102539
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 208,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -1.1349258422851562,
+              -7.009925842285156,
+              -5.509925842285156,
+              -0.6349257826805115
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 210,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.225217819213867,
+              -5.225217819213867,
+              -0.35021793842315674,
+              -2.350217819213867
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 216,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7404038906097412,
+              -0.8654038906097412,
+              -3.115403890609741,
+              -3.740403890609741
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 220,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.12090989947319031,
+              -3.9959099292755127,
+              -2.3709099292755127,
+              -6.995909690856934
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 226,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.03333819657564163,
+              -5.7833380699157715,
+              -4.5333380699157715,
+              -6.5333380699157715
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 229,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -3.0513103008270264,
+              -1.8013103008270264,
+              -3.8013103008270264,
+              -3.3013103008270264
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 232,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.0098555088043213,
+              -2.5098555088043213,
+              -1.2598555088043213,
+              -4.384855270385742
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 236,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.08017511665821075,
+              -6.205174922943115,
+              -5.955174922943115,
+              -9.080175399780273
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 239,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.06704608350992203,
+              -3.4420461654663086,
+              -4.567046165466309,
+              -3.9420461654663086
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 246,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -6.481583118438721,
+              -0.10658322274684906,
+              -2.7315831184387207,
+              -6.981583118438721
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 248,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.9615193605422974,
+              -0.21151934564113617,
+              -5.836519241333008,
+              -4.336519241333008
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 249,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.6261603832244873,
+              -4.626160621643066,
+              -2.5011603832244873,
+              -1.0011603832244873
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 274,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.9634082317352295,
+              -0.8384081721305847,
+              -6.71340799331665,
+              -7.33840799331665
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 276,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.1131443977355957,
+              -6.488144397735596,
+              -3.3631443977355957,
+              -0.2381443977355957
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 281,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.5141296982765198,
+              -1.014129638671875,
+              -4.014129638671875,
+              -3.889129638671875
+            ]
+          },
+          {
+            "subject": "philosophy",
+            "index": 284,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5324097871780396,
+              -7.40740966796875,
+              -1.5324097871780396,
+              -4.90740966796875
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 2,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -4.6559624671936035,
+              -5.0309624671936035,
+              -1.280962586402893,
+              -0.4059625566005707
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 10,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.3872116506099701,
+              -1.6372116804122925,
+              -3.637211561203003,
+              -3.762211561203003
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 12,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.088369369506836,
+              -0.33836933970451355,
+              -9.088369369506836,
+              -8.088369369506836
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 14,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.515370845794678,
+              -0.015370956622064114,
+              -8.015371322631836,
+              -8.015371322631836
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 15,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -7.503043174743652,
+              -0.0030433074571192265,
+              -9.878043174743652,
+              -8.878043174743652
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 16,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.1860869824886322,
+              -6.561087131500244,
+              -1.8110870122909546,
+              -6.436087131500244
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 17,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.29980731010437,
+              -1.5498073101043701,
+              -1.0498073101043701,
+              -6.924807548522949
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 18,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7182750105857849,
+              -0.8432750105857849,
+              -2.8432750701904297,
+              -5.09327507019043
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 20,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.010967450216412544,
+              -7.635967254638672,
+              -7.260967254638672,
+              -6.885967254638672
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 25,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2951648533344269,
+              -2.7951648235321045,
+              -2.1701648235321045,
+              -4.295165061950684
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 27,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -6.097372531890869,
+              -6.472372531890869,
+              -0.4723723530769348,
+              -6.097372531890869
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 30,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.3309916257858276,
+              -3.955991506576538,
+              -0.45599159598350525,
+              -2.705991506576538
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 33,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.0304529070854187,
+              -8.655452728271484,
+              -3.9054529666900635,
+              -5.780452728271484
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 40,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -0.945543646812439,
+              -0.820543646812439,
+              -1.820543646812439,
+              -7.4455437660217285
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 47,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.6505761742591858,
+              -5.400576114654541,
+              -3.900576114654541,
+              -1.775576114654541
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 52,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.3452445268630981,
+              -0.7202445268630981,
+              -2.5952444076538086,
+              -2.0952444076538086
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 60,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.648223638534546,
+              -0.5232236981391907,
+              -3.523223638534546,
+              -3.898223638534546
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 61,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.005116819869726896,
+              -9.13011646270752,
+              -7.130116939544678,
+              -8.50511646270752
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 63,
+            "gold": 0,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.7470473051071167,
+              -1.6220473051071167,
+              -2.7470474243164062,
+              -2.4970474243164062
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 64,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.11460018157959,
+              -0.11460033059120178,
+              -7.86460018157959,
+              -7.98960018157959
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 66,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.018239043653011322,
+              -6.3932390213012695,
+              -6.1432390213012695,
+              -4.5182390213012695
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 67,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.3606247007846832,
+              -4.86062479019165,
+              -2.9856247901916504,
+              -3.7356247901916504
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 68,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.02673148922622204,
+              -3.901731491088867,
+              -5.276731491088867,
+              -7.151731491088867
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 76,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.161895751953125,
+              -3.911895990371704,
+              -0.4118959903717041,
+              -6.411895751953125
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 80,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.3268938064575195,
+              -0.0768936350941658,
+              -7.8268938064575195,
+              -9.70189380645752
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 101,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.6245568990707397,
+              -8.499556541442871,
+              -0.8745568990707397,
+              -5.249557018280029
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 103,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.0173563957214355,
+              -0.017356177791953087,
+              -6.6423563957214355,
+              -5.1423563957214355
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 107,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.57566237449646,
+              -4.075662136077881,
+              -0.200662299990654,
+              -4.200662136077881
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 117,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.1409356594085693,
+              -5.765935897827148,
+              -0.6409356594085693,
+              -2.2659356594085693
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 119,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -5.3937578201293945,
+              -5.5187578201293945,
+              -4.6437578201293945,
+              -0.018758047372102737
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 122,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.19029660522937775,
+              -3.0652966499328613,
+              -2.5652966499328613,
+              -4.690296649932861
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 128,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.643407821655273,
+              -8.143407821655273,
+              -0.018407588824629784,
+              -7.393407821655273
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 130,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -8.130074501037598,
+              -0.005074122920632362,
+              -5.5050740242004395,
+              -8.505074501037598
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 131,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.003381607821211219,
+              -10.628381729125977,
+              -10.128381729125977,
+              -9.628381729125977
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 133,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.828600883483887,
+              -1.5786006450653076,
+              -0.32860067486763,
+              -6.953600883483887
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 135,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -5.2880449295043945,
+              -0.03804485872387886,
+              -7.7880449295043945,
+              -8.413044929504395
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 138,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -6.664148807525635,
+              -7.164148807525635,
+              -5.414148807525635,
+              -0.039148688316345215
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 139,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.2951223850250244,
+              -6.670122146606445,
+              -0.04512231424450874,
+              -6.670122146606445
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 142,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.3322622776031494,
+              -6.7072625160217285,
+              -5.5822625160217285,
+              -0.0822623074054718
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 143,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.8200697898864746,
+              -0.9450697302818298,
+              -9.195069313049316,
+              -8.820069313049316
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 144,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.0017357297474518418,
+              -6.876735687255859,
+              -7.751735687255859,
+              -8.75173568725586
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 145,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.4215329885482788,
+              -4.046533107757568,
+              -2.4215331077575684,
+              -3.5465331077575684
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 148,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -4.762287139892578,
+              -9.262287139892578,
+              -7.262287139892578,
+              -0.012287277728319168
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 149,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.0381254144012928,
+              -8.788125038146973,
+              -6.413125514984131,
+              -3.413125514984131
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 152,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -6.889046669006348,
+              -0.014046614989638329,
+              -10.639046669006348,
+              -10.389046669006348
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 155,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -6.204206943511963,
+              -10.579206466674805,
+              -1.7042068243026733,
+              -0.20420679450035095
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 157,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.827349066734314,
+              -0.20234911143779755,
+              -8.327348709106445,
+              -7.8273491859436035
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 161,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.02204286865890026,
+              -5.272042751312256,
+              -4.397042751312256,
+              -5.522042751312256
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 166,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.004574310965836048,
+              -9.6295747756958,
+              -6.379574298858643,
+              -8.6295747756958
+            ]
+          },
+          {
+            "subject": "world_religions",
+            "index": 167,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.266342282295227,
+              -3.7663421630859375,
+              -1.516342282295227,
+              -3.0163421630859375
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 0,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.1510753333568573,
+              -5.27607536315918,
+              -6.52607536315918,
+              -7.27607536315918
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 1,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.650311291217804,
+              -1.9003112316131592,
+              -1.6503112316131592,
+              -2.650311231613159
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 2,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.828320264816284,
+              -4.953320503234863,
+              -3.328320264816284,
+              -0.4533202648162842
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 6,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.04413639008998871,
+              -6.4191365242004395,
+              -6.0441365242004395,
+              -3.5441362857818604
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 8,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.260312557220459,
+              -6.260312557220459,
+              -3.385312557220459,
+              -0.5103124380111694
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 10,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -6.063902854919434,
+              -0.1889030933380127,
+              -9.563902854919434,
+              -7.438902854919434
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 11,
+            "gold": 2,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -4.7965407371521,
+              -0.04654066637158394,
+              -4.2965407371521,
+              -4.6715407371521
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 13,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -1.8167449235916138,
+              -2.4417450428009033,
+              -4.066744804382324,
+              -0.44174495339393616
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 14,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.0408830642700195,
+              -0.040883295238018036,
+              -3.9158833026885986,
+              -6.6658830642700195
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 16,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.165862083435059,
+              -5.665862083435059,
+              -0.04086189717054367,
+              -8.415862083435059
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 17,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.674497127532959,
+              -0.17449715733528137,
+              -5.299497127532959,
+              -5.299497127532959
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 19,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.515465259552002,
+              -0.14046542346477509,
+              -4.890465259552002,
+              -6.140465259552002
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 20,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.801254391670227,
+              -3.0512542724609375,
+              -3.0512542724609375,
+              -1.051254391670227
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 21,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -2.25006103515625,
+              -6.00006103515625,
+              -2.62506103515625,
+              -2.25006103515625
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 26,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.02125263772904873,
+              -8.396252632141113,
+              -7.646252632141113,
+              -9.771252632141113
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 27,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.186830759048462,
+              -0.061830684542655945,
+              -8.311830520629883,
+              -5.436830520629883
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 28,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -3.8120646476745605,
+              -6.1870646476745605,
+              -0.06206464394927025,
+              -5.5620646476745605
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 31,
+            "gold": 0,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -3.5556211471557617,
+              -5.305621147155762,
+              -0.1806212216615677,
+              -4.555621147155762
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 32,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -5.756819248199463,
+              -9.006818771362305,
+              -8.381818771362305,
+              -0.0068191904574632645
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 33,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.0656253919005394,
+              -4.940625190734863,
+              -4.315625190734863,
+              -6.065625190734863
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 34,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.4525701999664307,
+              -1.3275701999664307,
+              -7.827569961547852,
+              -7.390069961547852
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 35,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -4.8011474609375,
+              -7.4261474609375,
+              -3.5511474609375,
+              -0.05114734172821045
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 36,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.021769845858216286,
+              -6.896770000457764,
+              -6.646770000457764,
+              -8.021769523620605
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 38,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.2521402835845947,
+              -0.2521403729915619,
+              -5.252140522003174,
+              -2.6271402835845947
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 40,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.961985468864441,
+              -0.5869854688644409,
+              -5.8369855880737305,
+              -6.8369855880737305
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 43,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -5.756819248199463,
+              -9.006818771362305,
+              -8.381818771362305,
+              -0.0068191904574632645
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 44,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.009399918839335442,
+              -9.009400367736816,
+              -6.634399890899658,
+              -5.134399890899658
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 45,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.516132831573486,
+              -7.391132831573486,
+              -0.016133002936840057,
+              -6.391132831573486
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 47,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.4133681356906891,
+              -7.288368225097656,
+              -4.788368225097656,
+              -1.9133681058883667
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 49,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -4.096283435821533,
+              -7.471283435821533,
+              -5.721283435821533,
+              -0.09628366678953171
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 54,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.015670962631702423,
+              -6.0156707763671875,
+              -5.1406707763671875,
+              -6.6406707763671875
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 56,
+            "gold": 0,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.0193583965301514,
+              -6.0193586349487305,
+              -0.5193584561347961,
+              -2.2693583965301514
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 62,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.493244647979736,
+              -2.7432444095611572,
+              -0.11824450641870499,
+              -4.493244647979736
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 63,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.2588582932949066,
+              -4.7588582038879395,
+              -3.0088582038879395,
+              -1.883858323097229
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 64,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.0465812683105469,
+              -2.796581268310547,
+              -1.0465812683105469,
+              -1.6715812683105469
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 67,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.0299128293991089,
+              -4.154912948608398,
+              -5.779912948608398,
+              -1.0299128293991089
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 69,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -3.1697640419006348,
+              -5.669764041900635,
+              -0.9197641015052795,
+              -0.7947641015052795
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 70,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -6.139555931091309,
+              -0.01455604936927557,
+              -8.889555931091309,
+              -7.389555931091309
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 73,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.058185577392578,
+              -7.183185577392578,
+              -0.05818551778793335,
+              -5.558185577392578
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 78,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -1.8873478174209595,
+              -5.88734769821167,
+              -5.63734769821167,
+              -1.0123478174209595
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 80,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.4184571504592896,
+              -3.79345703125,
+              -0.41845712065696716,
+              -3.04345703125
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 82,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.5611546039581299,
+              -3.06115460395813,
+              -0.3111546039581299,
+              -4.686154365539551
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 83,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.6170786619186401,
+              -1.1170786619186401,
+              -4.99207878112793,
+              -4.74207878112793
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 84,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.09883442521095276,
+              -5.97383451461792,
+              -4.84883451461792,
+              -5.59883451461792
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 85,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -2.2102255821228027,
+              -3.9602255821228027,
+              -0.9602255821228027,
+              -3.9602255821228027
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 90,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -4.04984712600708,
+              -0.17484723031520844,
+              -5.29984712600708,
+              -3.92484712600708
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 91,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.2622317969799042,
+              -1.8872318267822266,
+              -3.7622318267822266,
+              -3.2622318267822266
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 95,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -1.2230829000473022,
+              -0.47308292984962463,
+              -3.973083019256592,
+              -2.973083019256592
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 96,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -5.402663707733154,
+              -0.027663635089993477,
+              -5.152663707733154,
+              -4.277663707733154
+            ]
+          },
+          {
+            "subject": "us_foreign_policy",
+            "index": 98,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.19782310724258423,
+              -3.9478230476379395,
+              -5.8228230476379395,
+              -7.0728230476379395
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 1,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.8083432912826538,
+              -2.6833434104919434,
+              -1.9333432912826538,
+              -3.6833434104919434
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 3,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7300909161567688,
+              -4.730091094970703,
+              -4.355091094970703,
+              -3.980090856552124
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 4,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.205657958984375,
+              -2.080657958984375,
+              -1.705657958984375,
+              -1.455657958984375
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 5,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7424192428588867,
+              -2.6174192428588867,
+              -3.7424192428588867,
+              -3.2424192428588867
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 9,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.561741828918457,
+              -4.061741828918457,
+              -0.18674202263355255,
+              -2.936742067337036
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 13,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.4803394377231598,
+              -1.6053394079208374,
+              -2.980339527130127,
+              -2.980339527130127
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 14,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.373966932296753,
+              -0.8739669919013977,
+              -5.498967170715332,
+              -3.873966932296753
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 16,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.499544143676758,
+              -2.999544143676758,
+              -2.749544143676758,
+              -1.6245441436767578
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 18,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -0.9635037183761597,
+              -0.5885037183761597,
+              -3.338503837585449,
+              -3.713503837585449
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 19,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -5.2336273193359375,
+              -4.3586273193359375,
+              -0.23362745344638824,
+              -4.3586273193359375
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 20,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.2192811965942383,
+              -1.3442810773849487,
+              -4.844281196594238,
+              -2.5942811965942383
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 22,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.2347604036331177,
+              -3.484760284423828,
+              -2.734760284423828,
+              -1.6097604036331177
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 25,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.30295687913894653,
+              -6.677957057952881,
+              -5.302957057952881,
+              -1.5529568195343018
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 26,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.7047736644744873,
+              -0.07977376878261566,
+              -5.454773902893066,
+              -6.454773902893066
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 28,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -3.0179643630981445,
+              -4.1429643630981445,
+              -0.8929643630981445,
+              -1.0179643630981445
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 29,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -4.467421531677246,
+              -2.592421531677246,
+              -6.842421531677246,
+              -6.217421531677246
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 30,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -2.4411323070526123,
+              -0.4411323070526123,
+              -1.6911323070526123,
+              -2.5661323070526123
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 31,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -2.019984722137451,
+              -0.5199846625328064,
+              -2.144984722137451,
+              -3.019984722137451
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 34,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -2.5833334922790527,
+              -6.145833492279053,
+              -4.583333492279053,
+              -2.7083334922790527
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 39,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -1.2048823833465576,
+              -3.3298823833465576,
+              -5.829882621765137,
+              -0.45488241314888
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 42,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.9050917625427246,
+              -3.2800917625427246,
+              -1.4050917625427246,
+              -2.1550917625427246
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 44,
+            "gold": 0,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.592319965362549,
+              -4.342319965362549,
+              -2.467319965362549,
+              -0.3423200249671936
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 45,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -2.4345202445983887,
+              -4.309520244598389,
+              -2.1845202445983887,
+              -0.5595203042030334
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 46,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.12521709501743317,
+              -2.5002171993255615,
+              -6.125216960906982,
+              -5.000216960906982
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 47,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.22662991285324097,
+              -8.976630210876465,
+              -7.226629734039307,
+              -3.6016299724578857
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 48,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -3.268671989440918,
+              -4.018671989440918,
+              -3.393671989440918,
+              -3.268671989440918
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 52,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.1827824115753174,
+              -5.3077826499938965,
+              -4.0577826499938965,
+              -6.4327826499938965
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 55,
+            "gold": 1,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -6.178417205810547,
+              -7.803417205810547,
+              -5.178417205810547,
+              -4.303417205810547
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 58,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -1.1944555044174194,
+              -2.944455623626709,
+              -2.319455623626709,
+              -1.0694555044174194
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 60,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.694528341293335,
+              -4.194528579711914,
+              -1.194528341293335,
+              -4.569528579711914
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 69,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -5.319533824920654,
+              -4.944533824920654,
+              -3.8195338249206543,
+              -5.569533824920654
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 70,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -1.9731526374816895,
+              -3.9731526374816895,
+              -3.7231526374816895,
+              -1.9731526374816895
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 71,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -4.8688530921936035,
+              -5.2438530921936035,
+              -6.6188530921936035,
+              -5.4938530921936035
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 74,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -1.9721884727478027,
+              -0.972188413143158,
+              -6.097188472747803,
+              -3.9721884727478027
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 79,
+            "gold": 1,
+            "pred": 1,
+            "correct": true,
+            "logp": [
+              -3.2717034816741943,
+              -0.14670343697071075,
+              -2.8967034816741943,
+              -5.146703243255615
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 81,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7932485938072205,
+              -5.043248653411865,
+              -4.293248653411865,
+              -1.2932486534118652
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 82,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.7817875146865845,
+              -2.781787395477295,
+              -3.031787395477295,
+              -3.906787395477295
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 83,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.2926575541496277,
+              -5.917657375335693,
+              -3.6676576137542725,
+              -1.9176576137542725
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 85,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.06094949319958687,
+              -9.685949325561523,
+              -9.435949325561523,
+              -3.0609495639801025
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 87,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -4.318192481994629,
+              -5.193192481994629,
+              -0.3181924819946289,
+              -6.318192481994629
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 88,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -1.1936734914779663,
+              -3.443673610687256,
+              -2.818673610687256,
+              -1.6936734914779663
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 90,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -2.4996185302734375,
+              -2.8746185302734375,
+              -0.749618649482727,
+              -2.2496185302734375
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 92,
+            "gold": 2,
+            "pred": 3,
+            "correct": false,
+            "logp": [
+              -5.434312343597412,
+              -5.309312343597412,
+              -3.934312343597412,
+              -1.0593122243881226
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 93,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -6.806029796600342,
+              -7.306029796600342,
+              -6.931029796600342,
+              -7.681029796600342
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 95,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.694944441318512,
+              -3.694944381713867,
+              -2.569944381713867,
+              -3.569944381713867
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 98,
+            "gold": 3,
+            "pred": 1,
+            "correct": false,
+            "logp": [
+              -2.386528253555298,
+              -0.2615283131599426,
+              -2.636528253555298,
+              -3.511528253555298
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 99,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -0.9155179262161255,
+              -5.165517807006836,
+              -4.915517807006836,
+              -0.5405179262161255
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 106,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.34637361764907837,
+              -6.221373558044434,
+              -4.346373558044434,
+              -6.096373558044434
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 108,
+            "gold": 3,
+            "pred": 3,
+            "correct": true,
+            "logp": [
+              -2.67651104927063,
+              -4.051510810852051,
+              -3.42651104927063,
+              -0.8015110492706299
+            ]
+          },
+          {
+            "subject": "econometrics",
+            "index": 113,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.20453767478466034,
+              -3.7045376300811768,
+              -2.7045376300811768,
+              -4.329537868499756
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 1,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.23498569428920746,
+              -5.609985828399658,
+              -2.609985589981079,
+              -5.609985828399658
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 24,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.15502828359603882,
+              -4.530028343200684,
+              -2.1550283432006836,
+              -4.655028343200684
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 28,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.2241087704896927,
+              -2.4741086959838867,
+              -2.2241086959838867,
+              -5.349108695983887
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 39,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.18313606083393097,
+              -3.433135986328125,
+              -2.433135986328125,
+              -4.433135986328125
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 45,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.08756636828184128,
+              -5.712566375732422,
+              -3.587566375732422,
+              -5.462566375732422
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 71,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.32177385687828064,
+              -3.0717737674713135,
+              -1.696773886680603,
+              -4.321774005889893
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 111,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.23657359182834625,
+              -4.361573696136475,
+              -2.7365736961364746,
+              -4.736573696136475
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 118,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.22345516085624695,
+              -5.22345495223999,
+              -3.4734551906585693,
+              -5.47345495223999
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 182,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.12691335380077362,
+              -5.376913547515869,
+              -3.12691330909729,
+              -4.001913547515869
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 194,
+            "gold": 0,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.7265533208847046,
+              -3.851553440093994,
+              -0.2265533208847046,
+              -7.226553440093994
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 197,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.23387959599494934,
+              -4.483879566192627,
+              -1.858879566192627,
+              -5.608879566192627
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 228,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.16102448105812073,
+              -4.411024570465088,
+              -2.536024570465088,
+              -4.911024570465088
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 260,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.3517712354660034,
+              -4.351771354675293,
+              -0.3517712354660034,
+              -5.726771354675293
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 267,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.4848158657550812,
+              -3.609815835952759,
+              -1.4848158359527588,
+              -5.109816074371338
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 271,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.16355036199092865,
+              -4.28855037689209,
+              -2.66355037689209,
+              -5.16355037689209
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 285,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.5899494290351868,
+              -3.339949369430542,
+              -0.9649494290351868,
+              -5.214949607849121
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 321,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.14326675236225128,
+              -5.018266677856445,
+              -3.6432666778564453,
+              -5.143266677856445
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 336,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.19411666691303253,
+              -4.319116592407227,
+              -2.6941165924072266,
+              -4.444116592407227
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 339,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.6481474041938782,
+              -3.5231473445892334,
+              -0.8981474041938782,
+              -5.7731475830078125
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 353,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.3641835153102875,
+              -4.23918342590332,
+              -1.3641835451126099,
+              -5.48918342590332
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 359,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.6068075299263,
+              -1.8568074703216553,
+              -1.3568074703216553,
+              -3.7318074703216553
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 394,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.7649467587471008,
+              -4.764946937561035,
+              -0.7649467587471008,
+              -5.139946937561035
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 408,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5576898455619812,
+              -3.182689905166626,
+              -1.057689905166626,
+              -4.182689666748047
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 409,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.1832333356142044,
+              -5.058233261108398,
+              -2.0582332611083984,
+              -5.308233261108398
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 444,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.30868151783943176,
+              -4.933681488037109,
+              -1.4336814880371094,
+              -7.308681488037109
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 446,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.7587769031524658,
+              -3.258776903152466,
+              -0.2587769329547882,
+              -4.508777141571045
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 521,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.47067517042160034,
+              -2.345675230026245,
+              -1.3456752300262451,
+              -5.470674991607666
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 523,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.0968947410583496,
+              -3.4718947410583496,
+              -0.4718947410583496,
+              -5.09689474105835
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 532,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.12788958847522736,
+              -5.627889633178711,
+              -2.252889633178711,
+              -6.877889633178711
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 549,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.17638836801052094,
+              -3.8013882637023926,
+              -2.9263882637023926,
+              -5.176388263702393
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 551,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.3744499683380127,
+              -4.749449729919434,
+              -1.3744499683380127,
+              -5.624449729919434
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 590,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.6765428781509399,
+              -2.5515427589416504,
+              -1.17654287815094,
+              -3.8015427589416504
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 594,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.263644814491272,
+              -2.8886446952819824,
+              -2.3886446952819824,
+              -3.7636446952819824
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 610,
+            "gold": 1,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5223329663276672,
+              -3.7723329067230225,
+              -4.272333145141602,
+              -5.022333145141602
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 620,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.1245334148406982,
+              -2.3745334148406982,
+              -0.6245334148406982,
+              -3.7495334148406982
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 656,
+            "gold": 3,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.5198311805725098,
+              -5.01983118057251,
+              -0.26983124017715454,
+              -6.39483118057251
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 675,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.5079870223999023,
+              -4.257987022399902,
+              -1.0079870223999023,
+              -5.132987022399902
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 686,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.31132227182388306,
+              -4.686322212219238,
+              -1.6863222122192383,
+              -4.061322212219238
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 695,
+            "gold": 1,
+            "pred": 2,
+            "correct": false,
+            "logp": [
+              -1.538877248764038,
+              -4.538877010345459,
+              -0.2888772189617157,
+              -6.038877010345459
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 703,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.36946865916252136,
+              -1.6194686889648438,
+              -2.3694686889648438,
+              -4.619468688964844
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 725,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.13744772970676422,
+              -4.512447834014893,
+              -2.5124478340148926,
+              -5.637447834014893
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 736,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.1511966735124588,
+              -3.7761967182159424,
+              -2.7761967182159424,
+              -5.276196479797363
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 746,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.4784238338470459,
+              -3.853423833847046,
+              -1.103423833847046,
+              -4.853424072265625
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 754,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.08077160269021988,
+              -4.455771446228027,
+              -4.330771446228027,
+              -5.455771446228027
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 759,
+            "gold": 2,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.24829280376434326,
+              -3.998292922973633,
+              -3.373292922973633,
+              -4.748292922973633
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 791,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.346664696931839,
+              -4.346664905548096,
+              -1.3466646671295166,
+              -5.096664905548096
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 805,
+            "gold": 2,
+            "pred": 2,
+            "correct": true,
+            "logp": [
+              -1.1581664085388184,
+              -2.2831664085388184,
+              -0.6581664085388184,
+              -4.408166408538818
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 825,
+            "gold": 3,
+            "pred": 0,
+            "correct": false,
+            "logp": [
+              -0.21532699465751648,
+              -4.71532678604126,
+              -1.8403270244598389,
+              -4.96532678604126
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 863,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.8056708574295044,
+              -2.680670738220215,
+              -0.8056708574295044,
+              -4.555670738220215
+            ]
+          },
+          {
+            "subject": "moral_scenarios",
+            "index": 885,
+            "gold": 0,
+            "pred": 0,
+            "correct": true,
+            "logp": [
+              -0.3577900230884552,
+              -3.857789993286133,
+              -1.3577899932861328,
+              -5.982789993286133
+            ]
+          }
+        ]
+      },
+      "mmlu_subset_acc": 0.492,
+      "mmlu_minus_source": 0.0,
+      "peak_vram_gb": 18.450894848,
+      "cuda_allocated_after_free_gb": 15.755142144,
+      "seconds": 10.781703472137451
+    }
+  }
+}
